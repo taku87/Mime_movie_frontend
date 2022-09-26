@@ -1,0 +1,21 @@
+.unlike {
+  font-size: 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  background-color: #ff7fe5;
+  color: white;
+  font-weight: bold;
+  padding: 6px 1.5px 6px 1px;
+}
+
+@media (min-width: 700px) {
+  .unlike {
+    font-size: 13px;
+    padding: 6px 4px 6px 4px;
+  }
+}
+
+.unlike:hover {
+  opacity: 0.8;
+}
