@@ -1,5 +1,7 @@
-function Terms() {
-  return <h2>Terms</h2>;
+export const Terms = () => {
+  return (
+    <div>Terms</div>
+  )
 }
 
 export default Terms;
