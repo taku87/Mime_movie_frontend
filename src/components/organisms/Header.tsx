@@ -1,4 +1,6 @@
 import { Link } from 'react-router-dom';
+import { LoginButton } from "components/atoms/LoginButton";
+
 
 export const Header = () => {
   return (
@@ -10,7 +12,7 @@ export const Header = () => {
             <Link to='/'>homeへのリンク_マイムMOVIEのロゴ</Link>
             <Link to='*'>ポイヤツへのリンク_ポイヤツのロゴ</Link>
             <Link to='*'>MENU これはmoleculeかorganism</Link>
-            <Link to='*'>ログイン これはmoleculeかorganism</Link>
+            <LoginButton/>
         </div>
       </div>
     </div>

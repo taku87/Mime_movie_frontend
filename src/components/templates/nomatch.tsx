@@ -1,5 +1,7 @@
-function NoMatch() {
-  return <h2>このページは存在しません。</h2>;
+export const NoMatch = () => {
+  return (
+    <div>nomatch</div>
+  )
 }
 
 export default NoMatch;
