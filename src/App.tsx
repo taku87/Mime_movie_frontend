@@ -6,6 +6,7 @@ import '@fontsource/roboto/700.css';
 
 import { QueryClient, QueryClientProvider } from 'react-query';
 import { AuthCheckProvider } from 'components/providers/AuthCheckprovider';
+import { GlobalProvider } from 'components/providers/Globalprovider';
 import { BrowserRouter } from 'react-router-dom';
 import { Footer } from "components/organisms/Footer";
 import { Header } from "components/organisms/Header";
@@ -17,11 +18,13 @@ function App() {
   return (
     <QueryClientProvider client={queryClient}>
       <AuthCheckProvider>
-        <BrowserRouter>
-            <Header />
-            <Routers />
-            <Footer />
-        </BrowserRouter>
+        <GlobalProvider>
+          <BrowserRouter>
+              <Header />
+              <Routers />
+              <Footer />
+          </BrowserRouter>
+        </GlobalProvider>
       </AuthCheckProvider>
     </QueryClientProvider>
   );
