@@ -1,29 +1,30 @@
+import './css/index.css';
 import React from 'react';
 import ReactDOM from 'react-dom/client';
+// import { Provider } from 'react-redux'
+// import { store } from 'store'
 import { Auth0Provider } from "@auth0/auth0-react";
-import { BrowserRouter} from 'react-router-dom';
-import './css/index.css';
-import App from './App';
-import { Footer } from "components/organisms/Footer";
-import { Header } from "components/organisms/Header";
 import reportWebVitals from './reportWebVitals';
+import App from './App';
 
+const domain: string = process.env.REACT_APP_AUTH0_DOMAIN || '';
+const clientId: string = process.env.REACT_APP_AUTH0_CLIENT_ID || '';
+const audience: string = process.env.REACT_APP_AUTH0_AUDIENCE || '';
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
 );
 root.render(
   <Auth0Provider
-    domain={process.env.REACT_APP_AUTH0_DOMAIN!}
-    clientId={process.env.REACT_APP_AUTH0_CLIENT_ID!}
+    domain={domain}
+    clientId={clientId}
+    audience={audience}
     redirectUri={window.location.origin}
   >
-  <React.StrictMode>
-    <BrowserRouter>
-      <Header />
-      <App />
-      <Footer />
-    </BrowserRouter>
-  </React.StrictMode>
+    {/* <Provider store={store}> */}
+      <React.StrictMode>
+        <App />
+      </React.StrictMode>
+    {/* </Provider> */}
   </Auth0Provider>
 );
 
