@@ -1,23 +1,31 @@
+import './css/index.css';
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import { BrowserRouter,Route, Link } from 'react-router-dom';
-import './css/index.css';
-import App from './App';
-import { Footer } from "components/organisms/Footer";
-import { Header } from "components/organisms/Header";
+// import { Provider } from 'react-redux'
+// import { store } from 'store'
+import { Auth0Provider } from "@auth0/auth0-react";
 import reportWebVitals from './reportWebVitals';
+import App from './App';
 
+const domain: string = process.env.REACT_APP_AUTH0_DOMAIN || '';
+const clientId: string = process.env.REACT_APP_AUTH0_CLIENT_ID || '';
+const audience: string = process.env.REACT_APP_AUTH0_AUDIENCE || '';
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
 );
 root.render(
-  <React.StrictMode>
-    <BrowserRouter>
-      <Header />
-      <App />
-      <Footer />
-    </BrowserRouter>
-  </React.StrictMode>
+  <Auth0Provider
+    domain={domain}
+    clientId={clientId}
+    audience={audience}
+    redirectUri={window.location.origin}
+  >
+    {/* <Provider store={store}> */}
+      <React.StrictMode>
+        <App />
+      </React.StrictMode>
+    {/* </Provider> */}
+  </Auth0Provider>
 );
 
 // If you want to start measuring performance in your app, pass a function

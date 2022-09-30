@@ -1,5 +1,12 @@
-function Mypage() {
-  return <h2>Mypage</h2>;
+import { Profile } from "components/organisms/Profile";
+
+export const MyPage = () => {
+  return (
+    <>
+    <div>mypage</div>
+    <Profile />
+    </>
+  )
 }
 
-export default Mypage;
+export default MyPage;

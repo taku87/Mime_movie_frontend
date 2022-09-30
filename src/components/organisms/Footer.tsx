@@ -1,19 +1,29 @@
 import { Link } from 'react-router-dom';
 
-export const Footer = () => {
-  return (
-    <>
-      <div className="flex flex-col w-full border-opacity-50">
-        <div className="grid h-20 card bg-base-300 rounded-box place-items-center">
-          <div className="flex">
-            <div>ここはフッター</div>
-            <Link to='/contents_videos/'>コンテンツ一覧へのリンク_シンプルロゴ</Link>
-            <Link to='/completed_videos/'>投稿動画一覧へのリンク_シンプルロゴ</Link>
-            <Link to='/mypage/'>マイページへのリンク_シンプルロゴ</Link>
-          </div>
-        </div>
-      </div>
-    </>
-  )
-}
+import * as React from 'react';
+import Box from '@mui/material/Box';
+import BottomNavigation from '@mui/material/BottomNavigation';
+import BottomNavigationAction from '@mui/material/BottomNavigationAction';
+import MovieIcon from '@mui/icons-material/Movie';
+import AddAPhotoIcon from '@mui/icons-material/AddAPhoto';
+import AccountBoxIcon from '@mui/icons-material/AccountBox';
 
+export const Footer = () => {
+  const [value, setValue] = React.useState(0);
+
+  return (
+    <Box sx={{ width: 500 }}>
+      <BottomNavigation
+        showLabels
+        value={value}
+        onChange={(event, newValue) => {
+          setValue(newValue);
+        }}
+      >
+        <BottomNavigationAction href="/contents_videos/" label="コンテンツ" icon={<MovieIcon />} />
+        <BottomNavigationAction href="/completed_videos/" label="投稿動画" icon={<AddAPhotoIcon />} />
+        <BottomNavigationAction href="/mypage/" label="マイページ" icon={<AccountBoxIcon />} />
+      </BottomNavigation>
+    </Box>
+  );
+}
