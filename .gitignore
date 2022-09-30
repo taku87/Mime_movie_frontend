@@ -1,5 +1,8 @@
 # See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
 
+# デザイン
+/public
+
 # dependencies
 /node_modules
 /.pnp
@@ -22,3 +25,5 @@ npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 node_modules
+
+.env
