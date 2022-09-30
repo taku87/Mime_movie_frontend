@@ -1,0 +1,27 @@
+.header_container {
+  padding: 1em 1em 1em 1em;
+  height: 200px;
+}
+
+.header {
+  display: "inline-block";
+}
+
+.header_iconlist {
+  display: "flex";
+  margin: auto;
+}
+
+.icon {
+  margin: 5px 5px;
+}
+
+.title_logo_container {
+  background-color: white;
+}
+
+.title_logo {
+  display: "inline-block";
+  width: 300px;
+  height: 150px;
+}
