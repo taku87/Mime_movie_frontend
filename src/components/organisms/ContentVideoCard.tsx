@@ -1,4 +1,5 @@
-import { useState } from 'react';
+import { useContext } from 'react';
+import { GlobalContext } from 'components/providers/Globalprovider';
 import YouTube from 'react-youtube';
 import { LikeButton } from "components/molecules/LikeButton";
 import { UnlikeButton } from "components/molecules/UnlikeButton";
@@ -13,8 +14,9 @@ export const ContentVideoCard = (props: ContentVideo) => {
     description,
     youtube_url
   } = props;
-  const [LikedState, setLikedState] = useState(false);
+  const {LikedState} = useContext(GlobalContext);
   return (
+
     <div className="card" key={id}>
       <h2>{number}</h2>
       <h2>{title}</h2>

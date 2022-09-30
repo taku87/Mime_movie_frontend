@@ -1,8 +1,9 @@
-//import { useContext } from 'react';
-import { useState } from 'react';
+import { useAuth0 } from '@auth0/auth0-react';
+import { useContext } from 'react';
 import axios from 'axios';
 import { REST_API_URL } from 'urls/index';
-//import { AuthGuardContext } from './../../providers/AuthGuard';
+import { Auth0Context } from 'components/providers/AuthCheckprovider';
+import { GlobalContext } from 'components/providers/Globalprovider';
 import type { Like } from "types/like";
 
 import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
@@ -10,23 +11,31 @@ import button from 'css/atoms/button.module.css';
 
 
 export const UnlikeButton = ( props: Like ) => {
-  //const { accessToken } = useContext(AuthGuardContext);
   const { id, changeLike } = props;
-  const [LikedState, setLikedState] = useState(changeLike);
+  const { accessToken, setAccessToken } = useContext(Auth0Context);
+  const {LikedState, setLikedState} =  useContext(GlobalContext);
+  const {isAuthenticated,getAccessTokenSilently } = useAuth0();
+
   const unLike = () => {
-    axios
-      .delete(`${REST_API_URL}/user/likes/${id}`, {
+    const unlikeis = async () => {
+      const token = isAuthenticated ? await getAccessTokenSilently() : null;
+      setAccessToken(token);
+      axios
+      .delete(`${REST_API_URL}/user/content_video_likes/${id}`, {
         headers: {
-          //Authorization: `Bearer ${accessToken}`,
+          Authorization: `Bearer ${accessToken}`,
           'Content-Type': 'application/json',
         },
       })
       .then((response) => {
-        setLikedState(false);
+        setLikedState(false)
+        console.log(LikedState)
       })
       .catch((error) => {
         console.error(error);
       });
+    }
+    unlikeis()
   };
   return (
     <button type='button' onClick={unLike} className={button.unlike}>
