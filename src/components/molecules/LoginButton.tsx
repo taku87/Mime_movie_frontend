@@ -1,11 +1,13 @@
+import 'css/molecules/login-button.css';
 import { useAuth0 } from "@auth0/auth0-react";
-import LoginIcon from '@mui/icons-material/Login';
+
 
 export const LoginButton = () => {
     const { isAuthenticated, loginWithRedirect, logout } = useAuth0();
 
     return !isAuthenticated ? (
-        <LoginIcon onClick={loginWithRedirect}>Log in</LoginIcon>
+      <img onClick={loginWithRedirect} className="login-button"
+        src={`${process.env.PUBLIC_URL}/login.png`} alt="login-button" />
       ) : <button
             onClick={() => {
               logout({ returnTo: window.location.origin });
