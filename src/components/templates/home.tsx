@@ -1,50 +1,49 @@
+// @ts-nocheck
+import 'css/templates/home.css';
 import { Link } from 'react-router-dom';
 import  SetSampleVideo  from 'components/molecules/SetSampleVideo';
+import  SetDesignVideo  from 'components/molecules/SetDesignVideo';
 //import pic from "../public/like.png"
 
 export const Home = () => {
   return (
     <>
-
-    <div>Home</div>
-
     <div>
-      <h1 className="text">マイムMOVIEとは？</h1>
-      <p className="text">→まるで、アニメのワンシーンや漫画の一コマ「っぽい」映像を、誰でも作れるアプリ！</p>
+      <div className="top-movie-container">
+        <div className="top-movie" >
+          <SetDesignVideo />
+        </div>
+      </div>
+      <div>
+        <h1 className="text">What is MIME MOVIE ?</h1>
+        <p className="text">→あなたが『撮った映像』から『物語が始まる』映像を作ります</p>
+      </div>
+
+      <div>
+        <h1 className="text">How?</h1>
+        <p className="text">{`→説明に沿って、動画を投稿してみてください！\n
+        パントマイミスト「ハナムラ」のアクト映像と合成されて、一本のストーリーに!`}</p>
+      </div>
+
+      <div><h1>sample!</h1></div>
+
+
+      {/* <Video /> */}
+      <SetSampleVideo />
+
+      <div>
+      <h1 className="text">Let's Check!</h1>
+        <p className="text">色んなジャンルのコンテンツを用意しているからCheckしてみて!
+        </p>
+        <Link to='/contents_videos/'>コンテンツ一覧へのリンク_シンプルロゴ</Link>
+        {/* <img src={pic} alt="picture" /> */}
+      </div>
+
+      <h1 className="text">Let's Enjoy!</h1>
+      <p className="text">{`他の人が投稿した動画も見られるよ！\n`}
+      </p>
+      <Link to='/completed_videos/'>投稿動画一覧へのリンク_シンプルロゴ</Link>
     </div>
-
-    <div>
-      <h1 className="text">どうやって、、？</h1>
-      <p className="text">{`→説明に沿って、簡単なアクトをした動画を投稿してみてください！\n
-      「アニメOPっポイヤツ」メンバーのアクト映像と合成されて、驚きのストーリーに!`}</p>
-    </div>
-
-    <div><h1>紹介ムービーの説明文</h1></div>
-
-
-    {/* <Video /> */}
-    <SetSampleVideo />
-
-    <div>
-      <h1 className="text">まるでアメコミのようなアクション系！や
-        淡い青春系、、などなど、色んなジャンル
-        のポイヤツコンテンツを用意しているから
-        Checkしてみて!
-      </h1>
-      <Link to='/contents_videos/'>コンテンツ一覧へのリンク_シンプルロゴ</Link>
-      {/* <img src={pic} alt="picture" /> */}
-    </div>
-
-    <h1 className="text">他の人が投稿した動画も見られるよ！
-    「わー、ぽいなー！」と思ったら、
-    </h1>
-
-    <h1 className="text">「これは推せる❤︎」と思ったら、</h1>
-
-    <h1 className="text">ボタンを押してね！</h1>
-
-    <Link to='/completed_videos/'>投稿動画一覧へのリンク_シンプルロゴ</Link>
-
     </>
   )
 }

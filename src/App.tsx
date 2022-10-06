@@ -20,9 +20,11 @@ function App() {
       <AuthCheckProvider>
         <GlobalProvider>
           <BrowserRouter>
+            <div className='App'>
               <Header />
               <Routers />
               <Footer />
+            </div>
           </BrowserRouter>
         </GlobalProvider>
       </AuthCheckProvider>

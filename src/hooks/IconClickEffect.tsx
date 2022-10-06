@@ -16,7 +16,7 @@ const useStyles = makeStyles({
   }
 });
 
-export const IconClickEffect = (props) => {
+export const IconClickEffect = (props :any) => {
   const classes = useStyles();
   return (
     <div className={classes.circle}>{props.children}</div>
