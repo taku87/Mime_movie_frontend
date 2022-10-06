@@ -1,24 +1,21 @@
-import "css/LikeButton.css";
-import button from 'css/atoms/button.module.css';
-import { useAuth0 } from '@auth0/auth0-react';
+// @ts-nocheck
 import { useContext } from 'react';
-import { useForm } from 'react-hook-form';
+import { useAuth0 } from '@auth0/auth0-react';
+import { Auth0Context } from 'components/providers/AuthCheckprovider';
 import axios from 'axios';
 import { REST_API_URL } from 'urls/index';
-import { Auth0Context } from 'components/providers/AuthCheckprovider';
-import { GlobalContext } from 'components/providers/Globalprovider';
+import { useForm } from 'react-hook-form';
 import type { Like } from "types/like";
+import button from 'css/atoms/button.module.css';
+import "css/LikeButton.css";
 
 export const LikeButton = (props: Like) => {
-  const { accessToken, setAccessToken } = useContext(Auth0Context);
   const { id, changeLike } = props;
-  const {LikedState, setLikedState} =  useContext(GlobalContext);
+  const { accessToken } = useContext(Auth0Context);
   const { register, handleSubmit } = useForm({});
-  const {isAuthenticated,getAccessTokenSilently } = useAuth0();
+
   const UseonSubmit = (data :any) => {
       const likeis = async () => {
-      const token = isAuthenticated ? await getAccessTokenSilently() : null;
-      setAccessToken(token);
       axios
         .post(`${REST_API_URL}/user/content_video_likes`, data, {
           headers: {
@@ -27,8 +24,8 @@ export const LikeButton = (props: Like) => {
           },
         })
         .then((response) => {
-          setLikedState(true)
-          console.log(LikedState)
+          console.log(changeLike)
+          changeLike(true);
         })
         .catch((error) => {
           console.error(error);
