@@ -4,4 +4,6 @@ export type ContentVideo = {
   title: string;
   description: string;
   youtube_url: string;
+  liked: boolean;
+  attributes: any;
 };

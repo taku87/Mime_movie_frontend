@@ -1,21 +1,19 @@
-import { useState } from 'react';
+// @ts-nocheck
+import { useContext } from 'react';
 import { useAuth0 } from '@auth0/auth0-react';
+import { Auth0Context } from 'components/providers/AuthCheckprovider';
+import { useState } from 'react';
+import axios from 'axios';
+import { REST_API_URL } from 'urls/index';
 import {
   QueryClient,
   QueryClientProvider,
   useQuery,
 } from 'react-query';
-import { useContext } from 'react';
-import { Auth0Context } from 'components/providers/AuthCheckprovider';
-import axios from 'axios';
-import { REST_API_URL } from 'urls/index';
 
 import { ContentVideoCard } from "components/organisms/ContentVideoCard";
 import type { ContentVideo } from "types/contentvideo";
-
 //import CircularProgress from '@mui/material/CircularProgress';
-
-
 const ContentVideos = ({ }) => {
   const {isAuthenticated,getAccessTokenSilently } = useAuth0();
   const { accessToken, setAccessToken } = useContext(Auth0Context);
@@ -24,15 +22,24 @@ const ContentVideos = ({ }) => {
 
   // Queries
   //const query = useQuery<取得するデータ型, Error>('ユニークなクエリキー', データ取得関数);
-  let { isLoading: queryLoading, data: content_videos } = useQuery(
-    ['content_videos'],
+  let { isLoading: queryLoading, data: content_videos } = useQuery(['content_videos'],
     async () => {
       const token = isAuthenticated ? await getAccessTokenSilently() : null;
       setAccessToken(token);
+      console.log(accessToken)
       /** GETの処理 */
       const res = await axios
-      .get<ContentVideo[]>(`${REST_API_URL}/user/content_videos`);
-        setContentVideos(res.data);
+      .get<ContentVideo[]>(`${REST_API_URL}/user/content_videos`,{
+        headers: {
+          Authorization: `Bearer ${token}`,
+          'Content-Type': 'application/json',
+        },
+      })
+      .catch((error) => {
+        console.error(error.response.data);
+      });
+      setContentVideos(res.data.data);
+      console.log(contentVideos)
       }
     );
 
@@ -62,11 +69,12 @@ const ContentVideos = ({ }) => {
         {contentVideos.map((content_video, index) => (
           <ContentVideoCard
             key = {index}
-            id = {content_video.id}
-            number = {content_video.number}
-            title = {content_video.title}
-            description = {content_video.description}
-            youtube_url = {content_video.youtube_url}
+            id = {content_video.attributes.id}
+            number = {content_video.attributes.number}
+            title = {content_video.attributes.title}
+            description = {content_video.attributes.description}
+            youtube_url = {content_video.attributes.youtube_url}
+            liked = {content_video.attributes.liked}
           />
         ))}
       </div>

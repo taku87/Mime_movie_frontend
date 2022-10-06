@@ -1,25 +1,20 @@
-import { useAuth0 } from '@auth0/auth0-react';
 import { useContext } from 'react';
+import { useAuth0 } from '@auth0/auth0-react';
+import { Auth0Context } from 'components/providers/AuthCheckprovider';
 import axios from 'axios';
 import { REST_API_URL } from 'urls/index';
-import { Auth0Context } from 'components/providers/AuthCheckprovider';
-import { GlobalContext } from 'components/providers/Globalprovider';
-import type { Like } from "types/like";
 
+import type { Like } from "types/like";
 import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
 import button from 'css/atoms/button.module.css';
 
 
 export const UnlikeButton = ( props: Like ) => {
   const { id, changeLike } = props;
-  const { accessToken, setAccessToken } = useContext(Auth0Context);
-  const {LikedState, setLikedState} =  useContext(GlobalContext);
-  const {isAuthenticated,getAccessTokenSilently } = useAuth0();
+  const { accessToken} = useContext(Auth0Context);
 
   const unLike = () => {
     const unlikeis = async () => {
-      const token = isAuthenticated ? await getAccessTokenSilently() : null;
-      setAccessToken(token);
       axios
       .delete(`${REST_API_URL}/user/content_video_likes/${id}`, {
         headers: {
@@ -28,8 +23,8 @@ export const UnlikeButton = ( props: Like ) => {
         },
       })
       .then((response) => {
-        setLikedState(false)
-        console.log(LikedState)
+        console.log(changeLike)
+        changeLike(false)
       })
       .catch((error) => {
         console.error(error);
@@ -38,7 +33,7 @@ export const UnlikeButton = ( props: Like ) => {
     unlikeis()
   };
   return (
-    <button type='button' onClick={unLike} className={button.unlike}>
+    <button type='button' onClick={unLike} >
       <FavoriteBorderIcon
         sx={{
           fontSize: '14px',
