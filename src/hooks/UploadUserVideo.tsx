@@ -1,59 +1,48 @@
+// @ts-nocheck
+import { useContext } from 'react';
+import { useAuth0 } from '@auth0/auth0-react';
+import { Auth0Context } from 'components/providers/AuthCheckprovider';
 import axios from "axios";
 import  {useState} from 'react';
 
 export const UploadUserVideo= () => {
-
-  /*
-  type Field = {
-    key: string
-    success_action_status: string
-    acl: string
-    policy: string
-  }
-
-  type selectedFields = {
-    fileds: Field[]
-  }
-
-  */
-
+  const {isAuthenticated,getAccessTokenSilently } = useAuth0();
+  const { setAccessToken } = useContext(Auth0Context);
   const [selectedFile, setSelectedFile] = useState<string>("");
-  const [selectedFields, setSelectedFields] = useState([]);
   const [selectedUrls, setSelectedUrls] = useState<string>("");
 
   const handleChange = async (e: any) => {
-
-    const res = await axios.get('http://localhost:3001//api/v1/user/1/user_videos/new')
+    const token = isAuthenticated ? await getAccessTokenSilently() : null;
+    setAccessToken(token);
+    console.log(token);
+    const res = await axios.get('http://localhost:3001//api/v1/user/user_videos/new',{
+      headers: {
+        Authorization: `Bearer ${token}`,
+        'Content-Type': 'application/json',
+      },
+    })
     const S3DirectPost = await res.data
-
     setSelectedFile(e.target.files[0]);
-    setSelectedFields(S3DirectPost["fields"]);
-    setSelectedUrls(S3DirectPost["url"]);
-
+    setSelectedUrls(S3DirectPost["presigned_url"]);
   }
-
 
   const handleSubmission = async() => {
-    const formData = new FormData()
-    for (let key in selectedFields) {
-      formData.append(key, selectedFields[key])
+    const res = await axios
+      .put(
+        selectedUrls,
+        selectedFile,
+        {
+          headers: {
+            'Content-Type': selectedFile.type,
+          },
+        })
+      .then(res => {
+        console.log(res)
+      })
+      .catch((error) => {
+        console.error(error.res.data);
+      });
     }
-    formData.append('file', selectedFile)
-    console.log(selectedUrls)
-    console.log(formData.get('file'))
-    fetch(selectedUrls, {method: 'POST', headers: { Accept: 'multipart/form-data' }, body: formData})
-
-    /*
-
-    const resText = await ret.text()
-    const resXML = await parseXML(resText)
-    // eslint-disable-next-line
-    const key = await resXML.getElementsByTagName('Key')[0].childNodes[0].nodeValue
-
-    const parseXML = (text: any) => new DOMParser().parseFromString(text, 'application/xml')
-
-    */
-  }
 
   return (
     <div>
