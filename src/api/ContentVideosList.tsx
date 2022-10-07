@@ -15,18 +15,17 @@ import { ContentVideoCard } from "components/organisms/ContentVideoCard";
 import type { ContentVideo } from "types/contentvideo";
 //import CircularProgress from '@mui/material/CircularProgress';
 const ContentVideos = ({ }) => {
-  const {isAuthenticated,getAccessTokenSilently } = useAuth0();
-  const { accessToken, setAccessToken } = useContext(Auth0Context);
+  const { isAuthenticated, getAccessTokenSilently } = useAuth0();
+  const { setAccessToken } = useContext(Auth0Context);
   const [contentVideos, setContentVideos ] = useState<ContentVideo[]>([]);
-  const [isLoading, setIsLoading] = useState(false);
 
   // Queries
   //const query = useQuery<取得するデータ型, Error>('ユニークなクエリキー', データ取得関数);
-  let { isLoading: queryLoading, data: content_videos } = useQuery(['content_videos'],
-    async () => {
+  let { isLoading: queryLoading } = useQuery(['content_videos'],
+    async (isAuthenticated) => {
       const token = isAuthenticated ? await getAccessTokenSilently() : null;
       setAccessToken(token);
-      console.log(accessToken)
+
       /** GETの処理 */
       const res = await axios
       .get<ContentVideo[]>(`${REST_API_URL}/user/content_videos`,{
