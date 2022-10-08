@@ -8,11 +8,10 @@ export const LoginButton = () => {
     return !isAuthenticated ? (
       <img onClick={loginWithRedirect} className="login-button"
         src={`${process.env.PUBLIC_URL}/login.png`} alt="login-button" />
-      ) : <button
-            onClick={() => {
-              logout({ returnTo: window.location.origin });
-            }}
-          >LOG OUT</button>
+      ) : <img onClick={() => {logout({ returnTo: window.location.origin })}}
+            className="logout-button"
+            src={`${process.env.PUBLIC_URL}/logout.png`} alt="logout-button"
+          />
   }
 
 export default LoginButton;
