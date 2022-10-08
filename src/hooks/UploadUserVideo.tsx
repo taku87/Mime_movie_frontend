@@ -5,6 +5,8 @@ import { Auth0Context } from 'components/providers/AuthCheckprovider';
 import axios from "axios";
 import  {useState} from 'react';
 
+import  ViewCompletedVideo  from 'components/molecules/ViewCompletedVideo';
+
 export const UploadUserVideo= () => {
   const {isAuthenticated,getAccessTokenSilently } = useAuth0();
   const { setAccessToken } = useContext(Auth0Context);
@@ -46,6 +48,7 @@ export const UploadUserVideo= () => {
 
   return (
     <div>
+      <ViewCompletedVideo />
       <input type="file" onChange={handleChange}  />
         <div>
           <button onClick={handleSubmission}>Submit</button>
