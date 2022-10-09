@@ -1,9 +1,7 @@
-import YouTube from 'react-youtube';
-
 export const SetSampleVideo = () => {
   return (
     <>
-    <YouTube videoId= "tmF7BpfEdwM" />
+    <img src={`${process.env.PUBLIC_URL}/thumbnail/tmb-engineer-lgtm.jpg`} width="100%" />
     </>
   );
 }

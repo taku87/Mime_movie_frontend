@@ -20,8 +20,8 @@ export const Footer = () => {
           setValue(newValue);
         }}
       >
-        <BottomNavigationAction href="/contents_videos/" label="コンテンツ" icon={<MovieIcon />} />
-        <BottomNavigationAction href="/completed_videos/" label="投稿動画" icon={<AddAPhotoIcon />} />
+        <BottomNavigationAction href="/contents_videos" label="コンテンツ一覧" icon={<MovieIcon />} />
+        <BottomNavigationAction href="/completed_videos/" label="完成版一覧" icon={<AddAPhotoIcon />} />
         <BottomNavigationAction href="/mypage/" label="マイページ" icon={<AccountBoxIcon />} />
       </BottomNavigation>
     </Box>

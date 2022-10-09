@@ -1,9 +1,17 @@
 // @ts-nocheck
 import { useState } from 'react';
 import YouTube from 'react-youtube';
+import { Link } from 'react-router-dom';
 import { LikeButton } from "components/molecules/LikeButton";
 import { UnlikeButton } from "components/molecules/UnlikeButton";
 import type { ContentVideo } from "types/contentvideo";
+
+import Box from '@mui/material/Box';
+import Card from "@material-ui/core/Card";
+import CardActions from '@mui/material/CardActions';
+import CardContent from '@mui/material/CardContent';
+import Typography from '@mui/material/Typography';
+import Grid from '@mui/material/Unstable_Grid2';
 
 export const ContentVideoCard = (props: ContentVideo) => {
   const {
@@ -15,21 +23,49 @@ export const ContentVideoCard = (props: ContentVideo) => {
     liked,
   } = props;
   const {setLikedState} = useState(liked);
+
+  const VideoShowstate = {
+    id: props.id,
+    title: props.title,
+    youtube_url: props.youtube_url,
+};
+
   return (
 
     <div className="card" key={id}>
-      <h2>{number}</h2>
-      <h2>{title}</h2>
-      <h2>{description}</h2>
-      <YouTube videoId= {youtube_url} />
-
-      {liked ? (
-          <UnlikeButton id={id} changeLike={setLikedState}/>
-        ) : (
-          <LikeButton id={id} changeLike={setLikedState} />
-        )}
+      <box>
+        <Grid container spacing={2}>
+          <Grid xs={0} lg={2}></Grid>
+          <Grid xs={12} lg={8}>
+            <Card>
+              <CardContent>
+                <Typography gutterBottom variant="h5" component="div">
+                  {title}
+                </Typography>
+                <Typography variant="body2" color="text.secondary">
+                  {description}
+                  Lizards are a widespread group of squamate reptiles, with over 6,000
+                  species, ranging across all continents except Antarctica
+                </Typography>
+              </CardContent>
+              <CardActions>
+                {liked ? (
+                    <UnlikeButton id={id} changeLike={setLikedState}/>
+                  ) : (
+                    <LikeButton id={id} changeLike={setLikedState} />
+                  )}
+              </CardActions>
+              <Link to={{
+                pathname: `/contents_videos/${id}`,
+                state: VideoShowstate,
+              }}
+              >このコンテンツで撮影チャレンジ！</Link>
+              <img src={`${process.env.PUBLIC_URL}/thumbnail/${youtube_url}`} width="100%" />
+            </Card>
+          </Grid>
+          <Grid xs={0} lg={2}></Grid>
+        </Grid>
+      </box>
     </div>
   )
 }
-
-export default ContentVideoCard;

@@ -22,9 +22,8 @@ export const Routers = memo(() => {
     <Route path="/completed_videos/" element={<CompletedVideos />}>
       <Route path=":completedVideoId" element={<CompletedVideo />} />
     </Route>
-    <Route path="/contents_videos/" element={<ContentsVideos />}>
-      <Route path=":contentsVideoId" element={<ContentsVideo />} />
-    </Route>
+    <Route path="/contents_videos" element={<ContentsVideos />}/>
+    <Route path="contents_videos/:contentsVideoId" element={<ContentsVideo />} />
     <Route path="/my_videos/" element={<MyVideos />} />
     <Route path="/mypage/" element={<Mypage />} />
     <Route path="/privacy_policy/" element={<PrivacyPolicy />} />
