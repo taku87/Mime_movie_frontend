@@ -7,12 +7,12 @@ import CompletedVideo from 'components/templates/CompletedVideo';
 import ContentsVideos from 'components/templates/ContentVideos';
 import ContentsVideo from 'components/templates/ContentVideo';
 import MyVideos from 'components/templates/MyVideos';
-import Mypage from 'components/templates/MyPage';
+import Mypage from 'components/templates/Mypages';
 import PrivacyPolicy from 'components/templates/PrivacyPolicy';
-import Terms from 'components/templates/Terms';
+import Terms from 'components/templates/Term';
 import VideoPost from 'components/templates/PostVideo';
 
-import NoMatch from 'components/templates/NoMatch';
+import NoMatch from 'components/templates/NoMatchs';
 
 export const Routers = memo(() => {
   return (
