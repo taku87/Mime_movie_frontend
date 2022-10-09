@@ -7,7 +7,7 @@ import Typography from '@mui/material/Typography';
 import { idText } from 'typescript';
 
 
-export const ContentVideo = () => {
+export const ContentVideoShow = () => {
 
   const { state } = useLocation();
   const { id, title, youtube_url } = state;
@@ -33,4 +33,4 @@ export const ContentVideo = () => {
   )
 }
 
-export default ContentVideo;
+export default ContentVideoShow;
