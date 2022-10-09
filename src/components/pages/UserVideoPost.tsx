@@ -1,6 +1,6 @@
 import UploadUserVideo from "hooks/UploadUserVideo";
 
-export const  PostVideo = () => {
+export const  UserVideoPost = () => {
   return(
     <>
     <h2>PostVideo</h2>
@@ -9,4 +9,4 @@ export const  PostVideo = () => {
   )
 }
 
-export default PostVideo;
+export default UserVideoPost;

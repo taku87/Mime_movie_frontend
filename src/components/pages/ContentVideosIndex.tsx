@@ -1,8 +1,8 @@
 //import SetContentVideo from "components/molecules/SetContentVideo";
 import { SwingVideos } from "components/molecules/SwingVideos";
-import ContentVideosList from "api/ContentVideosList";
+import ContentVideosList from "components/organisms/ContentVideosList";
 
-export const  ContentVideos = () => {
+export const  ContentVideosIndex = () => {
   return(
 	<>
 	<h2>ContentsVideos</h2>
@@ -12,4 +12,4 @@ export const  ContentVideos = () => {
   );
 };
 
-export default ContentVideos;
+export default ContentVideosIndex;
