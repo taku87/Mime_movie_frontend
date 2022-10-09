@@ -19,16 +19,10 @@ export const ContentVideoCard = (props: ContentVideo) => {
     number,
     title,
     description,
-    youtube_url,
+    thumbnail,
     liked,
   } = props;
   const {setLikedState} = useState(liked);
-
-  const VideoShowstate = {
-    id: props.id,
-    title: props.title,
-    youtube_url: props.youtube_url,
-};
 
   return (
 
@@ -44,8 +38,6 @@ export const ContentVideoCard = (props: ContentVideo) => {
                 </Typography>
                 <Typography variant="body2" color="text.secondary">
                   {description}
-                  Lizards are a widespread group of squamate reptiles, with over 6,000
-                  species, ranging across all continents except Antarctica
                 </Typography>
               </CardContent>
               <CardActions>
@@ -55,12 +47,10 @@ export const ContentVideoCard = (props: ContentVideo) => {
                     <LikeButton id={id} changeLike={setLikedState} />
                   )}
               </CardActions>
-              <Link to={{
-                pathname: `/contents_videos/${id}`,
-                state: VideoShowstate,
-              }}
-              >このコンテンツで撮影チャレンジ！</Link>
-              <img src={`${process.env.PUBLIC_URL}/thumbnail/${youtube_url}`} width="100%" />
+              <Link to={`/contents_videos/${id}`} state={{id : id}}>
+                このコンテンツで撮影チャレンジ！
+              </Link>
+              <img src={`${process.env.PUBLIC_URL}/thumbnail/${thumbnail}`} width="100%" />
             </Card>
           </Grid>
           <Grid xs={0} lg={2}></Grid>

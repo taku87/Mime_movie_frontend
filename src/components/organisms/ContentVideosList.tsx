@@ -38,7 +38,6 @@ const ContentVideos = ({ }) => {
         console.error(error.response.data);
       });
       setContentVideos(res.data.data);
-      console.log(contentVideos)
       }
     );
 
@@ -59,8 +58,8 @@ const ContentVideos = ({ }) => {
           コンテンツ動画がありません
         </p>
       </div>
-      )
-    }
+    )
+  }
 
   return (
       <div className="container">
@@ -72,7 +71,7 @@ const ContentVideos = ({ }) => {
             number = {content_video.attributes.number}
             title = {content_video.attributes.title}
             description = {content_video.attributes.description}
-            youtube_url = {content_video.attributes.youtube_url}
+            thumbnail = {content_video.attributes.thumbnail}
             liked = {content_video.attributes.liked}
           />
         ))}
