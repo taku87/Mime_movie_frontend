@@ -24,12 +24,6 @@ export const ContentVideoCard = (props: ContentVideo) => {
   } = props;
   const {setLikedState} = useState(liked);
 
-  const VideoShowstate = {
-    id: props.id,
-    title: props.title,
-    youtube_url: props.youtube_url,
-};
-
   return (
 
     <div className="card" key={id}>
@@ -55,11 +49,9 @@ export const ContentVideoCard = (props: ContentVideo) => {
                     <LikeButton id={id} changeLike={setLikedState} />
                   )}
               </CardActions>
-              <Link to={{
-                pathname: `/contents_videos/${id}`,
-                state: VideoShowstate,
-              }}
-              >このコンテンツで撮影チャレンジ！</Link>
+              <Link to={`/contents_videos/${id}`} state={{id : id}}>
+                このコンテンツで撮影チャレンジ！
+              </Link>
               <img src={`${process.env.PUBLIC_URL}/thumbnail/${youtube_url}`} width="100%" />
             </Card>
           </Grid>
