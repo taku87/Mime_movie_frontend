@@ -38,7 +38,6 @@ const ContentVideos = ({ }) => {
         console.error(error.response.data);
       });
       setContentVideos(res.data.data);
-      console.log(contentVideos)
       }
     );
 
@@ -59,8 +58,8 @@ const ContentVideos = ({ }) => {
           コンテンツ動画がありません
         </p>
       </div>
-      )
-    }
+    )
+  }
 
   return (
       <div className="container">

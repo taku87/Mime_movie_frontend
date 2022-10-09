@@ -9,6 +9,7 @@ import {
   QueryClientProvider,
   useQuery,
 } from 'react-query';
+import { ContentVideoShowCard } from "components/organisms/ContentVideoShowCard";
 import Card from "@material-ui/core/Card";
 import CardActions from '@mui/material/CardActions';
 import CardContent from '@mui/material/CardContent';
@@ -19,7 +20,7 @@ interface State {
   id: number;
 }
 
-const GetContentVideo = () => {
+const GetContentVideo = ({}) => {
   const [contentVideo, setContentVideo ] = useState<ContentVideo[]>([]);
   const location = useLocation();
   const { id } = location.state as State;
@@ -39,41 +40,37 @@ const GetContentVideo = () => {
         console.error(error.response.data);
       });
       setContentVideo(res.data.data);
+      console.log(res.data.data)
       console.log(contentVideo)
     }
   );
-
+  console.log(contentVideo)
   if (queryLoading) {
     return (
       <div style={{ textAlign: 'center', marginTop: '150px' }}>
       {/* <Circular large={60} small={60} /> */}
       <p>ロード中</p>
       </div>
-    );
+    )
   }
 
-  return(
-    <>
-    {contentVideo.map((content_video) => (
-      <div>
-          <h1>個別記事 {content_video.attributes.id}</h1>
-          <Card>
-              <CardContent>
-                <Typography gutterBottom variant="h5" component="div">
-                  {content_video.attributes.title}
-                </Typography>
-                <Typography variant="body2" color="text.secondary">
-                  Lizards are a widespread group of squamate reptiles, with over 6,000
-                  species, ranging across all continents except Antarctica
-                </Typography>
-              </CardContent>
-              <img src={`${process.env.PUBLIC_URL}/thumbnail/${content_video.attributes.youtube_url}`} width="100%" />
-          </Card>
-      </div>
-      ))}
-    </>
+
+  return (
+    <div className="container">
+      {/** query.isLoadingがtureのとき、つまり、ロード中はクラスネームのローダーのやつが表示*/}
+        <ContentVideoShowCard
+          id = {contentVideo.attributes.id}
+          number = {contentVideo.attributes.number}
+          title = {contentVideo.attributes.title}
+          description = {contentVideo.attributes.description}
+          youtube_url = {contentVideo.attributes.youtube_url}
+          //liked = {contentVideo.attributes.liked}
+        />
+    </div>
   )
 }
+
+
 
 export const ContentVideoShow= () => {
   const queryClient = new QueryClient();
