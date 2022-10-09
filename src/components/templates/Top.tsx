@@ -1,11 +1,11 @@
 // @ts-nocheck
-import 'css/templates/home.css';
+import 'css/templates/top.css';
 import { Link } from 'react-router-dom';
 import  SetSampleVideo  from 'components/molecules/SetSampleVideo';
 import  SetDesignVideo  from 'components/molecules/SetDesignVideo';
 //import pic from "../public/like.png"
 
-export const Home = () => {
+export const Top = () => {
   return (
     <>
     <div>
@@ -48,4 +48,5 @@ export const Home = () => {
   )
 }
 
-export default Home;
+export default Top;
+

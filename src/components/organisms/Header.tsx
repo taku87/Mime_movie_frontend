@@ -1,4 +1,4 @@
-//homeへのリンク_マイムMOVIEのロゴ
+//Topへのリンク_マイムMOVIEのロゴ
 //MENU
 import 'css/organisms/header.css';
 import * as React from 'react';
