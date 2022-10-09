@@ -1,6 +1,6 @@
 export const Terms = () => {
   return (
-    <div>Terms</div>
+    <div>Term</div>
   )
 }
 
