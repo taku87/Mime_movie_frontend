@@ -40,11 +40,9 @@ const GetContentVideo = ({}) => {
         console.error(error.response.data);
       });
       setContentVideo(res.data.data);
-      console.log(res.data.data)
-      console.log(contentVideo)
     }
   );
-  console.log(contentVideo)
+
   if (queryLoading) {
     return (
       <div style={{ textAlign: 'center', marginTop: '150px' }}>
