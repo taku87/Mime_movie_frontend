@@ -1,4 +1,4 @@
-import { Profile } from "components/organisms/Profile";
+import { Profile } from "src/components/organisms/Profile";
 
 export const MyPage = () => {
   return (
