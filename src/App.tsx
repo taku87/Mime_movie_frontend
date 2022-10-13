@@ -1,16 +1,16 @@
-import './css/App.css';
+import 'src/css/App.css';
 import '@fontsource/roboto/300.css';
 import '@fontsource/roboto/400.css';
 import '@fontsource/roboto/500.css';
 import '@fontsource/roboto/700.css';
 
 import { QueryClient, QueryClientProvider } from 'react-query';
-import { AuthCheckProvider } from 'components/providers/AuthCheckprovider';
-import { GlobalProvider } from 'components/providers/Globalprovider';
+import { AuthCheckProvider } from 'src/components/providers/AuthCheckprovider';
+import { GlobalProvider } from 'src/components/providers/Globalprovider';
 import { BrowserRouter } from 'react-router-dom';
-import { Footer } from "components/organisms/Footer";
-import { Header } from "components/organisms/Header";
-import { Routers } from 'route/Routers';
+import { Footer } from "src/components/organisms/Footer";
+import { Header } from "src/components/organisms/Header";
+import { Routers } from 'src/route/Routers';
 
 const queryClient = new QueryClient();
 

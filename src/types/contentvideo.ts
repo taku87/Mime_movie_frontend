@@ -3,7 +3,7 @@ export type ContentVideo = {
   number?: string;
   title?: string;
   description?: string;
-  youtube_url?: string;
+  thumbnail?: string;
   liked?: boolean;
   attributes?: any;
 };

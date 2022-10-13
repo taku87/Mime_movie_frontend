@@ -1,4 +1,4 @@
-import UploadUserVideo from "hooks/UploadUserVideo";
+import UploadUserVideo from "src/hooks/UploadUserVideo";
 
 export const  UserVideoPost = () => {
   return(

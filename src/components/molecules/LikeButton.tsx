@@ -1,13 +1,13 @@
 // @ts-nocheck
 import { useContext } from 'react';
 import { useAuth0 } from '@auth0/auth0-react';
-import { Auth0Context } from 'components/providers/AuthCheckprovider';
+import { Auth0Context } from 'src/components/providers/AuthCheckprovider';
 import axios from 'axios';
-import { REST_API_URL } from 'urls/index';
+import { REST_API_URL } from 'src/urls/index';
 import { useForm } from 'react-hook-form';
-import type { Like } from "types/like";
-import button from 'css/atoms/button.module.css';
-import "css/LikeButton.css";
+import type { Like } from "src/types/like";
+import button from 'src/css/atoms/button.module.css';
+import "src/css/LikeButton.css";
 
 export const LikeButton = (props: Like) => {
   const { id, changeLike } = props;
@@ -36,8 +36,7 @@ export const LikeButton = (props: Like) => {
   return (
     <form onSubmit={handleSubmit(UseonSubmit)}>
       <input {...register('id', { value: id })} type='hidden' />
-
-      <input type='submit' value={`いいね`} className={button.like} />
+      <input type='image' src={`${process.env.PUBLIC_URL}/blackhat.png`} className={button.like} />
     </form>
   );
 };

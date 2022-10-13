@@ -1,17 +1,17 @@
 import { memo } from 'react';
 import { Routes, Route } from 'react-router-dom';
 
-import Top from 'components/pages/Top';
-import NoMatch from 'components/pages/NoMatchs';
-import ContentsVideosIndex from 'components/pages/ContentVideosIndex';
-import ContentsVideoShow from 'components/pages/ContentVideoShow';
-import UserVideoPost from 'components/pages/UserVideoPost';
-import CompletedVideosIndex from 'components/pages/CompletedVideosIndex';
-//import CompletedVideo from 'components/templates/CompletedVideo';
-//import MyVideos from 'components/templates/MyVideos';
-import Mypage from 'components/pages/Mypages';
-import PrivacyPolicy from 'components/pages/PrivacyPolicy';
-import Terms from 'components/pages/Term';
+import Top from 'src/components/pages/Top';
+import NoMatch from 'src/components/pages/NoMatchs';
+import ContentsVideosIndex from 'src/components/pages/ContentVideosIndex';
+import ContentsVideoShow from 'src/components/pages/ContentVideoShow';
+import UserVideoPost from 'src/components/pages/UserVideoPost';
+import CompletedVideosIndex from 'src/components/pages/CompletedVideosIndex';
+//import CompletedVideo from 'src/components/templates/CompletedVideo';
+//import MyVideos from 'src/components/templates/MyVideos';
+import Mypage from 'src/components/pages/Mypages';
+import PrivacyPolicy from 'src/components/pages/PrivacyPolicy';
+import Terms from 'src/components/pages/Term';
 
 
 export const Routers = memo(() => {

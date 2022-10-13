@@ -1,0 +1,22 @@
+.set-user-created-video-wrapper {
+}
+
+.created-video-design-frame {
+  margin: 10px auto;
+  width: 900px;
+  height: 800px;
+}
+
+.user-created-video {
+  border-top: 25px solid;
+  border-bottom: 25px solid;
+  width: 800px;
+  height: 450px;
+  margin: 15px auto;
+  box-shadow: rgba(255, 238, 0, 0.56) 0px 22px 70px 4px;
+}
+
+.user-created-video-design-bottom {
+  width: 800px;
+  height: 200px;
+}

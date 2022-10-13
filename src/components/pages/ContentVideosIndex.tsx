@@ -1,13 +1,21 @@
-//import SetContentVideo from "components/molecules/SetContentVideo";
-import { SwingVideos } from "components/molecules/SwingVideos";
-import ContentVideosList from "components/organisms/ContentVideosList";
+//import SetContentVideo from "src/components/molecules/SetContentVideo";
+import { SwingVideos } from "src/components/molecules/SwingVideos";
+import ContentVideosList from "src/components/organisms/ContentVideosList";
+
+import 'src/css/pages/ContentVideosIndex.css';
 
 export const  ContentVideosIndex = () => {
   return(
 	<>
-	<h2>ContentsVideos</h2>
-  <SwingVideos />
-	<ContentVideosList />
+  <div className="content-videos-index">
+		<div className="container">
+			<div className="header">
+				<h2>ContentsVideos</h2>
+			</div>
+			<SwingVideos />
+			<ContentVideosList />
+		</div>
+	</div>
 	</>
   );
 };
