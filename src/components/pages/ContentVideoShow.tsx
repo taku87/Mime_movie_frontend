@@ -1,15 +1,16 @@
 // @ts-nocheck
 import { useState } from 'react';
 import axios from 'axios';
-import { REST_API_URL } from 'urls/index';
-import type { ContentVideo } from "types/contentvideo";
+import { REST_API_URL } from 'src/urls/index';
+import type { ContentVideo } from "src/types/contentvideo";
 import { useLocation } from "react-router-dom";
 import {
   QueryClient,
   QueryClientProvider,
   useQuery,
 } from 'react-query';
-import { ContentVideoShowCard } from "components/organisms/ContentVideoShowCard";
+import { ContentVideoShowCard } from "src/components/organisms/ContentVideoShowCard";
+import { UploadUserVideo } from "src/hooks/UploadUserVideo";
 import Card from "@material-ui/core/Card";
 import CardActions from '@mui/material/CardActions';
 import CardContent from '@mui/material/CardContent';
@@ -61,8 +62,11 @@ const GetContentVideo = ({}) => {
           number = {contentVideo.attributes.number}
           title = {contentVideo.attributes.title}
           description = {contentVideo.attributes.description}
-          youtube_url = {contentVideo.attributes.youtube_url}
+          thumbnail = {contentVideo.attributes.thumbnail}
           //liked = {contentVideo.attributes.liked}
+        />
+        <UploadUserVideo
+        id = {contentVideo.attributes.id}
         />
     </div>
   )
