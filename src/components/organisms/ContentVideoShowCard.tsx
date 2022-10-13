@@ -2,9 +2,9 @@
 //import { useState } from 'react';
 //import YouTube from 'react-youtube';
 //import { Link } from 'react-router-dom';
-//import { LikeButton } from "components/molecules/LikeButton";
-//import { UnlikeButton } from "components/molecules/UnlikeButton";
-import type { ContentVideo } from "types/contentvideo";
+//import { LikeButton } from "src/components/molecules/LikeButton";
+//import { UnlikeButton } from "src/components/molecules/UnlikeButton";
+import type { ContentVideo } from "src/types/contentvideo";
 
 //import Box from '@mui/material/Box';
 import Card from "@material-ui/core/Card";
@@ -19,7 +19,7 @@ export const ContentVideoShowCard = (props: ContentVideo) => {
     //number,
     title,
     //description,
-    youtube_url,
+    thumbnail,
     //liked,
   } = props;
 //  const {setLikedState} = useState(liked);
@@ -37,7 +37,7 @@ export const ContentVideoShowCard = (props: ContentVideo) => {
             species, ranging across all continents except Antarctica
           </Typography>
         </CardContent>
-        <img src={`${process.env.PUBLIC_URL}/thumbnail/${youtube_url}`} width="100%" />
+        <img src={`${process.env.PUBLIC_URL}/thumbnail/${thumbnail}`} width="100%" />
     </Card>
     </div>
   )

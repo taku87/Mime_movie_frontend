@@ -1,18 +1,18 @@
 // @ts-nocheck
 import { useContext } from 'react';
 import { useAuth0 } from '@auth0/auth0-react';
-import { Auth0Context } from 'components/providers/AuthCheckprovider';
+import { Auth0Context } from 'src/components/providers/AuthCheckprovider';
 import { useState } from 'react';
 import axios from 'axios';
-import { REST_API_URL } from 'urls/index';
+import { REST_API_URL } from 'src/urls/index';
 import {
   QueryClient,
   QueryClientProvider,
   useQuery,
 } from 'react-query';
 
-import { ContentVideoCard } from "components/organisms/ContentVideoCard";
-import type { ContentVideo } from "types/contentvideo";
+import { ContentVideoCard } from "src/components/organisms/ContentVideoCard";
+import type { ContentVideo } from "src/types/contentvideo";
 //import CircularProgress from '@mui/material/CircularProgress';
 const ContentVideos = ({ }) => {
   const { isAuthenticated, getAccessTokenSilently } = useAuth0();

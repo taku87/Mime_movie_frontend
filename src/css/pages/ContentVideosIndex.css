@@ -1,0 +1,19 @@
+.text {
+  white-space: pre-wrap;
+}
+
+.content-videos-index {
+  margin-top: 10px;
+}
+
+.container {
+  width: 90%;
+  margin: 0 auto;
+}
+
+.header {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+@media (max-width: 670px) {
+}
