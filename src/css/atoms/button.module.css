@@ -1,12 +1,19 @@
+.like {
+  width: 50px;
+  height: 35px;
+}
+
+.like:hover {
+  opacity: 0.8;
+}
+
 .unlike {
-  font-size: 10px;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  background-color: #ff7fe5;
-  color: white;
-  font-weight: bold;
-  padding: 6px 1.5px 6px 1px;
+  width: 70px;
+  height: 70px;
+}
+
+.unlike:hover {
+  opacity: 0.8;
 }
 
 @media (min-width: 700px) {
@@ -14,8 +21,4 @@
     font-size: 13px;
     padding: 6px 4px 6px 4px;
   }
-}
-
-.unlike:hover {
-  opacity: 0.8;
 }
