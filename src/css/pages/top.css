@@ -1,0 +1,38 @@
+.text {
+  white-space: pre-wrap;
+}
+
+.top {
+  margin-top: 10px;
+}
+
+.container {
+  width: 90%;
+  margin: 0 auto;
+}
+
+.eyecatch-movie-container {
+  width: 100%;
+  height: 450px;
+}
+
+.eyecatch-movie {
+  text-align: center;
+}
+
+.movie {
+  height: 450px;
+  width: 900px;
+}
+
+@media (max-width: 670px) {
+  .eyecatch-movie-container {
+    width: 100%;
+    height: 225px;
+  }
+
+  .movie {
+    height: 225px;
+    width: 450px;
+  }
+}
