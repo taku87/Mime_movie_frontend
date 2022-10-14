@@ -1,4 +1,4 @@
-export const SetSampleVideo = (thumbnail :string) => {
+export const SetSampleVideo = (thumbnail :any) => {
   const thumbnail_filename = thumbnail["thumbnail"]
   return (
     <>
