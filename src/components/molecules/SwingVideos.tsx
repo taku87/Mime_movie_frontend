@@ -1,31 +1,38 @@
+// @ts-nocheck
 import { Swiper, SwiperSlide } from 'swiper/react';
-import { Navigation, Pagination } from "swiper";
+import { Autoplay,EffectFade } from "swiper";
 import 'swiper/swiper-bundle.css';
 import "src/css/swiper.css";
 
-
 import SetSampleVideo from "src/components/molecules/SetSampleVideo";
 
-export const SwingVideos = () => {
+//import type { ContentVideo } from "src/types/contentvideo";
+
+
+
+export const SwingVideos = (props :any) => {
   return (
-    <>
     <Swiper
-    dir="rtl"
-    navigation={true}
-    pagination={{
-      clickable: true,
-    }}
-    modules={[Navigation, Pagination]}
+      modules={[Autoplay, EffectFade]}
+      dir="rtl"
+      loop={true}
+      spaceBetween={30}
+      slidesPerView={2}
+      autoplay={{ delay: 0, disableOnInteraction: false }}
+      speed={10000}
     >
-      <SwiperSlide>
-        <SetSampleVideo />
-      </SwiperSlide>
-      <SwiperSlide>
-        <SetSampleVideo />
-      </SwiperSlide>
+      {props.contentVideos.map((content_video :any) => (
+        <>
+            <SwiperSlide>
+              <SetSampleVideo thumbnail = {content_video.attributes.thumbnail} />
+            </SwiperSlide>
+        </>
+      ))}
     </Swiper>
-    </>
   );
 };
 
 export default SwingVideos;
+
+//effect="fade"
+//fadeEffect={{ crossFade: true }}

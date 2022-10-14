@@ -11,7 +11,9 @@ import {
   useQuery,
 } from 'react-query';
 
+import SwingVideos from "src/components/molecules/SwingVideos";
 import { ContentVideoCard } from "src/components/organisms/ContentVideoCard";
+
 import type { ContentVideo } from "src/types/contentvideo";
 //import CircularProgress from '@mui/material/CircularProgress';
 const ContentVideos = ({ }) => {
@@ -60,20 +62,23 @@ const ContentVideos = ({ }) => {
       </div>
     )
   }
-
+  console.log(contentVideos)
   return (
       <div className="container">
+        <SwingVideos contentVideos = {contentVideos} />
         {/** query.isLoadingがtureのとき、つまり、ロード中はクラスネームのローダーのやつが表示*/}
         {contentVideos.map((content_video, index) => (
-          <ContentVideoCard
-            key = {index}
-            id = {content_video.attributes.id}
-            number = {content_video.attributes.number}
-            title = {content_video.attributes.title}
-            description = {content_video.attributes.description}
-            thumbnail = {content_video.attributes.thumbnail}
-            liked = {content_video.attributes.liked}
-          />
+          <>
+            <ContentVideoCard
+              key = {index}
+              id = {content_video.attributes.id}
+              number = {content_video.attributes.number}
+              title = {content_video.attributes.title}
+              description = {content_video.attributes.description}
+              thumbnail = {content_video.attributes.thumbnail}
+              liked = {content_video.attributes.liked}
+            />
+          </>
         ))}
       </div>
     )

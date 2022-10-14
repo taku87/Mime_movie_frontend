@@ -12,7 +12,6 @@ export const  ContentVideosIndex = () => {
 			<div className="header">
 				<h2>ContentsVideos</h2>
 			</div>
-			<SwingVideos />
 			<ContentVideosList />
 		</div>
 	</div>

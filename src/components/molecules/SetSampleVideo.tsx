@@ -1,9 +1,11 @@
-export const SetSampleVideo = () => {
+export const SetSampleVideo = (thumbnail :string) => {
+  const thumbnail_filename = thumbnail["thumbnail"]
   return (
     <>
-    <img src={`${process.env.PUBLIC_URL}/thumbnail/tmb-engineer-lgtm.jpg`} width="100%" />
+      <img src={`${process.env.PUBLIC_URL}/thumbnail/${thumbnail_filename}`} width="100%" />
     </>
   );
 }
 
 export default SetSampleVideo;
+
