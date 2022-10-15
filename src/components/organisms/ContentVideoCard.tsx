@@ -18,8 +18,8 @@ export const ContentVideoCard = (props: ContentVideo) => {
     thumbnail,
     liked,
   } = props;
-  const {setLikedState} = useState(liked);
-  console.log(props)
+  const {likedState, setLikedState} = useState(liked);
+
   return (
     <div className="card">
       <Grid container spacing={2}>
@@ -38,9 +38,9 @@ export const ContentVideoCard = (props: ContentVideo) => {
             </div>
             <div className="content-video-card-button-list">
                 {liked ? (
-                    <UnlikeButton id={id} changeLike={setLikedState} className="content-video-card-button" />
+                    <UnlikeButton id={id} changeLikedState={setLikedState} className="content-video-card-button" />
                   ) : (
-                    <LikeButton id={id} changeLike={setLikedState} className="content-video-card-button" />
+                    <LikeButton id={id} changeLikedState={setLikedState} className="content-video-card-button" />
                   )}
             </div>
             <Link to={`/contents_videos/${id}`} state={{id : id}}>

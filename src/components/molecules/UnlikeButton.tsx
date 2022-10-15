@@ -9,7 +9,7 @@ import button from 'src/css/atoms/button.module.css';
 
 
 export const UnlikeButton = ( props: Like ) => {
-  const { id, changeLike } = props;
+  const { id, changeLikedState } = props;
   const { accessToken} = useContext(Auth0Context);
 
   const unLike = () => {
@@ -22,14 +22,14 @@ export const UnlikeButton = ( props: Like ) => {
         },
       })
       .then((response) => {
-        console.log(changeLike)
-        changeLike(false)
+        changeLikedState(false)
       })
       .catch((error) => {
         console.error(error);
       });
     }
     unlikeis()
+    console.log(likedState)
   };
   return (
     <input type='image' src={`${process.env.PUBLIC_URL}/black-hat-liked.png`} alt="unlike-button" onClick={unLike} className={button.unlike} />
