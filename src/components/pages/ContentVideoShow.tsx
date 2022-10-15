@@ -11,17 +11,13 @@ import {
 } from 'react-query';
 import { ContentVideoShowCard } from "src/components/organisms/ContentVideoShowCard";
 import { UploadUserVideo } from "src/hooks/UploadUserVideo";
-import Card from "@material-ui/core/Card";
-import CardActions from '@mui/material/CardActions';
-import CardContent from '@mui/material/CardContent';
-import Typography from '@mui/material/Typography';
-import { idText } from 'typescript';
+
 
 interface State {
   id: number;
 }
 
-const GetContentVideo = ({}) => {
+const GetContentVideo = () => {
   const [contentVideo, setContentVideo ] = useState<ContentVideo[]>([]);
   const location = useLocation();
   const { id } = location.state as State;

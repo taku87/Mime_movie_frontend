@@ -1,8 +1,6 @@
-import React, { Component } from 'react'
 import ReactPlayer from 'react-player'
 
-export default class SetContentVideo extends Component  {
-  render () {
+export const SetContentVideo = () => {
     return(
       <div>
         <h1>動画再生アプリ</h1>
@@ -10,4 +8,4 @@ export default class SetContentVideo extends Component  {
       </div>
     )
   }
-}
+

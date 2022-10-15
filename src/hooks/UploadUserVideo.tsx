@@ -5,7 +5,6 @@ import { Auth0Context } from 'src/components/providers/AuthCheckprovider';
 import axios from "axios";
 import  {useState} from 'react';
 
-import  ViewCompletedVideo  from 'src/components/molecules/ViewCompletedVideo';
 import SetUserCreatedVideo  from 'src/components/molecules/SetUserCreatedVideo';
 
 
@@ -39,7 +38,7 @@ export const UploadUserVideo= ( id :any) => {
   console.log(createdFileName)
 
   const handleSubmission = async() => {
-    const res = await axios
+    const update_res = await axios
       .put(
         selectedUrls,
         selectedFile,
@@ -49,12 +48,13 @@ export const UploadUserVideo= ( id :any) => {
           },
         })
       .then(res => {
-        console.log(res)
+        console.log(update_res.data)
         setUploadedState(true);
       })
       .catch((error) => {
-        console.error(error.res.data);
+        console.error(error.update_res.data);
       });
+    update_res()
   }
 
   console.log(uploadedState)

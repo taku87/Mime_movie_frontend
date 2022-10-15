@@ -1,12 +1,10 @@
 // @ts-nocheck
 import { useContext } from 'react';
-import { useAuth0 } from '@auth0/auth0-react';
 import { Auth0Context } from 'src/components/providers/AuthCheckprovider';
 import axios from 'axios';
 import { REST_API_URL } from 'src/urls/index';
 
 import type { Like } from "src/types/like";
-import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
 import button from 'src/css/atoms/button.module.css';
 
 
@@ -34,7 +32,7 @@ export const UnlikeButton = ( props: Like ) => {
     unlikeis()
   };
   return (
-    <input type='image' src={`${process.env.PUBLIC_URL}/black-hat-liked.png`} onClick={unLike} className={button.unlike} />
+    <input type='image' src={`${process.env.PUBLIC_URL}/black-hat-liked.png`} alt="unlike-button" onClick={unLike} className={button.unlike} />
   );
 };
 

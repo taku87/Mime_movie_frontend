@@ -1,5 +1,5 @@
 // @ts-nocheck
-import { useContext } from 'react';
+import { React,useContext } from 'react';
 import { useAuth0 } from '@auth0/auth0-react';
 import { Auth0Context } from 'src/components/providers/AuthCheckprovider';
 import { useState } from 'react';
@@ -16,8 +16,8 @@ import { ContentVideoCard } from "src/components/organisms/ContentVideoCard";
 
 import type { ContentVideo } from "src/types/contentvideo";
 //import CircularProgress from '@mui/material/CircularProgress';
-const ContentVideos = ({ }) => {
-  const { isAuthenticated, getAccessTokenSilently } = useAuth0();
+const ContentVideos = () => {
+  const {  getAccessTokenSilently } = useAuth0();
   const { setAccessToken } = useContext(Auth0Context);
   const [contentVideos, setContentVideos ] = useState<ContentVideo[]>([]);
 
@@ -62,15 +62,15 @@ const ContentVideos = ({ }) => {
       </div>
     )
   }
-  console.log(contentVideos)
+
   return (
       <div className="container">
         <SwingVideos contentVideos = {contentVideos} />
         {/** query.isLoadingがtureのとき、つまり、ロード中はクラスネームのローダーのやつが表示*/}
-        {contentVideos.map((content_video, index) => (
+        {contentVideos.map((content_video) => (
           <>
             <ContentVideoCard
-              key = {index}
+              key = {content_video.id}
               id = {content_video.attributes.id}
               number = {content_video.attributes.number}
               title = {content_video.attributes.title}

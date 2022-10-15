@@ -1,6 +1,5 @@
 // @ts-nocheck
 import { useContext } from 'react';
-import { useAuth0 } from '@auth0/auth0-react';
 import { Auth0Context } from 'src/components/providers/AuthCheckprovider';
 import axios from 'axios';
 import { REST_API_URL } from 'src/urls/index';
@@ -36,7 +35,7 @@ export const LikeButton = (props: Like) => {
   return (
     <form onSubmit={handleSubmit(UseonSubmit)}>
       <input {...register('id', { value: id })} type='hidden' />
-      <input type='image' src={`${process.env.PUBLIC_URL}/blackhat.png`} className={button.like} />
+      <input type='image' src={`${process.env.PUBLIC_URL}/blackhat.png`} alt="like-button" className={button.like} />
     </form>
   );
 };

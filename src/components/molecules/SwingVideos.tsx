@@ -21,10 +21,12 @@ export const SwingVideos = (props :any) => {
       autoplay={{ delay: 0, disableOnInteraction: false }}
       speed={10000}
     >
-      {props.contentVideos.map((content_video :any) => (
+      {props.contentVideos.map((content_video, index) => (
         <>
             <SwiperSlide>
-              <SetSampleVideo thumbnail = {content_video.attributes.thumbnail} />
+              <SetSampleVideo
+              key = {index}
+              thumbnail = {content_video.attributes.thumbnail} />
             </SwiperSlide>
         </>
       ))}

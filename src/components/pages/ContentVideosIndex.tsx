@@ -1,5 +1,3 @@
-//import SetContentVideo from "src/components/molecules/SetContentVideo";
-import { SwingVideos } from "src/components/molecules/SwingVideos";
 import ContentVideosList from "src/components/organisms/ContentVideosList";
 
 import 'src/css/pages/ContentVideosIndex.css';

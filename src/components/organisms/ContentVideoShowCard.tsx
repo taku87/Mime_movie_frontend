@@ -37,7 +37,7 @@ export const ContentVideoShowCard = (props: ContentVideo) => {
             species, ranging across all continents except Antarctica
           </Typography>
         </CardContent>
-        <img src={`${process.env.PUBLIC_URL}/thumbnail/${thumbnail}`} width="100%" />
+        <img src={`${process.env.PUBLIC_URL}/thumbnail/${thumbnail}`} alt="thumbnail" width="100%" />
     </Card>
     </div>
   )

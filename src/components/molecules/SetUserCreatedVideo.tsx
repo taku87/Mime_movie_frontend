@@ -15,8 +15,8 @@ export const   SetUserCreatedVideo = ( filename :any) => {
           <video className="user-created-video" controls ref={videoRef} >
             <source src={`https://completed-videos-s3-01.s3.ap-northeast-1.amazonaws.com/${user_created_file_name}_completed.mp4`} type="video/mp4" />
           </video>
-          <img src={`${process.env.PUBLIC_URL}/movie-curtain.png`} className="created-video-design-frame-curtain" />
-          <img src={`${process.env.PUBLIC_URL}/movie-light.png`} className="user-created-video-design-bottom" />
+          <img src={`${process.env.PUBLIC_URL}/movie-curtain.png`} alt="movie-curtain" className="created-video-design-frame-curtain" />
+          <img src={`${process.env.PUBLIC_URL}/movie-light.png`} alt="movie-light" className="user-created-video-design-bottom" />
         </div>
       </div>
     );
