@@ -4,13 +4,15 @@ import { Autoplay,EffectFade } from "swiper";
 import 'swiper/swiper-bundle.css';
 import "src/css/swiper.css";
 
-import SetSampleVideo from "src/components/molecules/SetSampleVideo";
+import SetThumbnail from "src/components/molecules/SetThumbnail";
 
 //import type { ContentVideo } from "src/types/contentvideo";
 
 
 
 export const SwingVideos = (props :any) => {
+const {contentVideos} =  props;
+
   return (
     <Swiper
       modules={[Autoplay, EffectFade]}
@@ -21,11 +23,11 @@ export const SwingVideos = (props :any) => {
       autoplay={{ delay: 0, disableOnInteraction: false }}
       speed={10000}
     >
-      {props.contentVideos.map((content_video, index) => (
+      {contentVideos.map((content_video, index) => (
         <>
-            <SwiperSlide>
-              <SetSampleVideo
-              key = {index}
+            <SwiperSlide  key ={`${content_video.id}22${index}`}>
+              < SetThumbnail
+              key ={`${content_video.id}33${index}`}
               thumbnail = {content_video.attributes.thumbnail} />
             </SwiperSlide>
         </>
