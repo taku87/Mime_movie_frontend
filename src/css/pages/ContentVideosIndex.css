@@ -2,13 +2,13 @@
   white-space: pre-wrap;
 }
 
-.content-videos-index {
-  margin-top: 10px;
-}
-
 .container {
   width: 90%;
   margin: 0 auto;
+  margin-top: 50px;
+}
+
+.content-videos-index {
 }
 
 .header {

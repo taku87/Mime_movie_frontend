@@ -1,6 +1,5 @@
 // @ts-nocheck
 import { useContext } from 'react';
-import { useAuth0 } from '@auth0/auth0-react';
 import { Auth0Context } from 'src/components/providers/AuthCheckprovider';
 import axios from 'axios';
 import { REST_API_URL } from 'src/urls/index';
@@ -10,7 +9,7 @@ import button from 'src/css/atoms/button.module.css';
 import "src/css/LikeButton.css";
 
 export const LikeButton = (props: Like) => {
-  const { id, changeLike } = props;
+  const { id, changeLikedState } = props;
   const { accessToken } = useContext(Auth0Context);
   const { register, handleSubmit } = useForm({});
 
@@ -24,8 +23,7 @@ export const LikeButton = (props: Like) => {
           },
         })
         .then((response) => {
-          console.log(changeLike)
-          changeLike(true);
+          changeLikedState(true);
         })
         .catch((error) => {
           console.error(error);
@@ -33,10 +31,11 @@ export const LikeButton = (props: Like) => {
       }
       likeis()
   };
+
   return (
     <form onSubmit={handleSubmit(UseonSubmit)}>
       <input {...register('id', { value: id })} type='hidden' />
-      <input type='image' src={`${process.env.PUBLIC_URL}/blackhat.png`} className={button.like} />
+      <input type='image' src={`${process.env.PUBLIC_URL}/blackhat.png`} alt="like-button" className={button.like} />
     </form>
   );
 };

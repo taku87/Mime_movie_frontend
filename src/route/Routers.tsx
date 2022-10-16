@@ -5,7 +5,6 @@ import Top from 'src/components/pages/Top';
 import NoMatch from 'src/components/pages/NoMatchs';
 import ContentsVideosIndex from 'src/components/pages/ContentVideosIndex';
 import ContentsVideoShow from 'src/components/pages/ContentVideoShow';
-import UserVideoPost from 'src/components/pages/UserVideoPost';
 import CompletedVideosIndex from 'src/components/pages/CompletedVideosIndex';
 //import CompletedVideo from 'src/components/templates/CompletedVideo';
 //import MyVideos from 'src/components/templates/MyVideos';
@@ -21,7 +20,6 @@ export const Routers = memo(() => {
     <Route path="*" element={<NoMatch />} />
     <Route path="/contents_videos" element={<ContentsVideosIndex />}/>
     <Route path="contents_videos/:contentsVideoId" element={<ContentsVideoShow />} />
-    <Route path="/video_post/" element={<UserVideoPost />} />
     <Route path="/completed_videos/" element={<CompletedVideosIndex />}>
       {/* <Route path=":completedVideoId" element={<CompletedVideo />} /> */}
     </Route>

@@ -10,25 +10,23 @@ import {
   useQuery,
 } from 'react-query';
 import { ContentVideoShowCard } from "src/components/organisms/ContentVideoShowCard";
+import { SetExampleVideo } from "src/components/molecules/SetExampleVideo";
 import { UploadUserVideo } from "src/hooks/UploadUserVideo";
-import Card from "@material-ui/core/Card";
-import CardActions from '@mui/material/CardActions';
-import CardContent from '@mui/material/CardContent';
-import Typography from '@mui/material/Typography';
-import { idText } from 'typescript';
+import { FlipCardButton } from "src/components/molecules/FlipCardButton";
+import 'src/css/pages/ContentVideoShow.css';
+
 
 interface State {
   id: number;
 }
 
-const GetContentVideo = ({}) => {
+const GetContentVideo = () => {
   const [contentVideo, setContentVideo ] = useState<ContentVideo[]>([]);
   const location = useLocation();
   const { id } = location.state as State;
   let { isLoading: queryLoading } = useQuery(['content_videos'],
     async () => {
-  //const { state } = useLocation();
-  //const { id, title, youtube_url } = state;
+
 
     /** GETの処理 */
     const res = await axios
@@ -57,14 +55,33 @@ const GetContentVideo = ({}) => {
   return (
     <div className="container">
       {/** query.isLoadingがtureのとき、つまり、ロード中はクラスネームのローダーのやつが表示*/}
-        <ContentVideoShowCard
-          id = {contentVideo.attributes.id}
-          number = {contentVideo.attributes.number}
-          title = {contentVideo.attributes.title}
-          description = {contentVideo.attributes.description}
-          thumbnail = {contentVideo.attributes.thumbnail}
-          //liked = {contentVideo.attributes.liked}
-        />
+      <div className="content-video-show-first-part">
+        <div className="content-video-show-card">
+          <ContentVideoShowCard
+            id = {contentVideo.attributes.id}
+            number = {contentVideo.attributes.number}
+            title = {contentVideo.attributes.title}
+            description = {contentVideo.attributes.description}
+            thumbnail = {contentVideo.attributes.thumbnail}
+          />
+        </div>
+        <div className="example-video">
+          <SetExampleVideo url={contentVideo.attributes.number} />
+        </div>
+      </div>
+
+      <div className="content-video-show-second-part">
+        <img src={`${process.env.PUBLIC_URL}/thumbnail/${contentVideo.attributes.thumbnail}`} className="lecture-photo" alt="thumbnail" width="100%" />
+        <img src={`${process.env.PUBLIC_URL}/thumbnail/${contentVideo.attributes.thumbnail}`} className="lecture-comment" alt="thumbnail" width="100%" />
+      </div>
+
+      <div className="content-video-show-third-part">
+        <h2>Are you ready? Let's 撮影！</h2>
+        <p>撮影したら、『CREATE』ボタンを押してみて!</p>
+        <p>あなたから始まる『MOVIE』が出来上がるよ!</p>
+
+      </div>
+
         <UploadUserVideo
         id = {contentVideo.attributes.id}
         />

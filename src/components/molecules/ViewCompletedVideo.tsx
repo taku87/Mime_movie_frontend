@@ -1,5 +1,4 @@
 import React, { useRef, useEffect } from 'react'
-import video_mp4 from "videos/title-animation.mp4"
 
 export function ViewCompletedVideo() {
 

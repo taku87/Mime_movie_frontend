@@ -1,5 +1,3 @@
-//import SetContentVideo from "src/components/molecules/SetContentVideo";
-import { SwingVideos } from "src/components/molecules/SwingVideos";
 import ContentVideosList from "src/components/organisms/ContentVideosList";
 
 import 'src/css/pages/ContentVideosIndex.css';
@@ -12,7 +10,6 @@ export const  ContentVideosIndex = () => {
 			<div className="header">
 				<h2>ContentsVideos</h2>
 			</div>
-			<SwingVideos />
 			<ContentVideosList />
 		</div>
 	</div>

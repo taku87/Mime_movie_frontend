@@ -5,22 +5,22 @@ import { Auth0Context } from 'src/components/providers/AuthCheckprovider';
 import axios from "axios";
 import  {useState} from 'react';
 
-import  ViewCompletedVideo  from 'src/components/molecules/ViewCompletedVideo';
 import SetUserCreatedVideo  from 'src/components/molecules/SetUserCreatedVideo';
-
+import  "src/css/hooks/UploadUserVideo.css";
 
 export const UploadUserVideo= ( id :any) => {
   const {isAuthenticated,getAccessTokenSilently } = useAuth0();
   const { setAccessToken } = useContext(Auth0Context);
   const [selectedFile, setSelectedFile] = useState<string>("");
   const [selectedUrls, setSelectedUrls] = useState<string>("");
-  const [selectedCreatedUrls, setSelectedCreatedUrls] = useState<string>("");
-
+  const [createdFileName, setCreatedFileName] = useState<string>("");
+  const [uploadedState, setUploadedState] = useState<boolean>(false);
+  const content_video_id = id["id"]
   const handleChange = async (e: any) => {
     const token = isAuthenticated ? await getAccessTokenSilently() : null;
     setAccessToken(token);
     console.log(token);
-    const res = await axios.get(`http://localhost:3001//api/v1/user/user_videos/show/${id}`,{
+    const res = await axios.get(`http://localhost:3001//api/v1/user/user_videos/${content_video_id}`,{
       headers: {
         Authorization: `Bearer ${token}`,
         'Content-Type': 'application/json',
@@ -29,11 +29,17 @@ export const UploadUserVideo= ( id :any) => {
     const S3DirectPost = await res.data
     setSelectedFile(e.target.files[0]);
     setSelectedUrls(S3DirectPost["presigned_url"]);
-    setSelectedCreatedUrls(S3DirectPost["key"]);
+    setCreatedFileName(S3DirectPost["key"]);
+    console.log(S3DirectPost)
   }
 
-  const handleSubmission = async() => {
-    const res = await axios
+  console.log(selectedFile)
+  console.log(selectedUrls)
+  console.log(createdFileName)
+
+  const handleSubmission = () => {
+    const update_res = async () => {
+    axios
       .put(
         selectedUrls,
         selectedFile,
@@ -42,20 +48,30 @@ export const UploadUserVideo= ( id :any) => {
             'Content-Type': selectedFile.type,
           },
         })
-      .then(res => {
-        <SetUserCreatedVideo url={`${selectedCreatedUrls}`}/>
-
-        console.log(res)
+      .then(response => {
+        console.log(update_res.data)
+        setUploadedState(true);
       })
       .catch((error) => {
-        console.error(error.res.data);
+        console.error(error.response);
       });
     }
+    update_res()
+  }
 
+  console.log(uploadedState)
   return (
     <div>
-      <ViewCompletedVideo />
+      <div>
+        {uploadedState ? (
+            <SetUserCreatedVideo  filename={`${createdFileName}`}/>
+          ) : (
+            <div></div>
+          )}
+      </div>
+
       <input type="file" onChange={handleChange}  />
+
         <div>
           <button onClick={handleSubmission}>Submit</button>
         </div>

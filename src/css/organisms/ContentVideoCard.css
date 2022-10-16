@@ -1,14 +1,14 @@
 .content-video-card-information-list {
 }
 
-.box {
+.information-box {
   padding: 1rem;
   box-shadow: 10px 10px 0 #e3b587;
   background-color: #314357;
   color: #e3b587;
 }
 
-.box p {
+.information-box p {
   line-height: 1.5;
 }
 
