@@ -1,4 +1,4 @@
-export const SetSampleVideo = (thumbnail :any) => {
+export const SetThumbnail = (thumbnail :any) => {
   const thumbnail_filename = thumbnail["thumbnail"]
   return (
     <>
@@ -7,5 +7,5 @@ export const SetSampleVideo = (thumbnail :any) => {
   );
 }
 
-export default SetSampleVideo;
+export default SetThumbnail;
 
