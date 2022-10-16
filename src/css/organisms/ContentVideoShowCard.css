@@ -1,0 +1,19 @@
+.information-box {
+  padding: 15px;
+  box-shadow: 10px 10px 0 #e3b587;
+  background-color: #314357;
+  color: #e3b587;
+}
+
+.video-card-thumbnail {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.video-card-title {
+  font-size: 20px;
+}
+
+.video-card-description {
+  font-size: 15px;
+}
