@@ -29,7 +29,6 @@ export const UnlikeButton = ( props: Like ) => {
       });
     }
     unlikeis()
-    console.log(likedState)
   };
   return (
     <input type='image' src={`${process.env.PUBLIC_URL}/black-hat-liked.png`} alt="unlike-button" onClick={unLike} className={button.unlike} />

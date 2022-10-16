@@ -1,5 +1,5 @@
 // @ts-nocheck
-import { useState } from 'react';
+import { useState, memo  } from 'react';
 import { Link } from 'react-router-dom';
 import { LikeButton } from "src/components/molecules/LikeButton";
 import { UnlikeButton } from "src/components/molecules/UnlikeButton";
@@ -18,7 +18,19 @@ export const ContentVideoCard = (props: ContentVideo) => {
     thumbnail,
     liked,
   } = props;
-  const {likedState, setLikedState} = useState(liked);
+  const [likedState, setLikedState] = useState(liked);
+
+  const SwitchLikeButtons = memo(() => {
+    return(
+      <>
+        {likedState ? (
+            <UnlikeButton id={id} changeLikedState={setLikedState} className="content-video-card-button" />
+          ) : (
+            <LikeButton id={id} changeLikedState={setLikedState} className="content-video-card-button" />
+        )}
+      </>
+    )
+  })
 
   return (
     <div className="card">
@@ -37,10 +49,10 @@ export const ContentVideoCard = (props: ContentVideo) => {
               </div>
             </div>
             <div className="content-video-card-button-list">
-                {liked ? (
-                    <UnlikeButton id={id} changeLikedState={setLikedState} className="content-video-card-button" />
-                  ) : (
-                    <LikeButton id={id} changeLikedState={setLikedState} className="content-video-card-button" />
+              {likedState === undefined ? (
+                <></>
+                ) : (
+                    <SwitchLikeButtons />
                   )}
             </div>
             <Link to={`/contents_videos/${id}`} state={{id : id}}>
