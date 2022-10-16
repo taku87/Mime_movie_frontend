@@ -6,7 +6,7 @@ import axios from "axios";
 import  {useState} from 'react';
 
 import SetUserCreatedVideo  from 'src/components/molecules/SetUserCreatedVideo';
-
+import  "src/css/hooks/UploadUserVideo.css";
 
 export const UploadUserVideo= ( id :any) => {
   const {isAuthenticated,getAccessTokenSilently } = useAuth0();
@@ -69,7 +69,9 @@ export const UploadUserVideo= ( id :any) => {
             <div></div>
           )}
       </div>
+
       <input type="file" onChange={handleChange}  />
+
         <div>
           <button onClick={handleSubmission}>Submit</button>
         </div>
