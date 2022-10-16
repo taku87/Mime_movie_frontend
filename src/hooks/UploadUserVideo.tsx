@@ -37,8 +37,9 @@ export const UploadUserVideo= ( id :any) => {
   console.log(selectedUrls)
   console.log(createdFileName)
 
-  const handleSubmission = async() => {
-    const update_res = await axios
+  const handleSubmission = () => {
+    const update_res = async () => {
+    axios
       .put(
         selectedUrls,
         selectedFile,
@@ -47,29 +48,30 @@ export const UploadUserVideo= ( id :any) => {
             'Content-Type': selectedFile.type,
           },
         })
-      .then(res => {
+      .then(response => {
         console.log(update_res.data)
         setUploadedState(true);
       })
       .catch((error) => {
-        console.error(error.update_res.data);
+        console.error(error.response);
       });
+    }
     update_res()
   }
 
   console.log(uploadedState)
   return (
     <div>
+      <div>
+        {uploadedState ? (
+            <SetUserCreatedVideo  filename={`${createdFileName}`}/>
+          ) : (
+            <div></div>
+          )}
+      </div>
       <input type="file" onChange={handleChange}  />
         <div>
           <button onClick={handleSubmission}>Submit</button>
-        </div>
-        <div>
-            {uploadedState ? (
-                <SetUserCreatedVideo  filename={`${createdFileName}`}/>
-              ) : (
-                <div></div>
-              )}
         </div>
     </div>
   )
