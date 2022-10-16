@@ -1,7 +1,7 @@
 // @ts-nocheck
 import 'src/css/pages/top.css';
 import { Link } from 'react-router-dom';
-import  SetSampleVideo  from 'src/components/molecules/SetSampleVideo';
+import SetThumbnail from 'src/components/molecules/SetThumbnail';
 import  SetDesignVideo  from 'src/components/molecules/SetDesignVideo';
 //import pic from "../public/like.png"
 
@@ -12,7 +12,7 @@ export const Top = () => {
       <div className="container">
         <div className="eyecatch-movie-container">
           <div className="eyecatch-movie" >
-            <SetDesignVideo />
+            <SetDesignVideo url={"title-animation"} />
           </div>
         </div>
         <div>
@@ -30,7 +30,7 @@ export const Top = () => {
 
 
         {/* <Video /> */}
-        <SetSampleVideo />
+        <SetThumbnail />
 
         <div>
         <h1 className="text">Let's Check!</h1>
