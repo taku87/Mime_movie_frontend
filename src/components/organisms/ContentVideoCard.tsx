@@ -3,7 +3,8 @@ import { useState, memo  } from 'react';
 import { Link } from 'react-router-dom';
 import { LikeButton } from "src/components/molecules/LikeButton";
 import { UnlikeButton } from "src/components/molecules/UnlikeButton";
-import type { ContentVideo } from "src/types/contentvideo";
+import { FlipCardButton } from "src/components/molecules/FlipCardButton";
+import type { ContentVideo } from "src/types/contentvideo"
 
 import 'src/css/organisms/ContentVideoCard.css';
 import Typography from '@mui/material/Typography';
@@ -58,7 +59,12 @@ export const ContentVideoCard = (props: ContentVideo) => {
             <Link to={`/contents_videos/${id}`} state={{id : id}}>
               このコンテンツで撮影チャレンジ！
             </Link>
-            <img src={`${process.env.PUBLIC_URL}/thumbnail/${thumbnail}`} alt="thumbnail" width="100%" />
+            <div className="thumbnail-frame">
+            <img src={`${process.env.PUBLIC_URL}/thumbnail/${thumbnail}`} alt="thumbnail" className="thumbnail-card" />
+              <div className="thumbnail-door" >
+                <FlipCardButton  />
+              </div>
+            </div>
           </div>
         </Grid>
         <Grid xs={0} lg={2}></Grid>

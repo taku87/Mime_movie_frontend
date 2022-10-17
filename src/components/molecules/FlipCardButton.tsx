@@ -13,7 +13,7 @@ export const FlipCardButton = () => {
   })
 
   return (
-    <Link to="/" className={styles.container} onClick={() =>  set(state => !state) }>
+    <div  className={styles.container} onClick={() =>  set(state => !state) }>
       <a.div
         className={`${styles.c} ${styles.back}`}
         style={{ opacity: opacity.to(o => 1 - o), transform }}
@@ -26,6 +26,6 @@ export const FlipCardButton = () => {
           rotateX: '180deg',
         }}
       />
-    </Link>
+    </div>
   )
 }
