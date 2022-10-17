@@ -10,12 +10,12 @@ import  "src/css/hooks/UploadUserVideo.css";
 
 import { useAsyncCallback } from 'react-async-hook'
 import Box from '@mui/material/Box'
+import button from 'src/css/atoms/button.module.css';
+
 import CircularIntegration from 'src/hooks/CircularIntegration';
 const initialState = {
   file: null,
 }
-
-
 
 export const UploadUserVideo= ( id :any) => {
   const {isAuthenticated,getAccessTokenSilently } = useAuth0();
@@ -114,7 +114,7 @@ export const UploadUserVideo= ( id :any) => {
           )}
       </div>
 
-      <Box>
+      <Box className={button.upload}>
         <CircularIntegration
           onClick={clickFileUploadButton}
           asyncEvent={asyncEvent}
@@ -132,9 +132,9 @@ export const UploadUserVideo= ( id :any) => {
 
       {/* <input type="file" onChange={uploadFile}  /> */}
 
-      <div>
-        <button onClick={handleSubmission}>Submit</button>
-      </div>
+      <form onClick={handleSubmission}>
+        <input type='image' src={`${process.env.PUBLIC_URL}/blackhat.png`} alt="create-button" className={button.create} />
+      </form>
     </div>
   )
 }

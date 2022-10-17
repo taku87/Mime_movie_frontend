@@ -16,6 +16,22 @@
   opacity: 0.8;
 }
 
+.create {
+  width: 50px;
+  height: 35px;
+}
+
+.create:hover {
+  width: 70px;
+  height: 49px;
+}
+
+.upload {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 @media (min-width: 700px) {
   .unlike {
     font-size: 13px;
