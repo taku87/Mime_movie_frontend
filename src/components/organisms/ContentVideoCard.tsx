@@ -62,7 +62,7 @@ export const ContentVideoCard = (props: ContentVideo) => {
             <div className="thumbnail-frame">
             <img src={`${process.env.PUBLIC_URL}/thumbnail/${thumbnail}`} alt="thumbnail" className="thumbnail-card" />
               <div className="thumbnail-door" >
-                <FlipCardButton  />
+                <FlipCardButton id={id}  />
               </div>
             </div>
           </div>
