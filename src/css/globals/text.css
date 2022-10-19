@@ -1,13 +1,15 @@
 .top-text-first {
   font-size: 40px;
   color: #314357;
-  text-shadow: 0 0 10px #e3b587;
+  text-shadow: 0 0 15px #ffffff;
 }
 
 .top-text-second {
-  font-size: 20px;
+  font-size: 25px;
+  color: #0e2e3b;
+  text-shadow: 0 0 20px #ffffff;
   font-family: "Hiragino Sans";
-  font-weight: 300;
+  font-weight: 40;
   white-space: pre-wrap;
 }
 

@@ -16,7 +16,7 @@ export const Top = () => {
           </div>
         </div>
 
-          <h1 className="top-text-first">Do you know 『パントマイム』?</h1>
+          <h1 className="top-text-first">Do you know 『panto mime』?</h1>
 
         <div className="eyecatch-movie" >
           <SetDesignVideo url={"title-animation"} />
