@@ -6,7 +6,7 @@ import { REST_API_URL } from 'src/urls/index';
 import { useForm } from 'react-hook-form';
 import type { Like } from "src/types/like";
 import button from 'src/css/atoms/button.module.css';
-import "src/css/LikeButton.css";
+
 
 export const LikeButton = (props: Like) => {
   const { id, changeLikedState } = props;

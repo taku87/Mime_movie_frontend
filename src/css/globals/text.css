@@ -1,0 +1,25 @@
+.top-text-first {
+  font-size: 40px;
+  color: #314357;
+  text-shadow: 0 0 10px #e3b587;
+}
+
+.top-text-second {
+  font-size: 20px;
+  font-family: "Hiragino Sans";
+  font-weight: 300;
+  white-space: pre-wrap;
+}
+
+.content-videos-show-text-first {
+  font-size: 40px;
+  color: #314357;
+  text-shadow: 0 0 10px #e3b587;
+}
+
+.content-videos-show-text-second {
+  font-size: 20px;
+  font-family: "Hiragino Sans";
+  font-weight: 300;
+  white-space: pre-wrap;
+}

@@ -2,7 +2,7 @@
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Autoplay,EffectFade } from "swiper";
 import 'swiper/swiper-bundle.css';
-import "src/css/swiper.css";
+import "src/css/globals/swiper.css";
 
 import SetThumbnail from "src/components/molecules/SetThumbnail";
 

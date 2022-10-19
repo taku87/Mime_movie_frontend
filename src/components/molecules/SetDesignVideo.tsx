@@ -9,7 +9,7 @@ export const SetDesignVideo = (props :any) => {
         videoRef.current?.play();
     }, []);
     return (
-      <video className="movie"  muted ref={videoRef} width="800" height="450" >
+      <video className="movie" loop muted ref={videoRef} width="800" height="450" >
           <source src={`${process.env.PUBLIC_URL}/videos/${url}.mp4`} type="video/mp4" />
       </video>
     );

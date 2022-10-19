@@ -14,7 +14,7 @@ import type { ContentVideo } from "src/types/contentvideo";
 //import CircularProgress from '@mui/material/CircularProgress';
 
   export const LoginUserGetContentVideos = memo(() => {
-    const { isAuthenticated, getAccessTokenSilently } = useAuth0();
+    const { getAccessTokenSilently } = useAuth0();
     const { setAccessToken } = useContext(Auth0Context);
     const [contentVideos, setContentVideos ] = useState<ContentVideo[]>([]);
 

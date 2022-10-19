@@ -19,3 +19,18 @@
 .content-video-card-button {
   text-align: center;
 }
+
+.thumbnail-frame {
+  position: relative;
+}
+
+.thumbnail-card {
+  width: 100%;
+}
+
+.thumbnail-door {
+  width: 20%;
+  position: absolute;
+  bottom: 230px;
+  left: 20px;
+}
