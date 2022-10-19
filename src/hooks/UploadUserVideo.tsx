@@ -28,7 +28,7 @@ export const UploadUserVideo= ( id :any) => {
   const content_video_id = id["id"]
 
   const inputRef = useRef(null)
-  const [formState, setFormState] = useState(initialState)
+  const [ setFormState ] = useState(initialState)
   const [success, setSuccess] = useState(false)
 
     const uploadFile = async (file: any) => {

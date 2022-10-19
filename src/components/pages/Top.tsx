@@ -1,7 +1,6 @@
 // @ts-nocheck
 import 'src/css/pages/top.css';
 import { Link } from 'react-router-dom';
-import SetThumbnail from 'src/components/molecules/SetThumbnail';
 import  SetDesignVideo  from 'src/components/molecules/SetDesignVideo';
 //import pic from "../public/like.png"
 import "src/css/globals/text.css"

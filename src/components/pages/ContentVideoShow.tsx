@@ -12,7 +12,6 @@ import {
 import { ContentVideoShowCard } from "src/components/organisms/ContentVideoShowCard";
 import { SetExampleVideo } from "src/components/molecules/SetExampleVideo";
 import { UploadUserVideo } from "src/hooks/UploadUserVideo";
-import { FlipCardButton } from "src/components/molecules/FlipCardButton";
 import 'src/css/pages/ContentVideoShow.css';
 import 'src/css/globals/text.css';
 

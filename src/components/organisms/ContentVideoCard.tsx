@@ -1,6 +1,5 @@
 // @ts-nocheck
 import { useState, memo  } from 'react';
-import { Link } from 'react-router-dom';
 import { LikeButton } from "src/components/molecules/LikeButton";
 import { UnlikeButton } from "src/components/molecules/UnlikeButton";
 import { FlipCardButton } from "src/components/molecules/FlipCardButton";
