@@ -11,6 +11,7 @@ import  "src/css/hooks/UploadUserVideo.css";
 import { useAsyncCallback } from 'react-async-hook'
 import Box from '@mui/material/Box'
 import button from 'src/css/atoms/button.module.css';
+import "src/css/hooks/UploadUserVideo.css";
 
 import CircularIntegration from 'src/hooks/CircularIntegration';
 const initialState = {
@@ -105,36 +106,45 @@ export const UploadUserVideo= ( id :any) => {
 
   console.log(uploadedState)
   return (
-    <div>
-      <div>
-        {uploadedState ? (
-            <SetUserCreatedVideo  filename={`${createdFileName}`}/>
-          ) : (
-            <div></div>
-          )}
+    <div className="upload-user-video">
+      <div className="container">
+        <div>
+          {uploadedState ? (
+              <SetUserCreatedVideo  filename={`${createdFileName}`}/>
+            ) : (
+              <div></div>
+            )}
+        </div>
+
+        <div className="upload-to-create">
+          <div className="upload-to-create-container">
+            <div>
+              <Box className={button.upload}>
+                <CircularIntegration
+                  onClick={clickFileUploadButton}
+                  asyncEvent={asyncEvent}
+                  success={success}
+                  component="label"
+                  text={asyncEvent.loading ? '...' : "Upload File"}
+                />
+                <input
+                  hidden
+                  ref={inputRef}
+                  type="file"
+                  onChange={asyncEvent.execute}
+                />
+              </Box>
+            </div>
+
+            {/* <input type="file" onChange={uploadFile}  /> */}
+            <div>
+              <form onClick={handleSubmission}>
+                <input type='image' src={`${process.env.PUBLIC_URL}/blackhat.png`} alt="create-button" className={button.create} />
+              </form>
+            </div>
+          </div>
+        </div>
       </div>
-
-      <Box className={button.upload}>
-        <CircularIntegration
-          onClick={clickFileUploadButton}
-          asyncEvent={asyncEvent}
-          success={success}
-          component="label"
-          text={asyncEvent.loading ? '...' : "Upload File"}
-        />
-        <input
-          hidden
-          ref={inputRef}
-          type="file"
-          onChange={asyncEvent.execute}
-        />
-      </Box>
-
-      {/* <input type="file" onChange={uploadFile}  /> */}
-
-      <form onClick={handleSubmission}>
-        <input type='image' src={`${process.env.PUBLIC_URL}/blackhat.png`} alt="create-button" className={button.create} />
-      </form>
     </div>
   )
 }

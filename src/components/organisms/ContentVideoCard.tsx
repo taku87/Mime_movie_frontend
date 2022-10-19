@@ -56,9 +56,7 @@ export const ContentVideoCard = (props: ContentVideo) => {
                     <SwitchLikeButtons />
                   )}
             </div>
-            <Link to={`/contents_videos/${id}`} state={{id : id}}>
-              このコンテンツで撮影チャレンジ！
-            </Link>
+
             <div className="thumbnail-frame">
             <img src={`${process.env.PUBLIC_URL}/thumbnail/${thumbnail}`} alt="thumbnail" className="thumbnail-card" />
               <div className="thumbnail-door" >

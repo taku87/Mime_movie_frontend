@@ -1,0 +1,17 @@
+.upload-user-video .container {
+  margin: 0 auto;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.upload-to-create {
+  display: inline-block;
+}
+
+.upload-to-create-container {
+  display: flex;
+}
+
+.upload-to-create-container > div {
+  margin: 10px;
+}

@@ -14,6 +14,7 @@ import { SetExampleVideo } from "src/components/molecules/SetExampleVideo";
 import { UploadUserVideo } from "src/hooks/UploadUserVideo";
 import { FlipCardButton } from "src/components/molecules/FlipCardButton";
 import 'src/css/pages/ContentVideoShow.css';
+import 'src/css/globals/text.css';
 
 
 interface State {
@@ -53,38 +54,41 @@ const GetContentVideo = () => {
 
 
   return (
-    <div className="container">
-      {/** query.isLoadingがtureのとき、つまり、ロード中はクラスネームのローダーのやつが表示*/}
-      <div className="content-video-show-first-part">
-        <div className="content-video-show-card">
-          <ContentVideoShowCard
-            id = {contentVideo.attributes.id}
-            number = {contentVideo.attributes.number}
-            title = {contentVideo.attributes.title}
-            description = {contentVideo.attributes.description}
-            thumbnail = {contentVideo.attributes.thumbnail}
-          />
+    <div className="content-video-show">
+      <div className="container">
+        <div className="content-videos-show-header">
+          <h2>ContentsVideos</h2>
         </div>
-        <div className="example-video">
-          <SetExampleVideo url={contentVideo.attributes.number} />
+        <div className="content-videos-show-container-secondary">
+          {/** query.isLoadingがtureのとき、つまり、ロード中はクラスネームのローダーのやつが表示*/}
+          <div className="content-video-show-first-part">
+            <div className="content-video-show-card">
+              <ContentVideoShowCard
+                id = {contentVideo.attributes.id}
+                number = {contentVideo.attributes.number}
+                title = {contentVideo.attributes.title}
+                description = {contentVideo.attributes.description}
+                thumbnail = {contentVideo.attributes.thumbnail}
+              />
+            </div>
+            <div className="example-video">
+              <SetExampleVideo url={contentVideo.attributes.number} />
+            </div>
+          </div>
+
+          <div className="content-video-show-second-part">
+            <img src={`${process.env.PUBLIC_URL}/thumbnail/${contentVideo.attributes.thumbnail}`} className="lecture-photo" alt="thumbnail" width="100%" />
+            <img src={`${process.env.PUBLIC_URL}/thumbnail/${contentVideo.attributes.thumbnail}`} className="lecture-comment" alt="thumbnail" width="100%" />
+          </div>
+
+          <div className="content-video-show-third-part">
+            <h1 className="content-videos-show-text-first">Are you ready? Let's TRY!</h1>
+            <p className="content-videos-show-text-second">『CREATE』であなたから始まる『MOVIE』!</p>
+
+          </div>
+          <UploadUserVideo id = { contentVideo.attributes.id } />
         </div>
       </div>
-
-      <div className="content-video-show-second-part">
-        <img src={`${process.env.PUBLIC_URL}/thumbnail/${contentVideo.attributes.thumbnail}`} className="lecture-photo" alt="thumbnail" width="100%" />
-        <img src={`${process.env.PUBLIC_URL}/thumbnail/${contentVideo.attributes.thumbnail}`} className="lecture-comment" alt="thumbnail" width="100%" />
-      </div>
-
-      <div className="content-video-show-third-part">
-        <h2>Are you ready? Let's 撮影！</h2>
-        <p>撮影したら、『CREATE』ボタンを押してみて!</p>
-        <p>あなたから始まる『MOVIE』が出来上がるよ!</p>
-
-      </div>
-
-        <UploadUserVideo
-        id = {contentVideo.attributes.id}
-        />
     </div>
   )
 }
