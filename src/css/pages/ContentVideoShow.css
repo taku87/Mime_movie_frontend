@@ -1,7 +1,11 @@
+.content-video-show {
+}
+
 .content-video-show .container {
   width: 90%;
   margin: 0 auto;
   margin-top: 20px;
+  padding-bottom: 50px;
 }
 
 .content-videos-show-header {
@@ -16,6 +20,7 @@
 .content-video-show-first-part {
   width: 100%;
   display: flex;
+  margin-bottom: 100px;
 }
 
 .content-video-show-card {

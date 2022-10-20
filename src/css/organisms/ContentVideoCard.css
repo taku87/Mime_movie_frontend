@@ -1,6 +1,10 @@
 .content-video-card-information-list {
 }
 
+.card {
+  margin-bottom: 30px;
+}
+
 .information-box {
   padding: 1rem;
   box-shadow: 10px 10px 0 #e3b587;
@@ -22,6 +26,7 @@
 
 .thumbnail-frame {
   position: relative;
+  margin-top: 20px;
 }
 
 .thumbnail-card {
