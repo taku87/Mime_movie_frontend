@@ -1,29 +1,79 @@
-//import { Link } from 'react-router-dom';
-
-import * as React from 'react';
-import Box from '@mui/material/Box';
-import BottomNavigation from '@mui/material/BottomNavigation';
-import BottomNavigationAction from '@mui/material/BottomNavigationAction';
+import React from "react";
+import { Link } from 'react-router-dom'
+import makeStyles from "@material-ui/core/styles/makeStyles";
+import createStyles from "@material-ui/core/styles/createStyles";
+import { Theme } from "@material-ui/core/styles";
+import BottomNavigation from "@material-ui/core/BottomNavigation";
+import BottomNavigationAction from "@material-ui/core/BottomNavigationAction";
 import MovieIcon from '@mui/icons-material/Movie';
 import AddAPhotoIcon from '@mui/icons-material/AddAPhoto';
 import AccountBoxIcon from '@mui/icons-material/AccountBox';
+import AppBar from "@material-ui/core/AppBar";
+
+const useStyles = makeStyles((theme: Theme) =>
+  createStyles({
+    root: {
+      width: "100%",
+      backgroundColor: "#d4cb94",
+    },
+    appBar: {
+      top: "auto",
+      bottom: 0,
+    },
+  })
+);
+
+const actionStyles = makeStyles((theme: Theme) =>
+  createStyles({
+    root: {
+      backgroundColor: "inherited",
+      "&$selected": {
+        color: "#b87551",
+      },
+    },
+    selected: {},
+  })
+);
+
 
 export const Footer = () => {
+
+  const classes = useStyles();
+  const actionClass = actionStyles();
   const [value, setValue] = React.useState(0);
 
   return (
-    <Box sx={{ width: 500 }}>
+    <AppBar position='fixed' color='primary' className={classes.appBar}>
       <BottomNavigation
-        showLabels
         value={value}
         onChange={(event, newValue) => {
           setValue(newValue);
         }}
+        showLabels
+        classes={{ root: classes.root }}
       >
-        <BottomNavigationAction href="/contents_videos" label="コンテンツ一覧" icon={<MovieIcon />} />
-        <BottomNavigationAction href="/completed_videos/" label="完成版一覧" icon={<AddAPhotoIcon />} />
-        <BottomNavigationAction href="/mypage/" label="マイページ" icon={<AccountBoxIcon />} />
+        <BottomNavigationAction
+          classes={actionClass}
+          label='コンテンツ一覧'
+          icon={<MovieIcon />}
+          component={Link}
+          to="/contents_videos"
+        />
+        <BottomNavigationAction
+          classes={actionClass}
+          label='完成版一覧'
+          icon={<AddAPhotoIcon />}
+          component={Link}
+          to="/completed_videos"
+        />
+        <BottomNavigationAction
+          classes={actionClass}
+          label='マイページ'
+          icon={<AccountBoxIcon />}
+          component={Link}
+          to="/mypage"
+        />
       </BottomNavigation>
-    </Box>
+    </AppBar>
   );
 }

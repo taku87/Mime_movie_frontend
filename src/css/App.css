@@ -3,6 +3,7 @@
   background: -moz-radial-gradient(#f3e4cd, #dec9ab 40%, #ab784e);
   background: -webkit-radial-gradient(#f3e4cd, #dec9ab 40%, #ab784e);
   background: radial-gradient(#f3e4cd, #dec9ab 40%, #ab784e);
+  background-image: url(src/assets/design/background.jpg);
 }
 
 .App-logo {

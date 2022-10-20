@@ -1,6 +1,7 @@
 import ContentVideosList from "src/components/organisms/ContentVideosList";
 
 import 'src/css/pages/ContentVideosIndex.css';
+import "src/css/globals/text.css"
 
 export const  ContentVideosIndex = () => {
   return(
@@ -8,7 +9,7 @@ export const  ContentVideosIndex = () => {
   <div className="content-videos-index">
 		<div className="container">
 			<div className="content-videos-index-header">
-				<h2>ContentsVideos</h2>
+				<div className="content-videos-index-text-first">ContentsVideos</div>
 			</div>
 			<ContentVideosList />
 		</div>

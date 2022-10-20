@@ -1,11 +1,12 @@
 import { Profile } from "src/components/organisms/Profile";
+import "src/css/pages/MyPage.css";
 
 export const MyPage = () => {
   return (
-    <>
-    <div>mypage</div>
-    <Profile />
-    </>
+    <div className="mypage">
+      <div>mypage</div>
+      <Profile />
+    </div>
   )
 }
 

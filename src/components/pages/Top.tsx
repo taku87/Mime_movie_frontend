@@ -1,6 +1,9 @@
 // @ts-nocheck
 import 'src/css/pages/top.css';
 import { Link } from 'react-router-dom';
+import Button from '@mui/material/Button';
+import MovieIcon from '@mui/icons-material/Movie';
+import AddAPhotoIcon from '@mui/icons-material/AddAPhoto';
 import  SetDesignVideo  from 'src/components/molecules/SetDesignVideo';
 //import pic from "../public/like.png"
 import "src/css/globals/text.css"
@@ -16,7 +19,7 @@ export const Top = () => {
           </div>
         </div>
 
-          <h1 className="top-text-first">Do you know 『パントマイム』?</h1>
+          <h1 className="top-text-first">Do you know 『panto mime』?</h1>
 
         <div className="eyecatch-movie" >
           <SetDesignVideo url={"title-animation"} />
@@ -37,14 +40,31 @@ export const Top = () => {
         <h1 className="top-text-first">Let's Check!</h1>
           <p className="top-text-second">色んなジャンルのコンテンツを用意しているからCheckしてみて!
           </p>
-          <Link to='/contents_videos/'>コンテンツ一覧へのリンク_シンプルロゴ</Link>
-          {/* <img src={pic} alt="picture" /> */}
+
+          <Button variant="contained"
+                  startIcon={<MovieIcon />}
+                  component={Link}
+                  to="/contents_videos"
+                  color="success"
+                  >
+            コンテンツ一覧
+          </Button>
+
         </div>
 
         <h1 className="top-text-first">Let's Enjoy!</h1>
         <p className="top-text-second">{`他の人が投稿した動画も見られるよ！\n`}
         </p>
-        <Link to='/completed_videos/'>投稿動画一覧へのリンク_シンプルロゴ</Link>
+
+          <Button variant="contained"
+                  startIcon={<AddAPhotoIcon />}
+                  component={Link}
+                  to="/completed_videos"
+                  color="success"
+                  >
+            完成版動画一覧
+          </Button>
+
       </div>
     </div>
     </>
