@@ -8,8 +8,8 @@ export const SetExampleVideo = (props :any) => {
         videoRef.current?.play();
     }, []);
     return (
-      <video className="movie" controls muted ref={videoRef} width="800" height="450" >
-          <source src={`${process.env.PUBLIC_URL}/videos/example/${url}.mp4`} type="video/mp4" />
+      <video className="video-frame" controls  muted ref={videoRef}  >
+          <source className="movie" src={`${process.env.PUBLIC_URL}/videos/example/${url}.mp4`} type="video/mp4" />
       </video>
     );
 }

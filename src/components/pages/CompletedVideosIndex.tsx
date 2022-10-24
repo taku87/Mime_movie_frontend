@@ -1,13 +1,15 @@
 // @ts-nocheck
-import {SetUserCreatedVideo} from "src/components/molecules/SetUserCreatedVideo";
+import {CompletedVideoShowCard} from "src/components/organisms/CompletedVideoShowCard";
 import "src/css/pages/CompletedVideosIndex.css";
 
 export const CompletedVideosIndex = () => {
   return (
     <div className="completed-videos-index">
-      <div className="container">
-        <h1>now showing</h1>
-        <SetUserCreatedVideo />
+      <div className="completed-videos-container">
+        <div className="completed-video-set">
+          <h1>now showing</h1>
+          <CompletedVideoShowCard />
+        </div>
       </div>
     </div>
 

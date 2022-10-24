@@ -1,0 +1,46 @@
+.information-box {
+  padding: 15px;
+  box-shadow: 10px 10px 0 #e3b587;
+  background-color: #314357;
+  color: #e3b587;
+}
+
+.video-card-title {
+  font-size: 20px;
+}
+
+.video-card-description {
+  font-size: 15px;
+}
+
+.set-completed-video-wrapper {
+}
+
+.completed-video-design-frame {
+  position: relative;
+  margin: 10px auto;
+  width: 900px;
+  height: 800px;
+}
+
+.completed-video-design-frame-curtain {
+  position: absolute;
+  top: -50px;
+  left: -95px;
+}
+
+.completed-video {
+  border-top: 40px solid;
+  border-bottom: 30px solid;
+  border-right: 25px solid;
+  border-left: 25px solid;
+  width: 800px;
+  height: 450px;
+  margin: 15px auto;
+  box-shadow: rgba(255, 238, 0, 0.56) 0px 22px 70px 4px;
+}
+
+.completed-video-design-bottom {
+  width: 800px;
+  height: 200px;
+}

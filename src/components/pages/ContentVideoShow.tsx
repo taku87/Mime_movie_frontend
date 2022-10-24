@@ -71,13 +71,13 @@ const GetContentVideo = () => {
               />
             </div>
             <div className="example-video">
+              <img src={`${process.env.PUBLIC_URL}/mrmime-videoframe.png`} className="mrmime-videoframe" alt="mrmime-videoframe" width="75%" />
               <SetExampleVideo url={contentVideo.attributes.number} />
             </div>
           </div>
 
           <div className="content-video-show-second-part">
-            <img src={`${process.env.PUBLIC_URL}/thumbnail/${contentVideo.attributes.thumbnail}`} className="lecture-photo" alt="thumbnail" width="100%" />
-            <img src={`${process.env.PUBLIC_URL}/thumbnail/${contentVideo.attributes.thumbnail}`} className="lecture-comment" alt="thumbnail" width="100%" />
+            <img src={`${process.env.PUBLIC_URL}/mrmime-point-frame.png`} className="lecture-photo" alt="mrmime-point-frame" width="100%" />
           </div>
 
           <div className="content-video-show-third-part">
