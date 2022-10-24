@@ -1,6 +1,6 @@
 import YouTube from 'react-youtube';
 
-export const SetYoutubevideo = (props: any) => {
+export const SetYoutubeVideo = (props: any) => {
   const { videoid } = props;
 
     return(

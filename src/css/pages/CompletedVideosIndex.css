@@ -1,8 +1,16 @@
 .completed-videos-index {
   background-color: darkgray;
   padding-top: 100px;
+  width: 100%;
 }
 
+.completed-videos-container {
+  width: 100%;
+}
+
+.completed-video-set {
+  width: 90%;
+}
 h1 {
   font-family: Georgia, "Times New Roman", Times, serif;
   font-size: 50px;

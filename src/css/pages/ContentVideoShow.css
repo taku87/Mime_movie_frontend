@@ -43,13 +43,6 @@
 }
 
 .lecture-photo {
-  width: 50%;
-  margin: 10px;
-}
-
-.lecture-comment {
-  width: 50%;
-  margin: 10px;
 }
 
 @media (max-width: 670px) {
