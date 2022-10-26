@@ -1,10 +1,10 @@
-import React, { useState } from 'react'
+import React, { useState, memo } from 'react'
 import { useSpring, a } from '@react-spring/web'
 import { useNavigate } from "react-router-dom"
 
 import styles from 'src/css/molecules/styles.module.css'
 
-export const FlipCardButton = (props :any) => {
+export const FlipCardButton = memo((props :any) => {
   const { id } = props;
   const navigate = useNavigate()
   const [flipped, set] = useState(false)
@@ -35,4 +35,4 @@ export const FlipCardButton = (props :any) => {
       />
     </div>
   )
-}
+})

@@ -38,43 +38,38 @@
 }
 
 .content-video-show-second-part {
-  width: 100%;
-  display: flex;
 }
 
 .lecture-photo {
+  margin-top: 50px;
+  width: 90%;
 }
 
 @media (max-width: 670px) {
   .content-video-show-first-part {
     display: flex;
     flex-direction: column;
+    margin: 0 auto;
   }
 
   .content-video-show-second-part {
-    display: flex;
-    flex-direction: column;
   }
 
   .content-video-show-card {
     width: 100%;
     margin-right: 10px;
     margin-left: 10px;
-    height: 500px;
+    height: 300px;
   }
 
   .example-video {
     width: 100%;
     margin-right: 10px;
     margin-left: 10px;
-    height: 500px;
+    height: 250px;
   }
 
   .lecture-photo {
-    width: 100%;
-  }
-
-  .lecture-comment {
     width: 100%;
   }
 }

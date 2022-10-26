@@ -15,7 +15,6 @@ import type { ContentVideo } from "src/types/contentvideo";
 
 export const GuestGetContentVideos = memo(() => {
   const [contentVideos, setContentVideos ] = useState<ContentVideo[]>([]);
-    console.log("ゲストで実行")
     let { isLoading: queryLoading } = useQuery(['content_videos'],
     async () => {
       const res = await axios

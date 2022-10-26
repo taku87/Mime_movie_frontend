@@ -1,5 +1,5 @@
 // @ts-nocheck
-import { useState } from 'react';
+import { useState, memo } from 'react';
 import axios from 'axios';
 import { REST_API_URL } from 'src/urls/index';
 import type { ContentVideo } from "src/types/contentvideo";
@@ -20,14 +20,13 @@ interface State {
   id: number;
 }
 
-const GetContentVideo = () => {
+const GetContentVideo = memo(() => {
   const [contentVideo, setContentVideo ] = useState<ContentVideo[]>([]);
   const location = useLocation();
-  const { id } = location.state as State;
+  const { id } = location.state as State || {};
+
   let { isLoading: queryLoading } = useQuery(['content_videos'],
     async () => {
-
-
     /** GETの処理 */
     const res = await axios
       .get<ContentVideo[]>(`${REST_API_URL}/user/content_videos/${id}`,{
@@ -77,7 +76,7 @@ const GetContentVideo = () => {
           </div>
 
           <div className="content-video-show-second-part">
-            <img src={`${process.env.PUBLIC_URL}/mrmime-point-frame.png`} className="lecture-photo" alt="mrmime-point-frame" width="100%" />
+            <img src={`${process.env.PUBLIC_URL}/mrmime-point-frame.png`} className="lecture-photo" alt="mrmime-point-frame"  />
           </div>
 
           <div className="content-video-show-third-part">
@@ -90,11 +89,11 @@ const GetContentVideo = () => {
       </div>
     </div>
   )
-}
+});
 
 
 
-export const ContentVideoShow= () => {
+export const ContentVideoShow= memo(() => {
   const queryClient = new QueryClient();
   return (
     // ProviderでQueryClientを設定する
@@ -102,7 +101,7 @@ export const ContentVideoShow= () => {
       <GetContentVideo />
     </QueryClientProvider>
   );
-};
+});
 
 
 export default ContentVideoShow;
