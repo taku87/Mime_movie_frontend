@@ -39,3 +39,12 @@
   bottom: 230px;
   left: 20px;
 }
+
+@media (max-width: 670px) {
+  .thumbnail-door {
+    width: 20%;
+    position: absolute;
+    bottom: 125px;
+    left: 20px;
+  }
+}

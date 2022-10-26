@@ -128,7 +128,7 @@ export const UploadUserVideo= (id :any) => {
 
             {/* <input type="file" onChange={uploadFile}  /> */}
             <div>
-                <input onClick={handleSubmission} type='image' src={`${process.env.PUBLIC_URL}/blackhat.png`} alt="create-button" className={button.create} />
+                <input onClick={handleSubmission} type='image' src={`${process.env.PUBLIC_URL}/blackhat-create.png`} alt="create-button" className={button.create} />
             </div>
           </div>
         </div>

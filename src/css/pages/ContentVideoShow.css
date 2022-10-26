@@ -53,6 +53,7 @@
   }
 
   .content-video-show-second-part {
+    margin-top: 50px;
   }
 
   .content-video-show-card {
@@ -64,6 +65,7 @@
 
   .example-video {
     width: 100%;
+    margin-top: 30px;
     margin-right: 10px;
     margin-left: 10px;
     height: 250px;

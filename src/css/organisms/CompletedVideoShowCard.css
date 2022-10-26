@@ -1,32 +1,18 @@
-.information-box {
-  padding: 15px;
-  box-shadow: 10px 10px 0 #e3b587;
-  background-color: #314357;
-  color: #e3b587;
-}
-
-.video-card-title {
-  font-size: 20px;
-}
-
-.video-card-description {
-  font-size: 15px;
-}
-
 .set-completed-video-wrapper {
+  margin: 0 auto;
 }
 
 .completed-video-design-frame {
   position: relative;
-  margin: 10px auto;
-  width: 900px;
+  margin: 0 auto;
+  width: 800px;
   height: 800px;
 }
 
 .completed-video-design-frame-curtain {
   position: absolute;
-  top: -50px;
-  left: -95px;
+  top: -100px;
+  left: -50px;
 }
 
 .completed-video {
@@ -43,4 +29,37 @@
 .completed-video-design-bottom {
   width: 800px;
   height: 200px;
+}
+
+@media (max-width: 670px) {
+  .completed-video-design-frame {
+    position: relative;
+    margin: 0 auto;
+    width: 390px;
+    height: 390px;
+  }
+
+  .completed-video-design-frame-curtain {
+    position: absolute;
+    top: -50px;
+    left: 0px;
+    width: 390px;
+    opacity: 0;
+  }
+
+  .completed-video {
+    border-top: 40px solid;
+    border-bottom: 30px solid;
+    border-right: 25px solid;
+    border-left: 25px solid;
+    width: 400px;
+    height: 225px;
+    margin: 15px auto;
+    box-shadow: rgba(255, 238, 0, 0.56) 0px 22px 70px 4px;
+  }
+
+  .completed-video-design-bottom {
+    width: 390px;
+    height: 100px;
+  }
 }

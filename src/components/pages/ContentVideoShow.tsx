@@ -70,7 +70,7 @@ const GetContentVideo = memo(() => {
               />
             </div>
             <div className="example-video">
-              <img src={`${process.env.PUBLIC_URL}/mrmime-videoframe.png`} className="mrmime-videoframe" alt="mrmime-videoframe" width="75%" />
+              <img src={`${process.env.PUBLIC_URL}/mrmime-videoframe.png`} className="mrmime-videoframe" alt="mrmime-videoframe" width="95%" />
               <SetExampleVideo url={contentVideo.attributes.number} />
             </div>
           </div>

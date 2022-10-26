@@ -23,3 +23,10 @@
 
 .container {
 }
+
+@media (max-width: 670px) {
+  .c {
+    width: 70px;
+    height: 120px;
+  }
+}

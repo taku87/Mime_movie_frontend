@@ -11,7 +11,7 @@ const useStyles = makeStyles({
       background: "yellow"
     },
     "&:active": {
-      background: "aqua"
+      background: "orange"
     }
   }
 });
