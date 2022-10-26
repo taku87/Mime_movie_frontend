@@ -35,7 +35,7 @@ export const LikeButton = (props: Like) => {
   return (
     <form onSubmit={handleSubmit(UseonSubmit)}>
       <input {...register('id', { value: id })} type='hidden' />
-      <input type='image' src={`${process.env.PUBLIC_URL}/blackhat.png`} alt="like-button" className={button.like} />
+      <input type='image' src={`${process.env.PUBLIC_URL}/blackhat-font.png`} alt="like-button" className={button.like} />
     </form>
   );
 };

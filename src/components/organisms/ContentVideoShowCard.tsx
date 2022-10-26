@@ -18,7 +18,7 @@ export const ContentVideoShowCard = (props: ContentVideo) => {
         <div className="video-card-title">
           {title}
         </div>
-        <div div className="video-card-description">
+        <div className="video-card-description">
           {description}
         </div>
       </div>

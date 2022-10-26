@@ -10,7 +10,7 @@ import Typography from '@mui/material/Typography';
 import Grid from '@mui/material/Unstable_Grid2';
 
 
-export const ContentVideoCard = (props: ContentVideo) => {
+export const ContentVideoCard = memo((props: ContentVideo) => {
   const {
     id,
     title,
@@ -68,4 +68,4 @@ export const ContentVideoCard = (props: ContentVideo) => {
       </Grid>
     </div>
   )
-}
+})

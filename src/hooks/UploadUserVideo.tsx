@@ -3,9 +3,9 @@ import { useContext } from 'react';
 import { useAuth0 } from '@auth0/auth0-react';
 import { Auth0Context } from 'src/components/providers/AuthCheckprovider';
 import axios from "axios";
-import  {useState, useRef } from 'react';
+import  {useState, useRef} from 'react';
+import { useNavigate } from "react-router-dom"
 
-import SetUserCreatedVideo  from 'src/components/molecules/SetUserCreatedVideo';
 import  "src/css/hooks/UploadUserVideo.css";
 
 import { useAsyncCallback } from 'react-async-hook'
@@ -18,14 +18,15 @@ const initialState = {
   file: null,
 }
 
-export const UploadUserVideo= ( id :any) => {
+export const UploadUserVideo= (id :any) => {
   const {isAuthenticated,getAccessTokenSilently } = useAuth0();
-  const { setAccessToken } = useContext(Auth0Context);
-  const [selectedFile, setSelectedFile] = useState<string>("");
+  const { accessToken, setAccessToken } = useContext(Auth0Context);
   const [selectedUrls, setSelectedUrls] = useState<string>("");
   const [createdFileName, setCreatedFileName] = useState<string>("");
-  const [uploadedState, setUploadedState] = useState<boolean>(false);
+  const [selectedFile, setSelectedFile] = useState<File | null>(null)
+  //const [uploadedState, setUploadedState] = useState<boolean>(false);
   const content_video_id = id["id"]
+  const navigate = useNavigate()
 
   const inputRef = useRef(null)
   const [ setFormState ] = useState(initialState)
@@ -60,10 +61,11 @@ export const UploadUserVideo= ( id :any) => {
       setSuccess(true)
     }
 
-    const onFileInputChange = async (event) => {
+    const onFileInputChange = async (event :any) => {
       const file = event.target.files[0]
-      await uploadFile(file)
       setSelectedFile(file)
+      console.log(file)
+      await uploadFile(file)
       /*添付されたファイルを取り出して、セットする処理
       アニメーションを行う処理（uploadFile）は５秒かかる作業なのでawaitさせてる？ */
     }
@@ -77,45 +79,33 @@ export const UploadUserVideo= ( id :any) => {
 
     const asyncEvent = useAsyncCallback(onFileInputChange);
 
-
-  console.log(selectedFile)
-  console.log(selectedUrls)
-  console.log(createdFileName)
+    console.log(selectedFile);
+    console.log(selectedUrls)
+    console.log(createdFileName)
 
   const handleSubmission = () => {
     const update_res = async () => {
-    axios
-      .put(
-        selectedUrls,
-        selectedFile,
-        {
-          headers: {
-            'Content-Type': selectedFile.type,
-          },
-        })
-      .then(response => {
-        console.log(update_res.data)
-        setUploadedState(true);
+    await axios.post(selectedUrls, selectedFile,{
+      headers: {
+        'Access-Control-Allow-Origin': "*",
+        'Content-Type': selectedFile.type
+      },
+    })
+      .then((res) => {
+        navigate('/created_video', { state: createdFileName })
+        console.log(res.data)
+        //setUploadedState(true);
       })
       .catch((error) => {
-        console.error(error.response);
+        console.error();
       });
     }
     update_res()
   }
 
-  console.log(uploadedState)
   return (
     <div className="upload-user-video">
       <div className="container">
-        <div>
-          {uploadedState ? (
-              <SetUserCreatedVideo  filename={`${createdFileName}`}/>
-            ) : (
-              <div></div>
-            )}
-        </div>
-
         <div className="upload-to-create">
           <div className="upload-to-create-container">
             <div>
@@ -138,15 +128,14 @@ export const UploadUserVideo= ( id :any) => {
 
             {/* <input type="file" onChange={uploadFile}  /> */}
             <div>
-              <form onClick={handleSubmission}>
-                <input type='image' src={`${process.env.PUBLIC_URL}/blackhat.png`} alt="create-button" className={button.create} />
-              </form>
+                <input onClick={handleSubmission} type='image' src={`${process.env.PUBLIC_URL}/blackhat-create.png`} alt="create-button" className={button.create} />
             </div>
           </div>
         </div>
       </div>
     </div>
   )
-}
+};
+
 
 export default UploadUserVideo;

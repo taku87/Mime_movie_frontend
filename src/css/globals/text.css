@@ -1,3 +1,11 @@
+.card_textbox {
+  width: 100%;
+  height: auto;
+  padding: 20px 18px;
+  background: #fff;
+  box-sizing: border-box;
+}
+
 .top-text-first {
   font-size: 40px;
   color: #314357;
@@ -15,7 +23,7 @@
   font-size: 25px;
   color: #0e2e3b;
   text-shadow: 0 0 20px #ffffff;
-  font-family: "Hiragino Sans";
+  font-family: HanziPen TC;
   font-weight: 40;
   white-space: pre-wrap;
 }
@@ -31,4 +39,16 @@
   font-family: "Hiragino Sans";
   font-weight: 300;
   white-space: pre-wrap;
+}
+
+.completed-video-card-text {
+  font-size: 50px;
+  color: #314357;
+  text-shadow: 0 0 30px yellow;
+}
+
+@media (max-width: 670px) {
+  .completed-video-card-text {
+    font-size: 20px;
+  }
 }

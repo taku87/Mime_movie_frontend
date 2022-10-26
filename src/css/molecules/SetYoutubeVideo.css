@@ -1,0 +1,11 @@
+.responsive {
+  width: 800px;
+  aspect-ratio: 16/9;
+}
+
+@media (max-width: 670px) {
+  .responsive {
+    width: 390px;
+    aspect-ratio: 16/9;
+  }
+}

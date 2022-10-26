@@ -1,10 +1,13 @@
-import  { useRef, useEffect } from 'react'
+import  { useRef, useEffect, memo } from 'react'
+import { useLocation } from "react-router-dom";
 //import video_mp4 from `${process.env.PUBLIC_URL}/videos/title-animation.mp4`
 import "src/css/molecules/SetUserCreatedVideo.css";
 
 
-export const   SetUserCreatedVideo = ( filename :any) => {
-    const user_created_file_name = filename["filename"]
+export const   SetUserCreatedVideo = memo(() => {
+  const location = useLocation()
+  const  user_created_file_name = location.state;
+    //const user_created_file_name = filename["filename"]
     const videoRef = useRef<HTMLVideoElement>(null);
     useEffect(() => {
         videoRef.current?.play();
@@ -20,6 +23,6 @@ export const   SetUserCreatedVideo = ( filename :any) => {
         </div>
       </div>
     );
-}
+})
 
 export default SetUserCreatedVideo;

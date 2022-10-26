@@ -10,23 +10,20 @@ export const Header = () => {
   return (
     <>
     <div className="header">
-      <div  className="container">
-        <Box>
-          <Grid container spacing={2} className="header-items-wrapper">
-            <Grid xs={7} className="header-title-logo-container">
-              <Link to="/">
-                <img src={`${process.env.PUBLIC_URL}/title_logo.png`}  className="header-title-logo" alt="title-logo"  />
-              </Link>
-              <img src={`${process.env.PUBLIC_URL}/movie-camera.png`} alt="movie-camera" className="header-movie-camera" />
-            </Grid>
-            <Grid xs={3}></Grid>
-            <Grid xs={2} className="header-iconlist">
-                <IconClickEffect>
-                  <div className="icon"><LoginButton  /></div>
-                </IconClickEffect>
-            </Grid>
-          </Grid>
-        </Box>
+      <div  className="header-container">
+        <div className="header-items-wrapper">
+          <div className="header-title-logo-container">
+            <Link to="/">
+              <img src={`${process.env.PUBLIC_URL}/title-logo.png`}  className="header-title-logo" alt="title-logo"  />
+            </Link>
+            <img src={`${process.env.PUBLIC_URL}/movie-camera.png`} alt="movie-camera" className="header-movie-camera" />
+          </div>
+          <div className="header-iconlist">
+              <IconClickEffect className="icon-clickeffect">
+                <div className="icon"><LoginButton  /></div>
+              </IconClickEffect>
+          </div>
+        </div>
       </div>
     </div>
     <img src={`${process.env.PUBLIC_URL}/moviefilm_line.png`} alt="moviefilm-line" className="moviefilm-line" />

@@ -7,6 +7,7 @@ import '@fontsource/roboto/700.css';
 import { QueryClient, QueryClientProvider } from 'react-query';
 import { AuthCheckProvider } from 'src/components/providers/AuthCheckprovider';
 import { GlobalProvider } from 'src/components/providers/Globalprovider';
+import { ContentVideoIdprovider } from 'src/components/providers/ContentVideoIdprovider';
 import { BrowserRouter } from 'react-router-dom';
 import { Footer } from "src/components/organisms/Footer";
 import { Header } from "src/components/organisms/Header";
@@ -19,6 +20,7 @@ function App() {
     <QueryClientProvider client={queryClient}>
       <AuthCheckProvider>
         <GlobalProvider>
+        <ContentVideoIdprovider>
           <BrowserRouter>
             <div className='App'>
               <Header />
@@ -26,6 +28,7 @@ function App() {
               <Footer />
             </div>
           </BrowserRouter>
+        </ContentVideoIdprovider>
         </GlobalProvider>
       </AuthCheckProvider>
     </QueryClientProvider>
