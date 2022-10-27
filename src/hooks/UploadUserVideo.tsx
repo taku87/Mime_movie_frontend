@@ -5,7 +5,7 @@ import { Auth0Context } from 'src/components/providers/AuthCheckprovider';
 import axios from "axios";
 import  {useState, useRef} from 'react';
 import { useNavigate } from "react-router-dom"
-
+import { REST_API_URL } from 'src/urls/index';
 import  "src/css/hooks/UploadUserVideo.css";
 
 import { useAsyncCallback } from 'react-async-hook'
@@ -36,7 +36,7 @@ export const UploadUserVideo= (id :any) => {
       const token = isAuthenticated ? await getAccessTokenSilently() : null;
       setAccessToken(token);
       console.log(token);
-      const res = await axios.get(`http://localhost:3001//api/v1/user/user_videos/${content_video_id}`,{
+      const res = await axios.get(`${REST_API_URL}/api/v1/user/user_videos/${content_video_id}`,{
         headers: {
           Authorization: `Bearer ${token}`,
           'Content-Type': 'application/json',

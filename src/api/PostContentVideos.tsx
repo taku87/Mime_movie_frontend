@@ -1,4 +1,5 @@
 import axios from 'axios';
+import { REST_API_URL } from 'src/urls/index';
 import {
   QueryClient,
   QueryClientProvider,
@@ -18,7 +19,7 @@ const ContentVideos = () => {
 
   /** POSTの処理 */
   const addContentVideos = async () => {
-    const res = await axios.post('http://localhost:3001/admin/content_videos', {
+    const res = await axios.post(`${REST_API_URL}/admin/content_videos`, {
       id: 1,
       number: 'huga',
       title: 'hoga',
