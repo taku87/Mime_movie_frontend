@@ -4,7 +4,7 @@ import "src/css/pages/MyPage.css";
 export const MyPage = () => {
   return (
     <div className="mypage">
-      <div>mypage</div>
+      <h1>mypage</h1>
       <Profile />
     </div>
   )

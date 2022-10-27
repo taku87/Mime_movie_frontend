@@ -9,7 +9,7 @@ export const  ContentVideosIndex = () => {
   <div className="content-videos-index">
 		<div className="container">
 			<div className="content-videos-index-header">
-				<div className="content-videos-index-text-first">ContentsVideos</div>
+				<h1 className="content-videos-index-text-first" >Show Room</h1>
 			</div>
 			<ContentVideosList />
 		</div>
