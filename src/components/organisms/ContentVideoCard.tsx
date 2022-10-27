@@ -57,7 +57,9 @@ export const ContentVideoCard = memo((props: ContentVideo) => {
             </div>
 
             <div className="thumbnail-frame">
-            <img src={`${process.env.PUBLIC_URL}/thumbnail/${thumbnail}`} alt="thumbnail" className="thumbnail-card" />
+              <div class="image">
+                <img src={`${process.env.PUBLIC_URL}/thumbnail/${thumbnail}`} alt="thumbnail" className="thumbnail-card" />
+              </div>
               <div className="thumbnail-door" >
                 <FlipCardButton id={id}  />
               </div>

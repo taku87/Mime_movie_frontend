@@ -5,8 +5,9 @@ import createStyles from "@material-ui/core/styles/createStyles";
 import { Theme } from "@material-ui/core/styles";
 import BottomNavigation from "@material-ui/core/BottomNavigation";
 import BottomNavigationAction from "@material-ui/core/BottomNavigationAction";
+import HomeIcon from '@mui/icons-material/Home';
 import MovieIcon from '@mui/icons-material/Movie';
-import AddAPhotoIcon from '@mui/icons-material/AddAPhoto';
+import DesktopMacIcon from '@mui/icons-material/DesktopMac';
 import AccountBoxIcon from '@mui/icons-material/AccountBox';
 import AppBar from "@material-ui/core/AppBar";
 
@@ -54,15 +55,23 @@ export const Footer = () => {
       >
         <BottomNavigationAction
           classes={actionClass}
-          label='コンテンツ一覧'
+          label='TOP'
+          icon={<HomeIcon />}
+          component={Link}
+          to="/"
+        />
+
+        <BottomNavigationAction
+          classes={actionClass}
+          label='コンテンツ'
           icon={<MovieIcon />}
           component={Link}
           to="/contents_videos"
         />
         <BottomNavigationAction
           classes={actionClass}
-          label='完成版一覧'
-          icon={<AddAPhotoIcon />}
+          label='完成版'
+          icon={<DesktopMacIcon />}
           component={Link}
           to="/completed_videos"
         />

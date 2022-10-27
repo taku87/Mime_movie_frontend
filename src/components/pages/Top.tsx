@@ -3,7 +3,7 @@ import 'src/css/pages/top.css';
 import { Link } from 'react-router-dom';
 import Button from '@mui/material/Button';
 import MovieIcon from '@mui/icons-material/Movie';
-import AddAPhotoIcon from '@mui/icons-material/AddAPhoto';
+import DesktopMacIcon from '@mui/icons-material/DesktopMac';
 import  SetDesignVideo  from 'src/components/molecules/SetDesignVideo';
 //import pic from "../public/like.png"
 import "src/css/globals/text.css"
@@ -63,7 +63,7 @@ export const Top = () => {
 
         <div className="link-button">
           <Button variant="contained"
-                  startIcon={<AddAPhotoIcon />}
+                  startIcon={<DesktopMacIcon  />}
                   component={Link}
                   to="/completed_videos"
                   color="success"

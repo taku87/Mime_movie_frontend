@@ -16,6 +16,7 @@ import 'src/css/pages/ContentVideoShow.css';
 import 'src/css/globals/text.css';
 
 
+
 interface State {
   id: number;
 }
@@ -55,7 +56,7 @@ const GetContentVideo = memo(() => {
     <div className="content-video-show">
       <div className="container">
         <div className="content-videos-show-header">
-          <h2>ContentsVideos</h2>
+          <h1 className="content-videos-show-text-first" >Filming Room</h1>
         </div>
         <div className="content-videos-show-container-secondary">
           {/** query.isLoadingがtureのとき、つまり、ロード中はクラスネームのローダーのやつが表示*/}

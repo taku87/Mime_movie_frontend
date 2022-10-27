@@ -13,6 +13,7 @@ export const CompletedVideoShowCard = () => {
           <SetYoutubeVideo videoid={"7BAJuWQYeyw"} className="youtube" />
           <img src={`${process.env.PUBLIC_URL}/movie-curtain.png`} alt="movie-curtain" className="completed-video-design-frame-curtain" />
           <img src={`${process.env.PUBLIC_URL}/movie-light.png`} alt="movie-light" className="completed-video-design-bottom" />
+          <img src={`${process.env.PUBLIC_URL}/mrmime-popcorn.png`} alt="mrmime-popcorn" className="completed-video-mrmime-popcorn" />
         </div>
       </div>
 

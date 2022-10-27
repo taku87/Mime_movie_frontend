@@ -33,18 +33,45 @@
   width: 100%;
 }
 
+.image {
+  position: relative;
+}
+
+.image::before,
+.image::after {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 0;
+  border-style: solid;
+}
+
+.image::before {
+  top: -15px;
+  right: -15px;
+  border-width: 0 50px 50px 0;
+  border-color: transparent #053e62 transparent transparent;
+}
+
+.image::after {
+  bottom: -15px;
+  left: -15px;
+  border-width: 50px 0 0 50px;
+  border-color: transparent transparent transparent #053e62;
+}
+
 .thumbnail-door {
   width: 20%;
   position: absolute;
-  bottom: 230px;
-  left: 20px;
+  bottom: 240px;
+  left: 50px;
 }
 
 @media (max-width: 670px) {
   .thumbnail-door {
     width: 20%;
     position: absolute;
-    bottom: 125px;
+    bottom: 130px;
     left: 20px;
   }
 }
