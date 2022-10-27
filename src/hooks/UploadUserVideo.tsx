@@ -85,10 +85,10 @@ export const UploadUserVideo= (id :any) => {
 
   const handleSubmission = () => {
     const update_res = async () => {
-    await axios.post(selectedUrls, selectedFile,{
+    await axios.put(selectedUrls, selectedFile,{
       headers: {
         'Access-Control-Allow-Origin': "*",
-        'Content-Type': selectedFile.type
+        'Content-Type': selectedFile.type,
       },
     })
       .then((res) => {
