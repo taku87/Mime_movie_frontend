@@ -1,0 +1,34 @@
+.mypage,
+.content-videos-index,
+.content-video-show {
+  min-height: 900px;
+  width: 100%;
+  padding-top: 0px;
+  padding-bottom: 100px;
+}
+
+.completed-videos-index {
+  background-color: darkgray;
+  min-height: 900px;
+  width: 100%;
+  padding-top: 35px;
+  padding-bottom: 100px;
+}
+
+.mypage-container,
+.content-videos-index-container,
+.content-video-show-container,
+.completed-videos-container {
+  margin: 0 auto;
+  width: 80%;
+}
+
+.mypage-header,
+.content-videos-index-header,
+.content-videos-show-header,
+.completed-videos-index-header {
+  margin-bottom: 50px;
+}
+
+@media (max-width: 670px) {
+}

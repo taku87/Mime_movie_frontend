@@ -14,6 +14,7 @@ import { SetExampleVideo } from "src/components/molecules/SetExampleVideo";
 import { UploadUserVideo } from "src/hooks/UploadUserVideo";
 import 'src/css/pages/ContentVideoShow.css';
 import 'src/css/globals/text.css';
+import "src/css/globals/common.css";
 
 
 
@@ -54,7 +55,7 @@ const GetContentVideo = memo(() => {
 
   return (
     <div className="content-video-show">
-      <div className="container">
+      <div className="content-video-show-container">
         <div className="content-videos-show-header">
           <h1 className="content-videos-show-text-first" >Filming Room</h1>
         </div>
@@ -83,6 +84,7 @@ const GetContentVideo = memo(() => {
           <div className="content-video-show-third-part">
             <h1 className="content-videos-show-text-first">Are you ready? Let's TRY!</h1>
             <p className="content-videos-show-text-second">『CREATE』であなたから始まる『MOVIE』!</p>
+            <p className="content-videos-show-text-third">ファイルをアップロードしてcreate!のボタンを押してね!</p>
 
           </div>
           <UploadUserVideo id = { contentVideo.attributes.id } />

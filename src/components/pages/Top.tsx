@@ -6,7 +6,8 @@ import MovieIcon from '@mui/icons-material/Movie';
 import DesktopMacIcon from '@mui/icons-material/DesktopMac';
 import  SetDesignVideo  from 'src/components/molecules/SetDesignVideo';
 //import pic from "../public/like.png"
-import "src/css/globals/text.css"
+import "src/css/globals/text.css";
+import "src/css/globals/common.css";
 
 export const Top = () => {
   return (
@@ -27,7 +28,7 @@ export const Top = () => {
         <div>
           <h1 className="top-text-first">What is MIME MOVIE ?</h1>
           <div class="card_textbox">
-            <p className="top-text-second">→あなたが『撮った映像』から『物語が始まる』映像を作るアプリ</p>
+            <p className="top-text-second">→『あなたが撮った』映像から『物語が始まる』映像を作るアプリ</p>
           </div>
         </div>
 

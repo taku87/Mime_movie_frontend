@@ -3,6 +3,7 @@
 }
 
 .top {
+  min-height: 900px;
   margin-top: 10px;
   padding-bottom: 100px;
 }
@@ -27,7 +28,7 @@
 }
 
 .link-button {
-  margin: 10px 0;
+  margin: 20px 0;
 }
 
 @media (max-width: 670px) {

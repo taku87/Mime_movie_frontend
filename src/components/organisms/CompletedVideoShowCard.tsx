@@ -10,7 +10,7 @@ export const CompletedVideoShowCard = () => {
       <div className="set-completed-video-wrapper">
         <h1 className="completed-video-card-text" >Now Showing</h1>
         <div className="completed-video-design-frame">
-          <SetYoutubeVideo videoid={"7BAJuWQYeyw"} className="youtube" />
+          <SetYoutubeVideo videoid={"BZeHfLsVMTo"} className="youtube" />
           <img src={`${process.env.PUBLIC_URL}/movie-curtain-left.png`} alt="movie-curtain" className="completed-video-design-frame-curtain-left" />
           <img src={`${process.env.PUBLIC_URL}/movie-curtain-right.png`} alt="movie-curtain" className="completed-video-design-frame-curtain-right" />
           <img src={`${process.env.PUBLIC_URL}/movie-light.png`} alt="movie-light" className="completed-video-design-bottom" />

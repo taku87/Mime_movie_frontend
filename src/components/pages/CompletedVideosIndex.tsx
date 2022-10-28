@@ -1,6 +1,7 @@
 // @ts-nocheck
 import {CompletedVideoShowCard} from "src/components/organisms/CompletedVideoShowCard";
 import "src/css/pages/CompletedVideosIndex.css";
+import "src/css/globals/common.css";
 
 export const CompletedVideosIndex = () => {
   return (

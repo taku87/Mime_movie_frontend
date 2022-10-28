@@ -36,7 +36,7 @@ export const UploadUserVideo= (id :any) => {
       const token = isAuthenticated ? await getAccessTokenSilently() : null;
       setAccessToken(token);
       console.log(token);
-      const res = await axios.get(`${REST_API_URL}/api/v1/user/user_videos/${content_video_id}`,{
+      const res = await axios.get(`${REST_API_URL}/user/user_videos/${content_video_id}`,{
         headers: {
           Authorization: `Bearer ${token}`,
           'Content-Type': 'application/json',

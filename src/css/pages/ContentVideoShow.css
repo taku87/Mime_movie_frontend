@@ -1,26 +1,7 @@
-.content-video-show {
-}
-
-.content-video-show .container {
-  width: 90%;
-  margin: 0 auto;
-  margin-top: 20px;
-  padding-bottom: 50px;
-}
-
-.content-videos-show-header {
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-  height: 30px;
-}
-
-.content-videos-show-container-secondary {
-  margin-top: 20px;
-}
-
 .content-video-show-first-part {
   width: 100%;
   display: flex;
-  margin-bottom: 100px;
+  margin-bottom: 150px;
 }
 
 .content-video-show-card {
@@ -41,11 +22,58 @@
 }
 
 .lecture-photo {
-  margin-top: 50px;
   width: 90%;
 }
 
+@media screen and (max-width: 1100px) {
+  .content-video-show-first-part {
+    width: 100%;
+    display: flex;
+    margin-bottom: 0px;
+  }
+}
+
+@media screen and (max-width: 960px) {
+  .content-video-show-first-part {
+    width: 100%;
+    display: flex;
+    margin-bottom: 0px;
+  }
+}
+
 @media (max-width: 670px) {
+  .content-video-show-first-part {
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+    margin-bottom: 250px;
+  }
+
+  .content-video-show-second-part {
+    margin-top: 50px;
+  }
+
+  .content-video-show-card {
+    width: 100%;
+    margin-right: 10px;
+    margin-left: 10px;
+    height: 300px;
+  }
+
+  .example-video {
+    width: 100%;
+    margin-top: 30px;
+    margin-right: 10px;
+    margin-left: 10px;
+    height: 250px;
+  }
+
+  .lecture-photo {
+    width: 100%;
+  }
+}
+
+@media (max-width: 390px) {
   .content-video-show-first-part {
     display: flex;
     flex-direction: column;
