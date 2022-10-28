@@ -12,6 +12,26 @@
   color: #e3b587;
 }
 
+.info-title {
+  font-family: "Hiragino Kaku Gothic ProN", "ヒラギノ角ゴ ProN W3", sans-serif;
+  font-size: 30px;
+}
+
+.info-description {
+  font-family: "Hiragino Kaku Gothic ProN", "ヒラギノ角ゴ ProN W3", sans-serif;
+  font-size: 15px;
+}
+
+@media (max-width: 670px) {
+  .info-title {
+    font-size: 20px;
+  }
+
+  .info-description {
+    font-size: 15px;
+  }
+}
+
 .information-box p {
   line-height: 1.5;
 }

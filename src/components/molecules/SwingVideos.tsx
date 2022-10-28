@@ -21,7 +21,7 @@ const {contentVideos} =  props;
         dir="rtl"
         loop={true}
         spaceBetween={30}
-        slidesPerView={2}
+        slidesPerView={1.5}
         autoplay={{ delay: 0, disableOnInteraction: false }}
         speed={10000}
       >

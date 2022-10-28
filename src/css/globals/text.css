@@ -18,32 +18,23 @@
   text-shadow: 0 0 15px #ffffff;
 }
 
-.mypage-text-first {
-  font-family: Georgia, "Times New Roman", Times, serif;
-  font-size: 60px;
-  color: #314357;
-  text-shadow: 0 0 15px #ffffff;
-}
-
-.content-videos-index-text-first {
-  font-family: Georgia, "Times New Roman", Times, serif;
-  font-size: 60px;
-  color: #314357;
-  text-shadow: 0 0 15px #ffffff;
-}
-
-.content-videos-show-text-first {
-  font-family: Georgia, "Times New Roman", Times, serif;
-  font-size: 60px;
-  color: #314357;
-  text-shadow: 0 0 15px #ffffff;
-}
-
+.mypage-text-first,
+.content-videos-index-text-first,
+.content-videos-show-text-first,
 .completed-videos-index-text-first {
   font-family: Georgia, "Times New Roman", Times, serif;
   font-size: 60px;
   color: #314357;
   text-shadow: 0 0 15px #ffffff;
+}
+
+@media (max-width: 670px) {
+  .mypage-text-first,
+  .content-videos-index-text-first,
+  .content-videos-show-text-first,
+  .completed-videos-index-text-first {
+    font-size: 35px;
+  }
 }
 
 .top-text-second {

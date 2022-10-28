@@ -23,6 +23,11 @@
   width: 80%;
 }
 
+.completed-videos-container {
+  margin: 0 auto;
+  width: 100%;
+}
+
 .mypage-header,
 .content-videos-index-header,
 .content-videos-show-header,

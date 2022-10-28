@@ -40,12 +40,12 @@ export const ContentVideoCard = memo((props: ContentVideo) => {
           <div>
             <div className="content-video-card-information-list">
               <div className="information-box">
-                  <Typography gutterBottom variant="h5" component="div">
+                  <div  className="info-title" >
                     {title}
-                  </Typography>
-                  <Typography variant="body2" >
+                  </div>
+                  <div className="info-description" >
                     {description}
-                  </Typography>
+                  </div>
               </div>
             </div>
             <div className="content-video-card-button-list">
