@@ -1,11 +1,5 @@
-.text {
-  white-space: pre-wrap;
-}
-
 .top {
-  min-height: 900px;
   margin-top: 10px;
-  padding-bottom: 100px;
 }
 
 .container {
