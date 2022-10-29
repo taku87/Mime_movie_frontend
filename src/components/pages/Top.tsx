@@ -19,11 +19,7 @@ export const Top = () => {
           </div>
         </div>
 
-        <h1 className="top-text-first">Do you know 『panto mime』?</h1>
-
-        <div className="eyecatch-movie" >
-          <SetDesignVideo url={"title-animation"} />
-        </div>
+        {/* <h1 className="top-text-first">Do you know 『panto mime』?</h1> */}
 
         <div>
           <h1 className="top-text-first">What is MIME MOVIE ?</h1>

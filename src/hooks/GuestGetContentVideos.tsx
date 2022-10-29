@@ -1,6 +1,5 @@
-
-  // @ts-nocheck
-import { React, memo } from 'react';
+// @ts-nocheck
+import { memo } from 'react';
 import { useState } from 'react';
 import axios from 'axios';
 import { REST_API_URL } from 'src/urls/index';
@@ -38,7 +37,9 @@ export const GuestGetContentVideos = memo(() => {
       );
     }
 
-    if (contentVideos.length === 0) {
+    console.log(contentVideos)
+
+    if (contentVideos === void 0 || contentVideos.length === 0) {
       return (
         <div style={{ textAlign: 'center', marginTop: '40px' }}>
           <p style={{ fontSize: '13px' }}>
@@ -48,6 +49,7 @@ export const GuestGetContentVideos = memo(() => {
         </div>
       )
     }
+
 
     return (
       <div className="container">
