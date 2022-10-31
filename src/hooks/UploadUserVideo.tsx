@@ -3,6 +3,7 @@ import { useContext } from 'react';
 import { useAuth0 } from '@auth0/auth0-react';
 import { Auth0Context } from 'src/components/providers/AuthCheckprovider';
 import axios from "axios";
+import AWS from 'aws-sdk';
 import  {useState, useRef} from 'react';
 import { useNavigate } from "react-router-dom"
 import { REST_API_URL } from 'src/urls/index';
@@ -31,6 +32,19 @@ export const UploadUserVideo= (id :any) => {
   const inputRef = useRef(null)
   const [ setFormState ] = useState(initialState)
   const [success, setSuccess] = useState(false)
+
+  const AWS_ACCESS_KEY = process.env.REACT_APP_AWS_ACCESS_KEY_ID;
+  const AWS_SECRET_KEY = process.env.REACT_APP_AWS_SECRET_ACCESS_KEY;
+  const BUCKET = "user-videos-s3-01";
+  const s3 = new AWS.S3();
+
+
+  AWS.config.update({
+    accessKeyId: AWS_ACCESS_KEY,
+    secretAccessKey: AWS_SECRET_KEY,
+    region: 'ap-northeast-1'
+  });
+
 
     const uploadFile = async (file: any) => {
       const token = isAuthenticated ? await getAccessTokenSilently() : null;
@@ -83,6 +97,26 @@ export const UploadUserVideo= (id :any) => {
     console.log(selectedUrls)
     console.log(createdFileName)
 
+
+    const handleSubmission = () => {
+      try {
+        const params = {
+          Bucket: BUCKET,
+          Key: createdFileName,
+          ContentType: selectedFile.type,
+          Body: selectedFile,
+        };
+
+        const res = s3.putObject(params).promise();
+        navigate('/created_video', { state: createdFileName })
+      } catch (error) {
+        console.log(error);
+        return;
+      }
+    }
+
+
+{/*
   const handleSubmission = () => {
     const update_res = async () => {
     await axios.put(selectedUrls, selectedFile,{
@@ -102,6 +136,7 @@ export const UploadUserVideo= (id :any) => {
     }
     update_res()
   }
+*/}
 
   return (
     <div className="upload-user-video">
@@ -139,3 +174,4 @@ export const UploadUserVideo= (id :any) => {
 
 
 export default UploadUserVideo;
+
