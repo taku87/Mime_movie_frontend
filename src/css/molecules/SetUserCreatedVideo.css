@@ -1,4 +1,5 @@
 .set-user-created-video-wrapper {
+  min-height: 900px;
 }
 
 .created-video-design-frame {
@@ -8,24 +9,33 @@
   height: 800px;
 }
 
-.created-video-design-frame-curtain {
-  position: absolute;
-  top: -50px;
-  left: -95px;
-}
-
 .user-created-video {
-  border-top: 40px solid;
-  border-bottom: 30px solid;
-  border-right: 25px solid;
-  border-left: 25px solid;
-  width: 800px;
-  height: 450px;
   margin: 15px auto;
   box-shadow: rgba(255, 238, 0, 0.56) 0px 22px 70px 4px;
 }
 
-.user-created-video-design-bottom {
+.user-created-video {
   width: 800px;
-  height: 200px;
+  aspect-ratio: 16/9;
+}
+
+@media (max-width: 900px) {
+  .user-created-video {
+    width: 600px;
+    aspect-ratio: 16/9;
+  }
+}
+
+@media (max-width: 670px) {
+  .user-created-video {
+    width: 390px;
+    aspect-ratio: 16/9;
+  }
+}
+
+@media (max-width: 390px) {
+  .user-created-video {
+    width: 100vw;
+    aspect-ratio: 16/9;
+  }
 }

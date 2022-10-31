@@ -1,6 +1,10 @@
 .text {
   white-space: pre-wrap;
 }
+.big-text {
+  font-size: 25px;
+  font-family: Georgia, "Times New Roman", Times, serif;
+}
 
 .card_textbox {
   width: 100%;
@@ -9,6 +13,30 @@
   background: #fff;
   box-sizing: border-box;
   box-shadow: 10px 5px 5px #314357;
+}
+
+.card_textbox-v2 {
+  width: 100%;
+  height: auto;
+  background: #314357;
+  box-sizing: border-box;
+  box-shadow: 10px 5px 5px #fff;
+}
+
+.card-loading {
+  width: 250px;
+  margin: 15px auto;
+  padding: 5px;
+  height: auto;
+  background: #314357;
+  box-sizing: border-box;
+  box-shadow: 10px 5px 5px #fff;
+}
+
+.card-loading-text {
+  font-family: HanziPen TC;
+  font-size: 25px;
+  color: #fff;
 }
 
 .top-text-first {
@@ -52,18 +80,28 @@
 
 .content-videos-show-text-second {
   display: inline-block;
-  font-size: 30px;
-  font-family: "AcademyEngravedLetPlain", sans-serif;
-  text-shadow: 0 0 10px #ffffff;
+  font-size: 20px;
+  font-family: HanziPen TC;
+  color: #fff;
   white-space: pre-wrap;
+}
+
+.content-videos-show-text-second span {
+  font-family: "AcademyEngravedLetPlain", sans-serif;
+  font-size: 35px;
 }
 
 .content-videos-show-text-third {
   display: inline-block;
   font-size: 20px;
-  font-family: "AcademyEngravedLetPlain", sans-serif;
-  text-shadow: 0 0 10px #ffffff;
+  font-family: HanziPen TC;
+  color: #fff;
   white-space: pre-wrap;
+}
+
+.content-videos-show-text-third span {
+  font-family: "AcademyEngravedLetPlain", sans-serif;
+  font-size: 35px;
 }
 
 .completed-videos-index-text-second {

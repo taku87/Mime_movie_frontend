@@ -83,8 +83,10 @@ const GetContentVideo = memo(() => {
 
           <div className="content-video-show-third-part">
             <h1 className="content-videos-show-text-first">Are you ready? Let's TRY!</h1>
-            <p className="content-videos-show-text-second">『CREATE』であなたから始まる『MOVIE』!</p>
-            <p className="content-videos-show-text-third">ファイルをアップロードしてcreate!のボタンを押してね!</p>
+            <div className='card_textbox-v2' >
+              <p className="content-videos-show-text-second"><span>『CREATE』</span>であなたから始まる<span>『MOVIE』!</span></p>
+              <p className="content-videos-show-text-third">ファイルをアップロードして<span>create!</span>のボタンを押してね!</p>
+            </div>
 
           </div>
           <UploadUserVideo id = { contentVideo.attributes.id } />

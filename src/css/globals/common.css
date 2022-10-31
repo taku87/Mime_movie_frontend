@@ -20,7 +20,8 @@
 .mypage-container,
 .content-videos-index-container,
 .content-video-show-container,
-.completed-videos-container {
+.completed-videos-container,
+.loading-text-container {
   margin: 0 auto;
   width: 80%;
 }

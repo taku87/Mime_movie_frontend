@@ -2,7 +2,9 @@ import  { useRef, useEffect, memo } from 'react'
 import { useLocation } from "react-router-dom";
 //import video_mp4 from `${process.env.PUBLIC_URL}/videos/title-animation.mp4`
 import "src/css/molecules/SetUserCreatedVideo.css";
-
+import 'src/css/organisms/CompletedVideoShowCard.css';
+import "src/css/globals/text.css";
+import {LoadingCountButton} from "src/components/molecules/LoadingCountButton";
 
 export const   SetUserCreatedVideo = memo(() => {
   const location = useLocation()
@@ -13,13 +15,17 @@ export const   SetUserCreatedVideo = memo(() => {
         videoRef.current?.play();
     }, []);
     return (
-      <div className="user-created-video-wrapper">
-        <div className="created-video-design-frame">
+      <div className="set-user-created-video-wrapper">
+        <LoadingCountButton />
+        <h1 className="completed-video-card-text" >Now Showing</h1>
+        <div className="completed-video-design-frame">
           <video className="user-created-video" controls ref={videoRef} >
             <source src={`https://completed-videos-s3-01.s3.ap-northeast-1.amazonaws.com/${user_created_file_name}_completed.mp4`} type="video/mp4" />
           </video>
-          <img src={`${process.env.PUBLIC_URL}/movie-curtain.png`} alt="movie-curtain" className="created-video-design-frame-curtain" />
-          <img src={`${process.env.PUBLIC_URL}/movie-light.png`} alt="movie-light" className="user-created-video-design-bottom" />
+          <img src={`${process.env.PUBLIC_URL}/movie-curtain-left.png`} alt="movie-curtain" className="completed-video-design-frame-curtain-left" />
+          <img src={`${process.env.PUBLIC_URL}/movie-curtain-right.png`} alt="movie-curtain" className="completed-video-design-frame-curtain-right" />
+          <img src={`${process.env.PUBLIC_URL}/movie-light.png`} alt="movie-light" className="completed-video-design-bottom" />
+          <img src={`${process.env.PUBLIC_URL}/mrmime-popcorn.png`} alt="mrmime-popcorn" className="completed-video-mrmime-popcorn" />
         </div>
       </div>
     );
