@@ -7,7 +7,7 @@ import "src/css/atoms/PushButton.css";
 export const LoadingCountButton = () => {
   const [count,setCount] = useState(0);
   const countUp = () => {
-    setCount(count + 4);
+    setCount(count + 2);
   }
 
   return  (
