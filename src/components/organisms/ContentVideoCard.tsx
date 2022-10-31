@@ -17,6 +17,7 @@ export const ContentVideoCard = memo((props: ContentVideo) => {
     description,
     thumbnail,
     liked,
+    state,
   } = props;
   const [likedState, setLikedState] = useState(liked);
 
@@ -61,7 +62,11 @@ export const ContentVideoCard = memo((props: ContentVideo) => {
                 <img src={`${process.env.PUBLIC_URL}/thumbnail/${thumbnail}`} alt="thumbnail" className="thumbnail-card" />
               </div>
               <div className="thumbnail-door" >
-                <FlipCardButton id={id}  />
+                { state === "draft" ? (
+                  <div className="door-waiting"></div>
+                  ) : (
+                      <FlipCardButton id={id}  />
+                    )}
               </div>
             </div>
           </div>

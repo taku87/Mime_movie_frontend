@@ -7,6 +7,28 @@
   margin-bottom: 60px;
 }
 
+.door-waiting {
+  position: absolute;
+  width: 130px;
+  height: 220px;
+  background-image: url(src/assets/design/door-waiting.png);
+  background-size: cover;
+}
+
+@media (max-width: 700px) {
+  .door-waiting {
+    width: 91px;
+    height: 154px;
+  }
+}
+
+@media (max-width: 460px) {
+  .door-waiting {
+    width: 65px;
+    height: 110px;
+  }
+}
+
 .information-box {
   padding: 1rem;
   box-shadow: 10px 10px 0 #e3b587;

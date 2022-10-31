@@ -74,6 +74,7 @@ import type { ContentVideo } from "src/types/contentvideo";
               description = {content_video.attributes.description}
               thumbnail = {content_video.attributes.thumbnail}
               liked = {content_video.attributes.liked}
+              state = {content_video.attributes.state}
             />
         ))}
       </div>
