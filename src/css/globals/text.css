@@ -99,6 +99,14 @@
   white-space: pre-wrap;
 }
 
+.content-videos-show-text-fourth {
+  display: inline-block;
+  font-size: 35px;
+  font-family: HanziPen TC;
+  color: #fff;
+  white-space: pre-wrap;
+}
+
 .content-videos-show-text-third span {
   font-family: "AcademyEngravedLetPlain", sans-serif;
   font-size: 35px;

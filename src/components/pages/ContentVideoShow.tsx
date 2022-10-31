@@ -1,4 +1,6 @@
 // @ts-nocheck
+import { useContext } from 'react';
+import { Auth0Context } from 'src/components/providers/AuthCheckprovider';
 import { useState, memo } from 'react';
 import axios from 'axios';
 import { REST_API_URL } from 'src/urls/index';
@@ -23,6 +25,7 @@ interface State {
 }
 
 const GetContentVideo = memo(() => {
+  const { accessToken } = useContext(Auth0Context);
   const [contentVideo, setContentVideo ] = useState<ContentVideo[]>([]);
   const location = useLocation();
   const { id } = location.state as State || {};
@@ -89,14 +92,16 @@ const GetContentVideo = memo(() => {
             </div>
 
           </div>
-          <UploadUserVideo id = { contentVideo.attributes.id } />
+          { accessToken ? (
+            <UploadUserVideo id = { contentVideo.attributes.id } />
+            ) : (
+                <h1 className="content-videos-show-text-fourth">Sorry! Please Login!</h1>
+              )}
         </div>
       </div>
     </div>
   )
 });
-
-
 
 export const ContentVideoShow= memo(() => {
   const queryClient = new QueryClient();
