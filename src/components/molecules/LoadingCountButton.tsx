@@ -14,8 +14,11 @@ export const LoadingCountButton = () => {
     <div className='text'>
     <div className='loading-text-container'>
         <div className='card_textbox' >
-          <p>{`
-          動画撮影、投稿ありがとう！ちなみにまだ映像は流れてないと思うんだが、\n
+          
+          <p>
+          <span className='big-text'>動画撮影、投稿ありがとう！</span>
+          {`
+          \nちなみにまだ映像は流れてないと思うんだが、\n
           今、裏でめちゃくちゃ頑張って動画加工の処理が行われているからごめんな、もうちょっと待ってくれ。\n
           こんな時に、オシャレでリッチな”ロード中”のアニメーションと、\n
           動画完成を検知して自動リロードをかける処理、みたいな小粋なものを実装できたらよかったんだけど、\n
