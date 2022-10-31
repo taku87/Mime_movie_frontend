@@ -81,7 +81,7 @@ const GetContentVideo = memo(() => {
           </div>
 
           <div className="content-video-show-second-part">
-            <img src={`${process.env.PUBLIC_URL}/mrmime-point-frame.png`} className="lecture-photo" alt="mrmime-point-frame"  />
+            <img src={`${process.env.PUBLIC_URL}/mrmime-point-frame-${contentVideo.attributes.number}.png`} className="lecture-photo" alt="mrmime-point-frame"  />
           </div>
 
           <div className="content-video-show-third-part">
