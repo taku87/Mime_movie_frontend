@@ -22,7 +22,6 @@ const initialState = {
 export const UploadUserVideo= (id :any) => {
   const {isAuthenticated,getAccessTokenSilently } = useAuth0();
   const { accessToken, setAccessToken } = useContext(Auth0Context);
-  const [selectedUrls, setSelectedUrls] = useState<string>("");
   const [createdFileName, setCreatedFileName] = useState<string>("");
   const [selectedFile, setSelectedFile] = useState<File | null>(null)
   //const [uploadedState, setUploadedState] = useState<boolean>(false);
@@ -56,10 +55,9 @@ export const UploadUserVideo= (id :any) => {
           'Content-Type': 'application/json',
         },
       })
-      const S3DirectPost = await res.data
-      setSelectedUrls(S3DirectPost["presigned_url"]);
-      setCreatedFileName(S3DirectPost["key"]);
-      console.log(S3DirectPost)
+      const upload_file_name = await res.data
+      setCreatedFileName(upload_file_name["key"]);
+      console.log(upload_file_name)
 
       if (!file) return
       /* アップロード処理に見立てた時間のかかる処理 */
@@ -85,7 +83,7 @@ export const UploadUserVideo= (id :any) => {
     }
 
     const clickFileUploadButton = () => {
-      /* おそらくアップロードボタンのクリックで着火するイベント。成功ステータスを一旦戻してる。
+      /* アップロードボタンのクリックで着火するイベント。成功ステータスを一旦戻してる。
       inputRef.current.click()は、別のDOM要素のイベントを起動する処理に使われる→今回はinputタグを参照している */
       setSuccess(false)
       inputRef.current.click()
@@ -94,8 +92,7 @@ export const UploadUserVideo= (id :any) => {
     const asyncEvent = useAsyncCallback(onFileInputChange);
 
     console.log(selectedFile);
-    console.log(selectedUrls)
-    console.log(createdFileName)
+    console.log(createdFileName);
 
 
     const handleSubmission = () => {
@@ -114,29 +111,6 @@ export const UploadUserVideo= (id :any) => {
         return;
       }
     }
-
-
-{/*
-  const handleSubmission = () => {
-    const update_res = async () => {
-    await axios.put(selectedUrls, selectedFile,{
-      headers: {
-        'Access-Control-Allow-Origin': "*",
-        'Content-Type': selectedFile.type,
-      },
-    })
-      .then((res) => {
-        navigate('/created_video', { state: createdFileName })
-        console.log(res.data)
-        //setUploadedState(true);
-      })
-      .catch((error) => {
-        console.error();
-      });
-    }
-    update_res()
-  }
-*/}
 
   return (
     <div className="upload-user-video">
@@ -172,6 +146,4 @@ export const UploadUserVideo= (id :any) => {
   )
 };
 
-
 export default UploadUserVideo;
-
