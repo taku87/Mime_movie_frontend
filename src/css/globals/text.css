@@ -8,6 +8,12 @@
   font-family: HanziPen TC;
 }
 
+@media (max-width: 400px) {
+  .big-text {
+    font-family: "Kaisei Opti", serif;
+  }
+}
+
 .card_textbox {
   width: 100%;
   height: auto;
@@ -102,6 +108,7 @@
 
   .content-videos-show-text-second {
     font-size: 20px;
+    font-family: "Kaisei Opti", serif;
     white-space: pre-wrap;
   }
 
@@ -113,7 +120,7 @@
 .content-videos-show-text-third {
   display: inline-block;
   font-size: 20px;
-  font-family: HanziPen TC;
+  font-family: "Kaisei Opti", serif;
   color: #fff;
   white-space: pre-wrap;
 }
