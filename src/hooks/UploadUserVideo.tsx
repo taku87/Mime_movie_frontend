@@ -65,7 +65,7 @@ export const UploadUserVideo= (id :any) => {
       sleep()の処理が完了（返り値がくる）までawaitしている。そして、resolveは５秒のディレイ処理がされている
        */
       const sleep = ms => new Promise(resolve => setTimeout(resolve, ms))
-      await sleep(3000)
+      await sleep(2000)
 
       /* アップロード処理が成功したらフォームの状態を
           初期化してsuccessステートをtrueにする */
