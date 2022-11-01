@@ -4,6 +4,7 @@ import { useLocation } from "react-router-dom";
 import "src/css/molecules/SetUserCreatedVideo.css";
 import 'src/css/organisms/CompletedVideoShowCard.css';
 import "src/css/globals/text.css";
+import "src/css/globals/common.css";
 import {LoadingCountButton} from "src/components/molecules/LoadingCountButton";
 
 export const   SetUserCreatedVideo = memo(() => {
