@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Kaisei+Opti&display=swap");
+
 .text {
   white-space: pre-wrap;
 }
@@ -17,6 +19,7 @@
 
 .card_textbox-v2 {
   width: 100%;
+  padding: 0 10px;
   height: auto;
   background: #314357;
   box-sizing: border-box;
@@ -89,6 +92,22 @@
 .content-videos-show-text-second span {
   font-family: "AcademyEngravedLetPlain", sans-serif;
   font-size: 35px;
+}
+
+@media (max-width: 400px) {
+  .top-text-first,
+  .top-text-second {
+    font-family: "Kaisei Opti", serif;
+  }
+
+  .content-videos-show-text-second {
+    font-size: 20px;
+    white-space: pre-wrap;
+  }
+
+  .content-videos-show-text-second span {
+    font-size: 30px;
+  }
 }
 
 .content-videos-show-text-third {
