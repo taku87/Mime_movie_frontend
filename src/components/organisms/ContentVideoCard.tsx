@@ -6,7 +6,6 @@ import { FlipCardButton } from "src/components/molecules/FlipCardButton";
 import type { ContentVideo } from "src/types/contentvideo"
 
 import 'src/css/organisms/ContentVideoCard.css';
-import Typography from '@mui/material/Typography';
 import Grid from '@mui/material/Unstable_Grid2';
 
 

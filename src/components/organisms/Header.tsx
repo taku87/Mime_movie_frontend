@@ -1,9 +1,6 @@
 import 'src/css/organisms/header.css';
-import * as React from 'react';
 import { Link } from 'react-router-dom';
 import { LoginButton } from "src/components/molecules/LoginButton";
-import Box from '@mui/material/Box';
-import Grid from '@mui/material/Unstable_Grid2';
 import { IconClickEffect }  from "src/hooks/IconClickEffect"
 
 export const Header = () => {

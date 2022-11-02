@@ -1,6 +1,4 @@
 // @ts-nocheck
-import { useContext } from 'react';
-import { Auth0Context } from 'src/components/providers/AuthCheckprovider';
 import { useAuth0 } from '@auth0/auth0-react';
 import { useState, memo } from 'react';
 import axios from 'axios';
@@ -26,7 +24,6 @@ interface State {
 }
 
 const GetContentVideo = memo(() => {
-  const { accessToken } = useContext(Auth0Context);
   const { isAuthenticated } = useAuth0();
   const [contentVideo, setContentVideo ] = useState<ContentVideo[]>([]);
   const location = useLocation();

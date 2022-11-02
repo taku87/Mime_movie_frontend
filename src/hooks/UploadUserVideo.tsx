@@ -21,7 +21,7 @@ const initialState = {
 
 export const UploadUserVideo= (id :any) => {
   const {isAuthenticated,getAccessTokenSilently } = useAuth0();
-  const { accessToken, setAccessToken } = useContext(Auth0Context);
+  const { setAccessToken } = useContext(Auth0Context);
   const [createdFileName, setCreatedFileName] = useState<string>("");
   const [selectedFile, setSelectedFile] = useState<File | null>(null)
   //const [uploadedState, setUploadedState] = useState<boolean>(false);
@@ -29,7 +29,7 @@ export const UploadUserVideo= (id :any) => {
   const navigate = useNavigate()
 
   const inputRef = useRef(null)
-  const [ formState, setFormState ] = useState(initialState)
+  const [ setFormState ] = useState(initialState)
   const [success, setSuccess] = useState(false)
 
   const AWS_ACCESS_KEY = process.env.REACT_APP_AWS_ACCESS_KEY_ID;
@@ -105,6 +105,7 @@ export const UploadUserVideo= (id :any) => {
         };
 
         const res = s3.putObject(params).promise();
+        console.log(res)
         navigate('/created_video', { state: createdFileName })
       } catch (error) {
         console.log(error);
