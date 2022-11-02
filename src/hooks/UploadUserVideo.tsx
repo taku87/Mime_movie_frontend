@@ -4,7 +4,7 @@ import { useAuth0 } from '@auth0/auth0-react';
 import { Auth0Context } from 'src/components/providers/AuthCheckprovider';
 import axios from "axios";
 import AWS from 'aws-sdk';
-import  {useState, useRef} from 'react';
+import  { useState, useRef } from 'react';
 import { useNavigate } from "react-router-dom"
 import { REST_API_URL } from 'src/urls/index';
 import  "src/css/hooks/UploadUserVideo.css";
@@ -29,7 +29,7 @@ export const UploadUserVideo= (id :any) => {
   const navigate = useNavigate()
 
   const inputRef = useRef(null)
-  const [ setFormState ] = useState(initialState)
+  const [ formState, setFormState ] = useState(initialState)
   const [success, setSuccess] = useState(false)
 
   const AWS_ACCESS_KEY = process.env.REACT_APP_AWS_ACCESS_KEY_ID;
@@ -54,7 +54,7 @@ export const UploadUserVideo= (id :any) => {
           Authorization: `Bearer ${token}`,
           'Content-Type': 'application/json',
         },
-      })
+      });
       const upload_file_name = await res.data
       setCreatedFileName(upload_file_name["key"]);
       console.log(upload_file_name)
