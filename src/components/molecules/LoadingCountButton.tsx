@@ -1,6 +1,5 @@
 // @ts-nocheck
 import { useState } from 'react';
-import button from 'src/css/atoms/button.module.css';
 import "src/css/globals/text.css";
 import "src/css/atoms/PushButton.css";
 

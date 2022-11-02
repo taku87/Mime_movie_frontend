@@ -4,7 +4,7 @@ import { useAuth0 } from '@auth0/auth0-react';
 import { Auth0Context } from 'src/components/providers/AuthCheckprovider';
 import axios from "axios";
 import AWS from 'aws-sdk';
-import  {useState, useRef} from 'react';
+import  { useState, useRef } from 'react';
 import { useNavigate } from "react-router-dom"
 import { REST_API_URL } from 'src/urls/index';
 import  "src/css/hooks/UploadUserVideo.css";
@@ -21,7 +21,7 @@ const initialState = {
 
 export const UploadUserVideo= (id :any) => {
   const {isAuthenticated,getAccessTokenSilently } = useAuth0();
-  const { accessToken, setAccessToken } = useContext(Auth0Context);
+  const { setAccessToken } = useContext(Auth0Context);
   const [createdFileName, setCreatedFileName] = useState<string>("");
   const [selectedFile, setSelectedFile] = useState<File | null>(null)
   //const [uploadedState, setUploadedState] = useState<boolean>(false);
@@ -54,7 +54,7 @@ export const UploadUserVideo= (id :any) => {
           Authorization: `Bearer ${token}`,
           'Content-Type': 'application/json',
         },
-      })
+      });
       const upload_file_name = await res.data
       setCreatedFileName(upload_file_name["key"]);
       console.log(upload_file_name)
@@ -65,7 +65,7 @@ export const UploadUserVideo= (id :any) => {
       sleep()の処理が完了（返り値がくる）までawaitしている。そして、resolveは５秒のディレイ処理がされている
        */
       const sleep = ms => new Promise(resolve => setTimeout(resolve, ms))
-      await sleep(3000)
+      await sleep(2000)
 
       /* アップロード処理が成功したらフォームの状態を
           初期化してsuccessステートをtrueにする */
@@ -105,6 +105,7 @@ export const UploadUserVideo= (id :any) => {
         };
 
         const res = s3.putObject(params).promise();
+        console.log(res)
         navigate('/created_video', { state: createdFileName })
       } catch (error) {
         console.log(error);

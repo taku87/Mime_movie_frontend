@@ -20,7 +20,7 @@ export const   SetUserCreatedVideo = memo(() => {
         <LoadingCountButton />
         <h1 className="completed-video-card-text" >Now Showing</h1>
         <div className="completed-video-design-frame">
-          <video className="user-created-video" controls ref={videoRef} >
+          <video className="user-created-video"  playsInline controls ref={videoRef} >
             <source src={`https://completed-videos-s3-01.s3.ap-northeast-1.amazonaws.com/${user_created_file_name}_completed.mp4`} type="video/mp4" />
           </video>
           <img src={`${process.env.PUBLIC_URL}/movie-curtain-left.png`} alt="movie-curtain" className="completed-video-design-frame-curtain-left" />
