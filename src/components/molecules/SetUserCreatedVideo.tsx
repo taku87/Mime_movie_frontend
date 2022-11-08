@@ -5,7 +5,8 @@ import "src/css/molecules/SetUserCreatedVideo.css";
 import 'src/css/organisms/CompletedVideoShowCard.css';
 import "src/css/globals/text.css";
 import "src/css/globals/common.css";
-import {LoadingCountButton} from "src/components/molecules/LoadingCountButton";
+import { LoadingCountButton } from "src/components/molecules/LoadingCountButton";
+import { ShareButton } from "src/components/atoms/ShareButton";
 
 export const   SetUserCreatedVideo = memo(() => {
   const location = useLocation()
@@ -28,6 +29,7 @@ export const   SetUserCreatedVideo = memo(() => {
           <img src={`${process.env.PUBLIC_URL}/movie-light.png`} alt="movie-light" className="completed-video-design-bottom" />
           <img src={`${process.env.PUBLIC_URL}/mrmime-popcorn.png`} alt="mrmime-popcorn" className="completed-video-mrmime-popcorn" />
         </div>
+        <ShareButton URL={'https://example.com/'} QUOTE={'タイトル名'} />
       </div>
     );
 })
