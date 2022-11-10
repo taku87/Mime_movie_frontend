@@ -9,7 +9,7 @@ import button from 'src/css/atoms/button.module.css';
 
 
 export const LikeButton = (props: Like) => {
-  const { id, changeLikedState } = props;
+  const { id, like_amount, changeLikedState } = props;
   const { accessToken } = useContext(Auth0Context);
   const { register, handleSubmit } = useForm({});
 
@@ -33,10 +33,13 @@ export const LikeButton = (props: Like) => {
   };
 
   return (
-    <form onSubmit={handleSubmit(UseonSubmit)}>
-      <input {...register('id', { value: id })} type='hidden' />
-      <input type='image' src={`${process.env.PUBLIC_URL}/blackhat-font.png`} alt="like-button" className={button.like} />
-    </form>
+    <>
+      <form onSubmit={handleSubmit(UseonSubmit)}>
+        <input {...register('id', { value: id })} type='hidden' />
+        <input type='image' src={`${process.env.PUBLIC_URL}/blackhat-font.png`} alt="like-button" className={button.like} />
+      </form>
+      <>{like_amount}</>
+    </>
   );
 };
 
