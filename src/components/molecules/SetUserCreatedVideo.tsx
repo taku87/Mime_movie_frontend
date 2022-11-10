@@ -2,11 +2,12 @@ import  { useRef, useEffect, memo } from 'react'
 import { useLocation } from "react-router-dom";
 //import video_mp4 from `${process.env.PUBLIC_URL}/videos/title-animation.mp4`
 import "src/css/molecules/SetUserCreatedVideo.css";
-import 'src/css/organisms/CompletedVideoShowCard.css';
+import 'src/css/organisms/CompletedVideoCard.css';
 import "src/css/globals/text.css";
 import "src/css/globals/common.css";
 import { LoadingCountButton } from "src/components/molecules/LoadingCountButton";
 import { ShareButton } from "src/components/atoms/ShareButton";
+import { DownloadCreatedVideo } from "src/hooks/DownloadCreatedVideo";
 
 export const   SetUserCreatedVideo = memo(() => {
   const location = useLocation()
@@ -30,6 +31,7 @@ export const   SetUserCreatedVideo = memo(() => {
           <img src={`${process.env.PUBLIC_URL}/mrmime-popcorn.png`} alt="mrmime-popcorn" className="completed-video-mrmime-popcorn" />
         </div>
         <ShareButton URL={'https://example.com/'} QUOTE={'タイトル名'} />
+        <DownloadCreatedVideo URL={`${user_created_file_name}_completed.mp4`} />
       </div>
     );
 })
