@@ -15,10 +15,10 @@ export const ShareButton = (props :any) => {
   return (
     <>
       <TwitterShareButton url={URL} title={QUOTE} hashtags={[PF]}   >
-        <TwitterIcon size={24} round />
+        <TwitterIcon size={60} round />
       </TwitterShareButton>
       <LineShareButton url={URL} title={QUOTE} >
-        <LineIcon size={24} round />
+        <LineIcon size={60} round />
       </LineShareButton>
     </>
   )

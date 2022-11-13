@@ -20,7 +20,7 @@ export const DownloadCreatedVideo = (props :URL ) => {
 
   return (
     <div>
-      <input onClick={DownloadButton} type='image' src={`${process.env.PUBLIC_URL}/blackhat-create.png`} alt="create-button" className={button.create} />
+      <input onClick={DownloadButton} type='image' src={`${process.env.PUBLIC_URL}/blackhat-download.png`} alt="create-button" className={button.create} />
     </div>
   )
 };
