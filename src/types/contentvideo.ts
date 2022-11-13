@@ -6,5 +6,7 @@ export type ContentVideo = {
   thumbnail?: string;
   state?: string;
   liked?: boolean;
+  like_amount?: number;
+  comment?: any;
   attributes?: any;
 };

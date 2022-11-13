@@ -41,6 +41,11 @@
   margin: auto;
 }
 
+.header-hamburger-menu {
+  display: flex;
+  align-items: flex-end;
+}
+
 .moviefilm-line {
   width: 100%;
 }

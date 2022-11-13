@@ -16,6 +16,7 @@ export const ContentVideoCard = memo((props: ContentVideo) => {
     description,
     thumbnail,
     liked,
+    like_amount,
     state,
   } = props;
   const [likedState, setLikedState] = useState(liked);
@@ -24,9 +25,9 @@ export const ContentVideoCard = memo((props: ContentVideo) => {
     return(
       <>
         {likedState ? (
-            <UnlikeButton id={id} changeLikedState={setLikedState} className="content-video-card-button" />
+            <UnlikeButton id={id} like_amount={like_amount} changeLikedState={setLikedState} className="content-video-card-button" />
           ) : (
-            <LikeButton id={id} changeLikedState={setLikedState} className="content-video-card-button" />
+            <LikeButton id={id} like_amount={like_amount} changeLikedState={setLikedState} className="content-video-card-button" />
         )}
       </>
     )
@@ -50,7 +51,7 @@ export const ContentVideoCard = memo((props: ContentVideo) => {
             </div>
             <div className="content-video-card-button-list">
               {likedState === undefined ? (
-                <></>
+                <>{like_amount}</>
                 ) : (
                     <SwitchLikeButtons />
                   )}

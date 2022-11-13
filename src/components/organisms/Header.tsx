@@ -2,6 +2,7 @@ import 'src/css/organisms/header.css';
 import { Link } from 'react-router-dom';
 import { LoginButton } from "src/components/molecules/LoginButton";
 import { IconClickEffect }  from "src/hooks/IconClickEffect"
+import { HamburgerMenu } from "src/components/molecules/HamburgerMenu";
 
 export const Header = () => {
   return (
@@ -19,6 +20,9 @@ export const Header = () => {
               <IconClickEffect className="icon-clickeffect">
                 <div className="icon"><LoginButton  /></div>
               </IconClickEffect>
+          </div>
+          <div className="header-hamburger-menu">
+            <HamburgerMenu />
           </div>
         </div>
       </div>

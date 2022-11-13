@@ -21,6 +21,8 @@
     "@types/react-dom": "^18.0.6",
     "aws-sdk": "^2.1243.0",
     "axios": "^0.27.2",
+    "file-saver": "^2.0.5",
+    "moment": "^2.29.4",
     "react": "^18.2.0",
     "react-async-hook": "^4.0.0",
     "react-dom": "^18.2.0",
@@ -30,6 +32,7 @@
     "react-redux": "^8.0.4",
     "react-router-dom": "^6.4.0",
     "react-scripts": "^4.0.3",
+    "react-share": "^4.4.1",
     "react-spring": "^9.5.5",
     "react-youtube": "^10.0.0",
     "redux": "^4.2.0",
@@ -62,6 +65,7 @@
     ]
   },
   "devDependencies": {
+    "@types/file-saver": "^2.0.5",
     "autoprefixer": "^10.4.11",
     "postcss": "^8.4.16",
     "tailwindcss": "^3.1.8"
