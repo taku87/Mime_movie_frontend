@@ -1,0 +1,9 @@
+.share-button {
+  margin: 10px;
+  display: flex;
+  justify-content: center;
+}
+
+.share-button > div {
+  margin: 10px;
+}

@@ -1,0 +1,42 @@
+.DrawerMenu-container {
+  background-color: #314357;
+  height: 100%;
+  padding: 20px;
+  position: relative;
+}
+
+.mrmime-stand {
+  width: 300px;
+  position: absolute;
+  bottom: 0;
+}
+
+.DrawerMenu-list {
+  list-style: none;
+  height: auto;
+  padding: 0;
+  width: 100%;
+}
+
+.DrawerMenu-raw {
+  width: 100%;
+  height: 60px;
+  padding: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+}
+
+.DrawerMenu-raw:hover {
+  background-color: #e3b587;
+}
+
+.DrawerMenu-raw #icon {
+  display: grid;
+  place-items: center;
+}
+
+.DrawerMenu-raw #title {
+  margin-left: 5px;
+}

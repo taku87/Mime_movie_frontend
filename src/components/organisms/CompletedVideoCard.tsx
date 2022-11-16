@@ -1,6 +1,9 @@
 // @ts-nocheck
 //import type { CompletedVideo } from "src/types/contentvideo";
 import { useAuth0 } from '@auth0/auth0-react';
+import { useState, memo  } from 'react';
+import { LikeButton } from "src/components/molecules/LikeButton";
+import { UnlikeButton } from "src/components/molecules/UnlikeButton";
 import { SetYoutubeVideo } from "src/components/molecules/SetYoutubeVideo";
 import { PostComment } from "src/hooks/PostComment";
 import { CommentList } from "src/components/organisms/CommentList";
@@ -14,8 +17,23 @@ export const CompletedVideoCard = ( props: ContentVideo ) => {
   const {
     id,
     youtube_url,
-    comment
+    comment,
+    liked,
+    like_amount,
   } = props;
+  const [likedState, setLikedState] = useState(liked);
+
+  const SwitchLikeButtons = memo(() => {
+    return(
+      <>
+        {likedState ? (
+            <UnlikeButton id={id} like_amount={like_amount} changeLikedState={setLikedState} className="content-video-card-button" />
+          ) : (
+            <LikeButton id={id} like_amount={like_amount} changeLikedState={setLikedState} className="content-video-card-button" />
+        )}
+      </>
+    )
+  })
 
   return (
       <div className="set-completed-video-wrapper">
@@ -27,7 +45,19 @@ export const CompletedVideoCard = ( props: ContentVideo ) => {
           <img src={`${process.env.PUBLIC_URL}/movie-light.png`} alt="movie-light" className="completed-video-design-bottom" />
           <img src={`${process.env.PUBLIC_URL}/mrmime-popcorn.png`} alt="mrmime-popcorn" className="completed-video-mrmime-popcorn" />
         </div>
-          { isAuthenticated ? ( <PostComment content_video_id={id} /> ) : ( <></> )}
+        <div>
+          <div className="completed-video-card-like-button-comment-post">
+            { isAuthenticated ? ( <div><PostComment content_video_id={id} /></div> ) : ( <></> )}
+            {likedState === undefined ? (
+              <></>
+              ) : (
+                  <div className='switch-like-buttons'><SwitchLikeButtons /></div>
+                )}
+              <div className='like-amount'>
+                <p>Like数 {like_amount}</p>
+              </div>
+          </div>
+        </div>
         <CommentList comments={comment} />
       </div>
   )
