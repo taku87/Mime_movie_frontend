@@ -31,8 +31,8 @@ export const PostComment = (props :any) => {
   return (
     <div className="form">
       <form>
-        <textarea placeholder="コメントしてね！" onChange={handleChange} /><br/>
-        <button type="submit" onClick={handleSubmit} >comment投稿</button>
+        <textarea className="textarea" rows={3} cols={80} placeholder="コメントしてね！" onChange={handleChange} /><br/>
+        <button type="submit" onClick={handleSubmit} >コメント投稿！</button>
       </form>
     </div>
   )
