@@ -2,7 +2,7 @@ import "src/css/globals/common.css";
 
 export const Terms = () => {
   return (
-    <div>Term</div>
+    <div className="term">Term</div>
   )
 }
 
