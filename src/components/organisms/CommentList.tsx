@@ -13,7 +13,7 @@ import { Avatar, ListItemAvatar } from "@material-ui/core";
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
     inline: {
-      display: "inline",
+      display: "inline"
     },
     margin: {
       margin: theme.spacing(1, 1, 0, 2),
@@ -69,13 +69,11 @@ export const CommentList = (props :Props) => {
                 >
                   {comment.body}
                 </Typography>
-                <br />
-                MIME MOVIE
               </>
             }
           />
         </ListItem>
-        <Divider variant="inset" component="li" />
+        <Divider variant="inset" />
         </>
       ))}
     </div>

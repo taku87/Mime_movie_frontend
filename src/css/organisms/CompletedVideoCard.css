@@ -1,5 +1,6 @@
 .set-completed-video-wrapper {
   margin: 0 auto;
+  padding-bottom: 50px;
 }
 
 /*
@@ -14,7 +15,7 @@
   position: relative;
   margin: 0 auto;
   width: 800px;
-  height: 800px;
+  height: 700px;
 }
 
 .completed-video-design-frame-curtain-left {
@@ -41,6 +42,25 @@
 .completed-video-design-bottom {
   width: 800px;
   height: 200px;
+}
+
+.completed-video-card-like-button-comment-post {
+  display: flex;
+  justify-content: center;
+}
+
+.switch-like-buttons {
+  align-items: center;
+}
+
+.like-amount {
+  font-size: 30px;
+  font-family: "Kaisei Opti", serif;
+  text-shadow: 0 0 20px yellow;
+}
+
+.completed-video-card-like-button-comment-post > div {
+  margin: 10px;
 }
 
 @media (max-width: 900px) {

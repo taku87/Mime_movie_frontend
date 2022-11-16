@@ -33,7 +33,6 @@ export const UnlikeButton = ( props: Like ) => {
   return (
     <>
     <input type='image' src={`${process.env.PUBLIC_URL}/blackhat-liked-font.png`} alt="unlike-button" onClick={unLike} className={button.unlike} />
-    <>{like_amount}</>
     </>
   );
 };

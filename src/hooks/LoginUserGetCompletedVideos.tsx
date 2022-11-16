@@ -1,24 +1,34 @@
 // @ts-nocheck
-import { memo } from 'react';
+import { useContext, memo } from 'react';
+import { useAuth0 } from '@auth0/auth0-react';
+import { Auth0Context } from 'src/components/providers/AuthCheckprovider';
 import { useState } from 'react';
 import axios from 'axios';
 import { REST_API_URL } from 'src/urls/index';
 import { useQuery } from 'react-query';
 
-import SwingVideos from "src/components/molecules/SwingVideos";
-import { ContentVideoCard } from "src/components/organisms/ContentVideoCard";
+import { CompletedVideoCard } from "src/components/organisms/CompletedVideoCard";
 
 import type { ContentVideo } from "src/types/contentvideo";
 //import CircularProgress from '@mui/material/CircularProgress';
 
+  export const LoginUserGetCompletedVideos = memo(() => {
+    const { getAccessTokenSilently } = useAuth0();
+    const { setAccessToken } = useContext(Auth0Context);
+    const [contentVideos, setContentVideos ] = useState<ContentVideo[]>([]);
 
-export const GuestGetContentVideos = memo(() => {
-  const [contentVideos, setContentVideos ] = useState<ContentVideo[]>([]);
+    console.log("ログインユーザーで実行")
+
     let { isLoading: queryLoading } = useQuery(['content_videos'],
-    async () => {
+    async (isAuthenticated) => {
+      const token = await getAccessTokenSilently();
+      setAccessToken(token);
+      console.log(token);
+      /** GETの処理 */
       const res = await axios
-      .get<ContentVideo[]>(`${REST_API_URL}/guest/content_videos`,{
+      .get<ContentVideo[]>(`${REST_API_URL}/user/content_videos`,{
         headers: {
+          Authorization: `Bearer ${token}`,
           'Content-Type': 'application/json',
         },
       })
@@ -37,9 +47,9 @@ export const GuestGetContentVideos = memo(() => {
       );
     }
 
-    console.log(contentVideos)
+  console.log(contentVideos)
 
-    if (contentVideos === void 0 || contentVideos.length === 0) {
+    if ( contentVideos === void 0 || contentVideos.length === 0) {
       return (
         <div style={{ textAlign: 'center', marginTop: '40px' }}>
           <p style={{ fontSize: '13px' }}>
@@ -50,22 +60,21 @@ export const GuestGetContentVideos = memo(() => {
       )
     }
 
-
     return (
       <div className="container">
-        <SwingVideos contentVideos = {contentVideos} />
         {/** query.isLoadingがtureのとき、つまり、ロード中はクラスネームのローダーのやつが表示*/}
         {contentVideos.map((content_video,index) => (
-            <ContentVideoCard
+            <CompletedVideoCard
               key = {`${content_video.id}11${index}`}
               id = {content_video.attributes.id}
-              number = {content_video.attributes.number}
-              title = {content_video.attributes.title}
-              description = {content_video.attributes.description}
-              thumbnail = {content_video.attributes.thumbnail}
-              state = {content_video.attributes.state}
+              youtube_url = {content_video.attributes.youtube_url}
+              comment = {content_video.attributes.comment}
+              liked = {content_video.attributes.liked}
+              like_amount = {content_video.attributes.like_amount}
             />
         ))}
       </div>
     )
   })
+
+  export default LoginUserGetCompletedVideos;
