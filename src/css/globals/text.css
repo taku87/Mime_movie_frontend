@@ -5,7 +5,7 @@
 }
 .big-text {
   font-size: 20px;
-  font-family: HanziPen TC;
+  font-family: "Kaisei Opti", serif;
 }
 
 @media (max-width: 400px) {
@@ -43,16 +43,18 @@
 }
 
 .card-loading-text {
-  font-family: HanziPen TC;
+  font-family: "Kaisei Opti", serif;
   font-size: 25px;
   color: #fff;
 }
 
 .top-text-first {
-  font-family: Georgia, "Times New Roman", Times, serif;
+  font-family: "Kaisei Opti", serif;
   font-size: 40px;
   color: #314357;
   text-shadow: 0 0 15px #ffffff;
+  white-space: pre-wrap;
+  margin: 100px auto;
 }
 
 .nom-match-text-first,
@@ -79,7 +81,7 @@
   font-size: 25px;
   color: #0e2e3b;
   text-shadow: 0 0 20px #ffffff;
-  font-family: HanziPen TC;
+  font-family: "Kaisei Opti", serif;
   font-weight: 40;
   white-space: pre-wrap;
 }
@@ -90,7 +92,7 @@
 .content-videos-show-text-second {
   display: inline-block;
   font-size: 20px;
-  font-family: HanziPen TC;
+  font-family: "Kaisei Opti", serif;
   color: #fff;
   white-space: pre-wrap;
 }
@@ -128,7 +130,7 @@
 .content-videos-show-text-fourth {
   display: inline-block;
   font-size: 35px;
-  font-family: HanziPen TC;
+  font-family: "Kaisei Opti", serif;
   color: #fff;
   white-space: pre-wrap;
 }
