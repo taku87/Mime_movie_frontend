@@ -59,6 +59,8 @@
 
 .nom-match-text-first,
 .mypage-text-first,
+.term-text-first,
+.privacy-policy-text-first,
 .content-videos-index-text-first,
 .content-videos-show-text-first,
 .completed-videos-index-text-first {
@@ -69,6 +71,8 @@
 }
 
 @media (max-width: 670px) {
+  .term-text-first,
+  .privacy-policy-text-first,
   .mypage-text-first,
   .content-videos-index-text-first,
   .content-videos-show-text-first,
@@ -84,6 +88,11 @@
   font-family: "Kaisei Opti", serif;
   font-weight: 40;
   white-space: pre-wrap;
+}
+
+.term-text-second,
+.privacy-policy-text-second {
+  color: #0e2e3b;
 }
 
 .content-videos-index-text-second {
