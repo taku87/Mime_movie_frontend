@@ -1,0 +1,9 @@
+.term {
+  width: 80%;
+  margin: 0 auto;
+}
+
+.term-list {
+  list-style: none;
+  text-align: left;
+}
