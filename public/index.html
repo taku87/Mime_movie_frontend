@@ -1,8 +1,8 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" prefix="og: http://ogp.me/ns#">
   <head>
     <meta charset="utf-8" />
-    <link rel="icon" href="%PUBLIC_URL%/blackhat-raw.png" />
+    <link rel="icon" href="https://mimemovie-public-assets.s3.ap-northeast-1.amazonaws.com/blackhat-raw.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="theme-color" content="#000000" />
     <meta
@@ -11,7 +11,7 @@
     />
     <meta property="og:title" content="あなたが撮った映像からストーリーが始まる映像を作れるアプリ！マイムムービー!" />
     <meta property="og:description" content="あなたが撮った映像」とパントマイミスト「ハナムラ」のアクト映像を合成して、１本のストーリーになる映像をつくるアプリです。『パントマイム』の面白さと『自ら演じる』楽しさを、ぜひご体験あれ！" />
-    <meta property="og:image" content="%PUBLIC_URL%/mime-movie-info.png" />
+    <meta property="og:image" content="https://mimemovie-public-assets.s3.ap-northeast-1.amazonaws.com/mime-movie-info.png" />
     <meta name="twitter:card" content="summary_large_image" />
 
     <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
@@ -30,7 +30,18 @@
       Learn how to configure a non-root public URL by running `npm run build`.
     -->
     <title>MIME MOVIE</title>
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-V6KW9HNKWK"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-V6KW9HNKWK');
+    </script>
   </head>
+
   <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>
     <div id="root"></div>
