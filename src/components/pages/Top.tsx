@@ -4,7 +4,8 @@ import { Link } from 'react-router-dom';
 import Button from '@mui/material/Button';
 import MovieIcon from '@mui/icons-material/Movie';
 import DesktopMacIcon from '@mui/icons-material/DesktopMac';
-import  SetDesignVideo  from 'src/components/molecules/SetDesignVideo';
+import SetDesignVideo  from 'src/components/molecules/SetDesignVideo';
+import {SetYoutubeVideo} from 'src/components/molecules/SetYoutubeVideo';
 //import pic from "../public/like.png"
 import "src/css/globals/text.css";
 import "src/css/globals/common.css";
@@ -25,7 +26,7 @@ export const Top = () => {
           <div class="card_textbox">
             <h1 className="top-text-first"> Do you know "パントマイム" ?</h1>
             <div className="eyecatch-movie" >
-              <SetDesignVideo url={"title-animation"} />
+              <SetYoutubeVideo videoid={"atmxb5zbk1Q"} />
             </div>
             <p className="top-text-second">→誰にでも、何にでもなれる！それがパントマイム！</p>
           </div>
