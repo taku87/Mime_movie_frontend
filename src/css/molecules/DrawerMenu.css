@@ -37,6 +37,13 @@
   place-items: center;
 }
 
+.DrawerMenu-raw #link {
+  display: grid;
+  place-items: center;
+  text-decoration: none;
+  color: inherit;
+}
+
 .DrawerMenu-raw #title {
   margin-left: 5px;
 }
