@@ -10,6 +10,10 @@ import ListItemText from "@material-ui/core/ListItemText";
 import Typography from "@material-ui/core/Typography";
 import { Avatar, ListItemAvatar } from "@material-ui/core";
 
+import type { Comment,Comments } from "src/types/contentvideo"
+
+
+
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
     inline: {
@@ -21,18 +25,14 @@ const useStyles = makeStyles((theme: Theme) =>
   })
 );
 
-type Props = {
-  comments?: any;
-};
-
-export const CommentList = (props :Props) => {
+export const CommentList = (props :Comments) => {
   const classes = useStyles();
   const { comments } = props;
   const { user } = useAuth0();
 
   return (
     <div>
-      {comments.map((comment :any) => (
+      {comments?.map((comment :Comment) => (
         <>
         <ListItem alignItems="flex-start" key={comment.id}>
           {/* <ListItemAvatar>

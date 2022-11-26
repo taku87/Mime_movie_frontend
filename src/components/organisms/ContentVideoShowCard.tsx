@@ -1,4 +1,3 @@
-// @ts-nocheck
 import type { ContentVideo } from "src/types/contentvideo";
 
 import Card from "@material-ui/core/Card";

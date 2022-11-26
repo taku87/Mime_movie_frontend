@@ -1,4 +1,4 @@
-// @ts-nocheck
+
 //import type { CompletedVideo } from "src/types/contentvideo";
 import { useAuth0 } from '@auth0/auth0-react';
 import { useState, memo  } from 'react';
@@ -17,7 +17,7 @@ export const CompletedVideoCard = ( props: ContentVideo ) => {
   const {
     id,
     youtube_url,
-    comment,
+    comments,
     liked,
     like_amount,
   } = props;
@@ -27,9 +27,9 @@ export const CompletedVideoCard = ( props: ContentVideo ) => {
     return(
       <>
         {likedState ? (
-            <UnlikeButton id={id} like_amount={like_amount} changeLikedState={setLikedState} className="content-video-card-button" />
+            <UnlikeButton id={id}  changeLikedState={setLikedState}  />
           ) : (
-            <LikeButton id={id} like_amount={like_amount} changeLikedState={setLikedState} className="content-video-card-button" />
+            <LikeButton id={id}  changeLikedState={setLikedState}  />
         )}
       </>
     )
@@ -39,7 +39,7 @@ export const CompletedVideoCard = ( props: ContentVideo ) => {
       <div className="set-completed-video-wrapper">
         <h1 className="completed-video-card-text" >Now Showing</h1>
         <div className="completed-video-design-frame">
-          <SetYoutubeVideo videoid={youtube_url} className="youtube-frame" />
+          <SetYoutubeVideo videoid={youtube_url} />
           <img src={`${process.env.PUBLIC_URL}/movie-curtain-left.png`} alt="movie-curtain" className="completed-video-design-frame-curtain-left" />
           <img src={`${process.env.PUBLIC_URL}/movie-curtain-right.png`} alt="movie-curtain" className="completed-video-design-frame-curtain-right" />
           <img src={`${process.env.PUBLIC_URL}/movie-light.png`} alt="movie-light" className="completed-video-design-bottom" />
@@ -58,7 +58,7 @@ export const CompletedVideoCard = ( props: ContentVideo ) => {
               </div>
           </div>
         </div>
-        <CommentList comments={comment} />
+        <CommentList comments={comments} />
       </div>
   )
 }

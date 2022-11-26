@@ -17,7 +17,7 @@ export const Header = () => {
             <img src={`${process.env.PUBLIC_URL}/movie-camera.png`} alt="movie-camera" className="header-movie-camera" />
           </div>
           <div className="header-iconlist">
-              <IconClickEffect className="icon-clickeffect">
+              <IconClickEffect >
                 <div className="icon"><LoginButton  /></div>
               </IconClickEffect>
           </div>

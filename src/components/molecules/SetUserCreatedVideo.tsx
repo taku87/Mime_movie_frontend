@@ -1,6 +1,5 @@
 import  { useRef, useEffect, memo } from 'react'
 import { useLocation } from "react-router-dom";
-//import video_mp4 from `${process.env.PUBLIC_URL}/videos/title-animation.mp4`
 import "src/css/molecules/SetUserCreatedVideo.css";
 import 'src/css/organisms/CompletedVideoCard.css';
 import "src/css/globals/text.css";

@@ -1,8 +1,7 @@
 import  { useRef, useEffect } from 'react'
-//import video_mp4 from `${process.env.PUBLIC_URL}/videos/title-animation.mp4`
+import type { Video } from "src/types/video";
 
-
-export const SetInformationVideo = (props :any) => {
+export const SetInformationVideo = (props :Video) => {
   const {url} = props;
     const videoRef = useRef<HTMLVideoElement>(null);
     useEffect(() => {

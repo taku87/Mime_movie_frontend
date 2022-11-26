@@ -1,19 +1,21 @@
-// @ts-nocheck
 import { useContext } from 'react';
 import { Auth0Context } from 'src/components/providers/AuthCheckprovider';
 import axios from 'axios';
 import { REST_API_URL } from 'src/urls/index';
-import { useForm } from 'react-hook-form';
+import { useForm,SubmitHandler } from 'react-hook-form';
 import type { Like } from "src/types/like";
 import button from 'src/css/atoms/button.module.css';
 
+interface IdInput {
+  id?: number;
+};
 
 export const LikeButton = (props: Like) => {
-  const { id, like_amount, changeLikedState } = props;
+  const { id, changeLikedState } = props;
   const { accessToken } = useContext(Auth0Context);
   const { register, handleSubmit } = useForm({});
 
-  const UseonSubmit = (data :any) => {
+  const UseonSubmit: SubmitHandler<IdInput> = ( data ) => {
       const likeis = async () => {
       axios
         .post(`${REST_API_URL}/user/content_video_likes`, data, {

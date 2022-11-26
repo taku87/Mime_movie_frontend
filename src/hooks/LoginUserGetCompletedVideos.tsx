@@ -68,7 +68,7 @@ import type { ContentVideo } from "src/types/contentvideo";
               key = {`${content_video.id}11${index}`}
               id = {content_video.attributes.id}
               youtube_url = {content_video.attributes.youtube_url}
-              comment = {content_video.attributes.comment}
+              comments = {content_video.attributes.comments}
               liked = {content_video.attributes.liked}
               like_amount = {content_video.attributes.like_amount}
             />

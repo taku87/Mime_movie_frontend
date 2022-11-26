@@ -1,4 +1,8 @@
-export const SetThumbnail = (thumbnail :any) => {
+type ThumbnailProps ={
+thumbnail: string;
+}
+
+export const SetThumbnail = (thumbnail :ThumbnailProps) => {
   const thumbnail_filename = thumbnail["thumbnail"]
   return (
     <>

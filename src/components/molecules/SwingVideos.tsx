@@ -1,4 +1,3 @@
-// @ts-nocheck
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Autoplay,EffectFade } from "swiper";
 import 'swiper/swiper-bundle.css';
@@ -6,12 +5,13 @@ import "src/css/globals/swiper.css";
 import "src/css/molecules/SwingVideos.css";
 
 import SetThumbnail from "src/components/molecules/SetThumbnail";
+import type { ContentVideo } from "src/types/contentvideo";
 
-//import type { ContentVideo } from "src/types/contentvideo";
+type ContentVideos ={
+  contentVideos :Array<ContentVideo>
+}
 
-
-
-export const SwingVideos = (props :any) => {
+export const SwingVideos = (props :ContentVideos ) => {
 const {contentVideos} =  props;
 
   return (
@@ -25,7 +25,7 @@ const {contentVideos} =  props;
         autoplay={{ delay: 0, disableOnInteraction: false }}
         speed={10000}
       >
-        {contentVideos.map((content_video, index) => (
+        {contentVideos.map((content_video :ContentVideo, index :number) => (
           <>
               <SwiperSlide  key ={`${content_video.id}22${index}`}>
                 < SetThumbnail

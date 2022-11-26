@@ -11,7 +11,14 @@ import {
 
 import 'src/css/atoms/ShareButton.css';
 
-export const ShareButton = (props :any) => {
+type ShareProps = {
+  URL: string;
+  QUOTE: string;
+}
+
+
+
+export const ShareButton = (props :ShareProps) => {
   const { URL, QUOTE } = props;
   const PF = "MIMEMOVIE";
   return (

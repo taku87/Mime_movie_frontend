@@ -1,8 +1,7 @@
-//import YouTube from 'react-youtube';
 import "src/css/molecules/SetYoutubeVideo.css";
-//import style from "src/css/atoms/SetYoutubeVideo.module.css";
+import type { Video } from "src/types/video";
 
-export const SetYoutubeVideo = (props: any) => {
+export const SetYoutubeVideo = (props: Video) => {
   const { videoid } = props;
     return(
       <div className="responsive">

@@ -1,4 +1,3 @@
-// @ts-nocheck
 import { useContext } from 'react';
 import { Auth0Context } from 'src/components/providers/AuthCheckprovider';
 import axios from 'axios';
@@ -9,7 +8,7 @@ import button from 'src/css/atoms/button.module.css';
 
 
 export const UnlikeButton = ( props: Like ) => {
-  const { id, like_amount, changeLikedState } = props;
+  const { id, changeLikedState } = props;
   const { accessToken} = useContext(Auth0Context);
 
   const unLike = () => {

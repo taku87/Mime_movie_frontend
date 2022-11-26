@@ -1,4 +1,4 @@
-// @ts-nocheck
+
 import { useState, memo  } from 'react';
 import { LikeButton } from "src/components/molecules/LikeButton";
 import { UnlikeButton } from "src/components/molecules/UnlikeButton";
@@ -36,7 +36,7 @@ export const ContentVideoCard = memo((props: ContentVideo) => {
             </div>
 
             <div className="thumbnail-frame">
-              <div class="image">
+              <div className="image">
                 <img src={`${process.env.PUBLIC_URL}/thumbnail/${thumbnail}`} alt="thumbnail" className="thumbnail-card" />
               </div>
               <div className="thumbnail-door" >

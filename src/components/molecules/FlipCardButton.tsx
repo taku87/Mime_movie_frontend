@@ -4,7 +4,12 @@ import { useNavigate } from "react-router-dom"
 
 import styles from 'src/css/molecules/styles.module.css'
 
-export const FlipCardButton = memo((props :any) => {
+type Id = {
+  id: number;
+}
+
+
+export const FlipCardButton = memo((props :Id) => {
   const { id } = props;
   const navigate = useNavigate()
   const [flipped, set] = useState(false)

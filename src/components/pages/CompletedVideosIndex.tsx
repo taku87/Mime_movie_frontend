@@ -1,5 +1,5 @@
-// @ts-nocheck
-import { CompletedVideosList } from "src/components/organisms/CompletedVideosList";
+
+import {CompletedVideosList} from 'src/components/organisms/CompletedVideosList';
 import "src/css/pages/CompletedVideosIndex.css";
 import "src/css/globals/common.css";
 
@@ -10,7 +10,7 @@ export const CompletedVideosIndex = () => {
         <div className="completed-videos-index-header">
             <h1 className="completed-videos-index-text-first" >Theater Room</h1>
         </div>
-          <CompletedVideosList className="completed-video-set"  />
+          <CompletedVideosList />
       </div>
     </div>
   )

@@ -3,8 +3,16 @@ import CircularProgress from '@mui/material/CircularProgress'
 import { green } from '@mui/material/colors'
 import Button from '@mui/material/Button'
 
-export default function CircularIntegration(props :any) {
-  const { asyncEvent, success, onClick } = props
+type EventProps = {
+  asyncEvent :any;
+  success :boolean;
+  onClick :() => void;
+  component :string;
+  text :string;
+}
+
+export default function CircularIntegration(props :EventProps) {
+  const { asyncEvent, success, onClick, text } = props
 
   const buttonSx = {
     ...(success && {

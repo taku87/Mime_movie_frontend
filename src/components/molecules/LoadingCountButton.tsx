@@ -1,4 +1,3 @@
-// @ts-nocheck
 import { useState } from 'react';
 import "src/css/globals/text.css";
 import "src/css/atoms/PushButton.css";

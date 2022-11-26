@@ -1,7 +1,8 @@
 import React, { useRef, useEffect } from 'react'
 import 'src/css/molecules/SetExampleVideo.css';
+import type { Video } from "src/types/video";
 
-export const SetExampleVideo = (props :any) => {
+export const SetExampleVideo = (props :Video) => {
   const {url} = props;
     const videoRef = useRef<HTMLVideoElement>(null);
     useEffect(() => {

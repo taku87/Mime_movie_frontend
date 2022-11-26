@@ -3,12 +3,16 @@ import axios from 'axios';
 import { REST_API_URL } from 'src/urls/index';
 import  { useState } from 'react';
 
-export const PostComment = (props :any) => {
+type Id = {
+  content_video_id :number;
+}
+
+export const PostComment = (props :Id) => {
   const { content_video_id } = props;
   const [comment, setComment] = useState('')
   const {isAuthenticated,getAccessTokenSilently } = useAuth0();
 
-  const handleChange = (e :any) => {
+  const handleChange = (e :React.ChangeEvent<HTMLTextAreaElement>) => {
     setComment(e.target.value)
   }
 

@@ -19,7 +19,7 @@ const initialState = {
   file: null,
 }
 
-export const UploadUserVideo= (id :any) => {
+export const UploadUserVideo= (id :number) => {
   const {isAuthenticated,getAccessTokenSilently } = useAuth0();
   const { setAccessToken } = useContext(Auth0Context);
   const [createdFileName, setCreatedFileName] = useState<string>("");
@@ -45,7 +45,7 @@ export const UploadUserVideo= (id :any) => {
   });
 
 
-    const uploadFile = async (file: any) => {
+    const uploadFile = async (file: object) => {
       const token = isAuthenticated ? await getAccessTokenSilently() : null;
       setAccessToken(token);
       console.log(token);
@@ -64,7 +64,7 @@ export const UploadUserVideo= (id :any) => {
       /* シンプルに5秒経つまでresolveを返さずに次のアクションに進ませない処理？
       sleep()の処理が完了（返り値がくる）までawaitしている。そして、resolveは５秒のディレイ処理がされている
        */
-      const sleep = ms => new Promise(resolve => setTimeout(resolve, ms))
+      const sleep = ms  => new Promise(resolve => setTimeout(resolve, ms))
       await sleep(2000)
 
       /* アップロード処理が成功したらフォームの状態を
@@ -73,7 +73,7 @@ export const UploadUserVideo= (id :any) => {
       setSuccess(true)
     }
 
-    const onFileInputChange = async (event :any) => {
+    const onFileInputChange = async (event :React.ChangeEventHandler<HTMLInputElement> | undefined) => {
       const file = event.target.files[0]
       setSelectedFile(file)
       console.log(file)
