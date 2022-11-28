@@ -12,6 +12,7 @@
 .header-items-wrapper {
   display: "inline-block";
   display: flex;
+  position: relative;
 }
 
 .header-title-logo-container {
@@ -39,12 +40,15 @@
 .header-iconlist {
   display: flex;
   align-items: flex-end;
-  margin: auto;
+  position: absolute;
+  right: 0;
 }
 
-.header-hamburger-menu {
-  display: flex;
-  align-items: flex-end;
+.icon {
+  width: 90px;
+}
+.login-box {
+  margin: 0 10px;
 }
 
 .moviefilm-line {

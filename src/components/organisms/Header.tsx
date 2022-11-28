@@ -17,12 +17,12 @@ export const Header = () => {
             <img src={`${process.env.PUBLIC_URL}/movie-camera.png`} alt="movie-camera" className="header-movie-camera" />
           </div>
           <div className="header-iconlist">
-              <IconClickEffect >
-                <div className="icon"><LoginButton  /></div>
-              </IconClickEffect>
-          </div>
-          <div className="header-hamburger-menu">
-            <HamburgerMenu />
+            <div className='login-box'>
+            <IconClickEffect >
+              <div className="icon"><LoginButton  /></div>
+            </IconClickEffect>
+            </div>
+              <HamburgerMenu />
           </div>
         </div>
       </div>
