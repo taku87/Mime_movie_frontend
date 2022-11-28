@@ -24,7 +24,6 @@ export const UploadUserVideo= (id :number) => {
   const { setAccessToken } = useContext(Auth0Context);
   const [createdFileName, setCreatedFileName] = useState<string>("");
   const [selectedFile, setSelectedFile] = useState<File | null>(null)
-  //const [uploadedState, setUploadedState] = useState<boolean>(false);
   const content_video_id = id["id"]
   const navigate = useNavigate()
 
@@ -32,19 +31,22 @@ export const UploadUserVideo= (id :number) => {
   const [ fotmState, setFormState ] = useState(initialState)
   const [success, setSuccess] = useState(false)
 
+  /*S3に動画をダイレクトアップロードできるように、アップロード権限が付与されたIAMユーザーを設定、
+  S3バケット、リージョンの指定*/
   const AWS_ACCESS_KEY = process.env.REACT_APP_AWS_ACCESS_KEY_ID;
   const AWS_SECRET_KEY = process.env.REACT_APP_AWS_SECRET_ACCESS_KEY;
-  const BUCKET = "user-videos-s3-01";
+  const BUCKET = process.env.REACT_APP_USER_BACKET;
+  const REGION = process.env.REACT_APP_REGION;
   const s3 = new AWS.S3();
-
 
   AWS.config.update({
     accessKeyId: AWS_ACCESS_KEY,
     secretAccessKey: AWS_SECRET_KEY,
-    region: 'ap-northeast-1'
+    region: REGION,
   });
 
-
+    /*ファイル添付時に、バックエンド側に指示出し→
+    コンテンツ番号とユーザーIDを組み合わせた一意のファイル名が返ってくる*/
     const uploadFile = async (file: object) => {
       const token = isAuthenticated ? await getAccessTokenSilently() : null;
       setAccessToken(token);
@@ -55,46 +57,40 @@ export const UploadUserVideo= (id :number) => {
           'Content-Type': 'application/json',
         },
       });
+      /*ファイル名はあとで使うので、useStateにセットする*/
       const upload_file_name = await res.data
       setCreatedFileName(upload_file_name["key"]);
-      console.log(upload_file_name)
 
       if (!file) return
-      /* アップロード処理に見立てた時間のかかる処理 */
-      /* シンプルに5秒経つまでresolveを返さずに次のアクションに進ませない処理？
-      sleep()の処理が完了（返り値がくる）までawaitしている。そして、resolveは５秒のディレイ処理がされている
-       */
+      /* アップロード処理に十分な時間をディレイさせる処理 */
+      /* 2秒経つまでresolveを返さずに次のアクションに進ませない。
+      sleep()の処理が完了（返り値がくる）までawaitしている。*/
       const sleep = ms  => new Promise(resolve => setTimeout(resolve, ms))
       await sleep(2000)
 
-      /* アップロード処理が成功したらフォームの状態を
-          初期化してsuccessステートをtrueにする */
+      /* アップロード処理が成功したらフォームの状態を初期化してsuccessステータスをtrueにする */
       setFormState(initialState)
       setSuccess(true)
     }
 
+    /*添付されたファイルを取り出して、useStateにセットする*/
     const onFileInputChange = async (event :React.ChangeEventHandler<HTMLInputElement> | undefined) => {
       const file = event.target.files[0]
       setSelectedFile(file)
-      console.log(file)
       await uploadFile(file)
-      /*添付されたファイルを取り出して、セットする処理
-      アニメーションを行う処理（uploadFile）は５秒かかる作業なのでawaitさせてる？ */
     }
 
     const clickFileUploadButton = () => {
-      /* アップロードボタンのクリックで着火するイベント。成功ステータスを一旦戻してる。
+      /* アップロードボタンのクリックで着火するイベント。successステータスを一旦戻してる。
       inputRef.current.click()は、別のDOM要素のイベントを起動する処理に使われる→今回はinputタグを参照している */
       setSuccess(false)
       inputRef.current.click()
     }
 
+    /*非同期版のuseCallback　sucessステータスでCircularIntegrationの内容が変わるようにするための処理*/
     const asyncEvent = useAsyncCallback(onFileInputChange);
 
-    console.log(selectedFile);
-    console.log(createdFileName);
-
-
+    /*添付ファイル、ファイル名をセットしてS3にアップロード→完成版視聴画面に遷移*/
     const handleSubmission = () => {
       try {
         const params = {
@@ -103,7 +99,6 @@ export const UploadUserVideo= (id :number) => {
           ContentType: selectedFile.type,
           Body: selectedFile,
         };
-
         const res = s3.putObject(params).promise();
         console.log(res)
         navigate('/created_video', { state: createdFileName })
