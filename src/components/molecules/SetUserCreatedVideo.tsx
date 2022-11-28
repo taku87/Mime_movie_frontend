@@ -11,7 +11,6 @@ import { DownloadCreatedVideo } from "src/hooks/DownloadCreatedVideo";
 export const   SetUserCreatedVideo = memo(() => {
   const location = useLocation()
   const  user_created_file_name = location.state;
-    //const user_created_file_name = filename["filename"]
     const videoRef = useRef<HTMLVideoElement>(null);
     useEffect(() => {
         videoRef.current?.play();
@@ -22,7 +21,8 @@ export const   SetUserCreatedVideo = memo(() => {
         <h1 className="completed-video-card-text" >Now Showing</h1>
         <div className="completed-video-design-frame">
           <video className="user-created-video"  playsInline controls ref={videoRef} >
-            <source src={`https://completed-videos-s3-01.s3.ap-northeast-1.amazonaws.com/${user_created_file_name}_completed.mp4`} type="video/mp4" />
+          {/* user_created_file_name は、rails側で作成したファイル名。 */}
+            <source src={`https://${process.env.REACT_APP_COMPLETED_BACKET}.s3.${process.env.REACT_APP_REGION}.amazonaws.com/${user_created_file_name}_completed.mp4`} type="video/mp4" />
           </video>
           <img src={`${process.env.PUBLIC_URL}/movie-curtain-left.png`} alt="movie-curtain" className="completed-video-design-frame-curtain-left" />
           <img src={`${process.env.PUBLIC_URL}/movie-curtain-right.png`} alt="movie-curtain" className="completed-video-design-frame-curtain-right" />
