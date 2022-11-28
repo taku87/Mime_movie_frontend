@@ -1,8 +1,8 @@
 // @ts-nocheck
 import { memo } from 'react';
 import { useState } from 'react';
-import axios from 'axios';
-import { REST_API_URL } from 'src/urls/index';
+import axios from 'src/lib/axios';
+import { REST_API_URL, API_URL } from 'src/urls/index';
 import { useQuery } from 'react-query';
 
 import SwingVideos from "src/components/molecules/SwingVideos";
@@ -13,6 +13,15 @@ import type { ContentVideo } from "src/types/contentvideo";
 
 
 export const GuestGetContentVideos = memo(() => {
+
+  const csrf_token = () => {
+    axios
+      .get(`${API_URL}/secured`)
+      .then((response) => {
+      })
+  }
+  csrf_token()
+
   const [contentVideos, setContentVideos ] = useState<ContentVideo[]>([]);
     let { isLoading: queryLoading } = useQuery(['content_videos'],
     async () => {

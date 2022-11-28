@@ -6,16 +6,25 @@ import {
 } from 'react-query';
 
 import { useState } from 'react';
-import axios, {AxiosResponse} from 'axios';
-import { REST_API_URL } from 'src/urls/index';
+import  {AxiosResponse} from 'axios';
+import axios from 'src/lib/axios';
+import { REST_API_URL, API_URL } from 'src/urls/index';
 import { useQuery } from 'react-query';
-
 
 import type { ContentVideo, ContentVideos } from "src/types/contentvideo";
 import { CompletedVideoCard } from "src/components/organisms/CompletedVideoCard";
 
 
 export const GuestGetCompletedVideos = () => {
+
+  const csrf_token = () => {
+    axios
+      .get(`${API_URL}/secured`)
+      .then((response) => {
+      })
+  }
+  csrf_token()
+
   const [contentVideos, setContentVideos ] = useState<ContentVideos[]>([]);
     let { isLoading: queryLoading } = useQuery(['content_videos'],
     async () => {
@@ -28,8 +37,6 @@ export const GuestGetCompletedVideos = () => {
       .then((res: AxiosResponse<ContentVideos[]>) => {
         const { data } = res;
         setContentVideos(data.data);
-        console.log(data)
-        console.log(data.data)
       })
       .catch((error) => {
         console.error(error.response.data);

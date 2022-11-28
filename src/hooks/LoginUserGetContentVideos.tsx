@@ -3,8 +3,8 @@ import { useContext, memo } from 'react';
 import { useAuth0 } from '@auth0/auth0-react';
 import { Auth0Context } from 'src/components/providers/AuthCheckprovider';
 import { useState } from 'react';
-import axios from 'axios';
-import { REST_API_URL } from 'src/urls/index';
+import axios from 'src/lib/axios';
+import { REST_API_URL, API_URL } from 'src/urls/index';
 import { useQuery } from 'react-query';
 
 import { SwingVideos } from "src/components/molecules/SwingVideos";
@@ -18,7 +18,13 @@ import type { ContentVideo } from "src/types/contentvideo";
     const { setAccessToken } = useContext(Auth0Context);
     const [contentVideos, setContentVideos ] = useState<ContentVideo[]>([]);
 
-    console.log("ログインユーザーで実行")
+    const csrf_token = () => {
+      axios
+        .get(`${API_URL}/secured`)
+        .then((response) => {
+        })
+    }
+    csrf_token()
 
     let { isLoading: queryLoading } = useQuery(['content_videos'],
     async (isAuthenticated) => {

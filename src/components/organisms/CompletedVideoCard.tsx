@@ -22,14 +22,15 @@ export const CompletedVideoCard = ( props: ContentVideo ) => {
     like_amount,
   } = props;
   const [likedState, setLikedState] = useState(liked);
+  const [likeAmountState, setLikeAmountState] = useState(like_amount);
 
   const SwitchLikeButtons = memo(() => {
     return(
       <>
         {likedState ? (
-            <UnlikeButton id={id}  changeLikedState={setLikedState}  />
+            <UnlikeButton id={id}  changeLikedState={setLikedState} changeLikeAmountState={setLikeAmountState}  />
           ) : (
-            <LikeButton id={id}  changeLikedState={setLikedState}  />
+            <LikeButton id={id}  changeLikedState={setLikedState} changeLikeAmountState={setLikeAmountState} />
         )}
       </>
     )
@@ -54,7 +55,7 @@ export const CompletedVideoCard = ( props: ContentVideo ) => {
                   <div className='switch-like-buttons'><SwitchLikeButtons /></div>
                 )}
               <div className='like-amount'>
-                <p>Like数 {like_amount}</p>
+                <p>Like数 {likeAmountState}</p>
               </div>
           </div>
         </div>

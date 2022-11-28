@@ -2,11 +2,11 @@
 import { useContext } from 'react';
 import { useAuth0 } from '@auth0/auth0-react';
 import { Auth0Context } from 'src/components/providers/AuthCheckprovider';
-import axios from "axios";
+import axios from 'src/lib/axios';
+import { REST_API_URL, API_URL } from 'src/urls/index';
 import AWS from 'aws-sdk';
 import  { useState, useRef } from 'react';
 import { useNavigate } from "react-router-dom"
-import { REST_API_URL } from 'src/urls/index';
 import  "src/css/hooks/UploadUserVideo.css";
 
 import { useAsyncCallback } from 'react-async-hook'
@@ -30,6 +30,14 @@ export const UploadUserVideo= (id :number) => {
   const inputRef = useRef(null)
   const [ fotmState, setFormState ] = useState(initialState)
   const [success, setSuccess] = useState(false)
+
+  const csrf_token = () => {
+    axios
+      .get(`${API_URL}/secured`)
+      .then((response) => {
+      })
+  }
+  csrf_token()
 
   /*S3に動画をダイレクトアップロードできるように、アップロード権限が付与されたIAMユーザーを設定、
   S3バケット、リージョンの指定*/

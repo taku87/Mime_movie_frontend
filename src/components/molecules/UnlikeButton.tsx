@@ -1,15 +1,23 @@
 import { useContext } from 'react';
 import { Auth0Context } from 'src/components/providers/AuthCheckprovider';
-import axios from 'axios';
-import { REST_API_URL } from 'src/urls/index';
+import axios from 'src/lib/axios';
+import { REST_API_URL,  API_URL } from 'src/urls/index';
 
 import type { Like } from "src/types/like";
 import button from 'src/css/atoms/button.module.css';
 
 
 export const UnlikeButton = ( props: Like ) => {
-  const { id, changeLikedState } = props;
+  const { id, changeLikedState, changeLikeAmountState } = props;
   const { accessToken} = useContext(Auth0Context);
+
+  const csrf_token = () => {
+    axios
+      .get(`${API_URL}/secured`)
+      .then((response) => {
+        console.log(response);
+      })
+    }
 
   const unLike = () => {
     const unlikeis = async () => {
@@ -21,12 +29,14 @@ export const UnlikeButton = ( props: Like ) => {
         },
       })
       .then((response) => {
-        changeLikedState(false)
+        changeLikedState(false);
+        changeLikeAmountState(response.data.data.attributes.like_amount);
       })
       .catch((error) => {
         console.error(error);
       });
     }
+    csrf_token()
     unlikeis()
   };
   return (
