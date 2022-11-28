@@ -4,9 +4,11 @@ import Button from '@mui/material/Button';
 import MovieIcon from '@mui/icons-material/Movie';
 import DesktopMacIcon from '@mui/icons-material/DesktopMac';
 import SetDesignVideo  from 'src/components/molecules/SetDesignVideo';
-import {SetYoutubeVideo} from 'src/components/molecules/SetYoutubeVideo';
+import { SetYoutubeVideo } from 'src/components/molecules/SetYoutubeVideo';
+import { Tutorial } from 'src/components/molecules/Tutorial';
 import "src/css/globals/text.css";
 import "src/css/globals/common.css";
+import 'src/css/pages/top.css';
 
 export const Top = () => {
   return (
@@ -34,12 +36,9 @@ export const Top = () => {
           </div>
         </div>
 
-        <div className="top-app-info">
-          <h1 className="top-text-first">How?</h1>
-          <div className="card_textbox">
-            <p className="top-text-second">{`→説明に沿って、動画を投稿してみてください！\nパントマイミスト「ハナムラ」の映像と合成されて、一本のストーリーに!`}</p>
-          </div>
-        </div>
+        <h1 className="top-text-first">{`How?\n下のチュートリアルを見てみてね!`}</h1>
+
+        <Tutorial />
 
         <div>
           <h1 className="top-text-first">Let's Check!</h1>

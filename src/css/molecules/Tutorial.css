@@ -1,0 +1,39 @@
+.tutorial-list {
+  width: 100%;
+}
+
+.tutorial-card-textbox {
+  width: 70%;
+  height: auto;
+  margin: 300px auto;
+  padding: 50px 0px;
+  background: #fff;
+  box-sizing: border-box;
+  box-shadow: 10px 5px 5px #314357;
+}
+
+.tutorial-box {
+  display: flex;
+}
+
+.tutorial-image-box {
+  align-items: center;
+  width: 50%;
+  margin-right: 50px;
+  margin-left: 100px;
+}
+
+.tutorial-image {
+  width: 100%;
+}
+
+.tutorial-mrmime-box {
+  align-items: center;
+  width: 50%;
+  margin-right: 50px;
+  margin-left: 100px;
+}
+
+.tutorial-mrmime {
+  width: 150px;
+}

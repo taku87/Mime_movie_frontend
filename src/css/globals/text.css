@@ -48,6 +48,15 @@
   color: #fff;
 }
 
+.tutorial-text-first {
+  font-family: "Kaisei Opti", serif;
+  font-size: 30px;
+  color: #314357;
+  text-shadow: 0 0 15px #ffffff;
+  white-space: pre-wrap;
+  margin: 0px auto;
+}
+
 .top-text-first {
   font-family: "Kaisei Opti", serif;
   font-size: 40px;
