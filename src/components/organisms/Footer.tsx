@@ -75,13 +75,15 @@ export const Footer = () => {
           component={Link}
           to="/completed_videos"
         />
-        <BottomNavigationAction
+
+        {/* <BottomNavigationAction
           classes={actionClass}
           label='マイページ'
           icon={<AccountBoxIcon />}
           component={Link}
           to="/mypage"
-        />
+        /> */}
+
       </BottomNavigation>
     </AppBar>
   );

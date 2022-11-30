@@ -2,7 +2,7 @@ import { TutorialData } from 'src/components/atoms/TutorialData';
 import 'src/css/globals/text.css';
 import 'src/css/globals/common.css';
 import 'src/css/molecules/Tutorial.css';
-import 'src/css/pages/top.css';
+import 'src/css/pages/Top.css';
 
 
 export const Tutorial = () => {
@@ -14,11 +14,13 @@ export const Tutorial = () => {
               <div className="tutorial-card-textbox">
                 <div className='tutorial-box'>
                   <div className='tutorial-image-box'>
-                    <img src={`${process.env.PUBLIC_URL}/tutorial/${value.image}.png`} className="tutorial-image" alt={value.image} />
+                    <div>
+                      <img src={`${process.env.PUBLIC_URL}/tutorial/${value.image}.png`} className="tutorial-image" alt={value.image} />
+                    </div>
                   </div>
                   <div className='tutorial-mrmime-box'>
-                    <div>
-                      <h1 className='tutorial-text-first'>{value.text}</h1>
+                    <div className='tutorial-mrmime-box-object'>
+                      <h1 className='top-text fourth'>{value.text}</h1>
                       <div>
                         <img src={`${process.env.PUBLIC_URL}/${value.mrmime}.png`} className="tutorial-mrmime" alt={value.mrmime} />
                       </div>
@@ -26,6 +28,11 @@ export const Tutorial = () => {
                   </div>
                 </div>
               </div>
+              { key % 2  ?
+                (<img src={`${process.env.PUBLIC_URL}/foot-stamp-right.png`} className="foot-stamp" alt="foot-stamp-right" />)
+                :
+                (<img src={`${process.env.PUBLIC_URL}/foot-stamp-left.png`} className="foot-stamp" alt="foot-stamp-left" />)
+              }
             </div>
           )
         })}

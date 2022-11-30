@@ -1,25 +1,23 @@
 .responsive {
-  height: 400px;
-  aspect-ratio: 16/9;
+  width: 80%;
+  aspect-ratio: 16 / 9;
+  margin: 0 auto;
 }
 
 @media (max-width: 900px) {
   .responsive {
-    width: 600px;
-    aspect-ratio: 16/9;
+    width: 100%;
   }
 }
 
 @media (max-width: 670px) {
   .responsive {
-    width: 390px;
-    aspect-ratio: 16/9;
+    width: 100%;
   }
 }
 
-@media (max-width: 390px) {
+@media (max-width: 400px) {
   .responsive {
-    width: 100vw;
-    aspect-ratio: 16/9;
+    width: 100%;
   }
 }

@@ -3,7 +3,7 @@
 }
 
 .top {
-  margin-top: 10px;
+  white-space: pre-wrap;
 }
 
 .container {
@@ -19,7 +19,7 @@
 }
 
 .top-app-info,
-.top-appーpantomime-movie {
+.top-mime-info {
   margin: 0 auto;
   width: 70%;
   margin-top: 200px;
@@ -31,25 +31,165 @@
   text-align: center;
 }
 
-.movie {
+.youtube-movie {
+  display: inline-block;
+  text-align: center;
   height: 400px;
-  width: 800px;
+  width: 100%;
+}
+
+.set-design-movie {
+  width: 50%;
+}
+
+.mrmime-click {
+  width: 500px;
+}
+
+.top-link-container {
+  width: 90%;
+  height: 200px;
+  padding: 20px 0;
+}
+
+.top-link-button-box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .link-button {
-  margin: 20px 0;
+  margin: 30px 30px;
+}
+
+.top-card-textbox {
+  width: 100%;
+  height: auto;
+  padding: 10px 10px;
+  background: #fff;
+  box-sizing: border-box;
+  box-shadow: 10px 5px 5px #314357;
+}
+
+.top-text {
+  font-family: "Kaisei Opti", serif;
+
+  color: #314357;
+  text-shadow: 0 0 15px #ffffff;
+}
+
+.first {
+  font-size: 60px;
+}
+
+.second {
+  font-size: 40px;
+}
+
+.third {
+  font-size: 30px;
+}
+
+.fourth {
+  font-size: 20px;
+}
+
+@media (max-width: 1200px) {
+  .youtube-movie {
+    width: 100%;
+  }
+  .set-design-movie {
+    width: 80%;
+  }
 }
 
 @media (max-width: 670px) {
   .eyecatch-movie-container {
     width: 100%;
-    height: 190px;
+    height: 300px;
+    margin-top: 50px;
+    margin-bottom: 100px;
   }
-  .eyecatch-movie {
-    text-align: center;
+
+  .youtube-movie {
+    width: 100%;
+    height: 300px;
   }
-  .movie {
-    height: 190px;
-    width: 340px;
+
+  .set-design-movie {
+    width: 100%;
+  }
+
+  .mrmime-click {
+    width: 370px;
+  }
+
+  .top-link-button-box {
+    flex-flow: column;
+  }
+
+  .first {
+    font-size: 45px;
+  }
+
+  .second {
+    font-size: 30px;
+  }
+
+  .third {
+    font-size: 20px;
+  }
+
+  .fourth {
+    font-size: 20px;
+  }
+}
+
+@media (max-width: 400px) {
+  .container {
+    width: 100%;
+    margin: 0 auto;
+  }
+
+  .eyecatch-movie-container {
+    width: 100%;
+    height: 200px;
+    margin-top: 100px;
+    margin-bottom: 100px;
+  }
+
+  .set-design-movie {
+    width: 100%;
+  }
+
+  .top-app-info,
+  .top-mime-info {
+    width: 90%;
+    margin-top: 100px;
+  }
+
+  .mrmime-click {
+    width: 300px;
+  }
+
+  .top-card-textbox {
+    width: 100%;
+    padding: 10px 10px;
+  }
+
+  .first {
+    font-size: 45px;
+  }
+
+  .second {
+    font-size: 30px;
+  }
+
+  .third {
+    font-size: 20px;
+  }
+
+  .fourth {
+    font-size: 18px;
   }
 }

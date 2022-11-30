@@ -6,10 +6,10 @@ type IconProps = {
 
 const useStyles = makeStyles({
   circle: {
-    margin: "auto",
     borderRadius: "50%",
-    width: "75px",
-    height: "75px",
+    width: "70px",
+    height: "70px",
+    transition: "0.3s",
 
     "&:hover": {
       background: "yellow"

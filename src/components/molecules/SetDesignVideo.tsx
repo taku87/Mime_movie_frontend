@@ -8,7 +8,7 @@ export const SetDesignVideo = (props :Video) => {
         videoRef.current?.play();
     }, []);
     return (
-      <video className="movie" playsInline  autoPlay muted loop ref={videoRef} width="640" height="360" >
+      <video className="set-design-movie" playsInline  autoPlay muted loop ref={videoRef}  >
           <source src={`${process.env.PUBLIC_URL}/videos/${url}.mp4`} type="video/mp4" />
       </video>
     );

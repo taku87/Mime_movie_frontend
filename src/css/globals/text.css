@@ -48,24 +48,6 @@
   color: #fff;
 }
 
-.tutorial-text-first {
-  font-family: "Kaisei Opti", serif;
-  font-size: 30px;
-  color: #314357;
-  text-shadow: 0 0 15px #ffffff;
-  white-space: pre-wrap;
-  margin: 0px auto;
-}
-
-.top-text-first {
-  font-family: "Kaisei Opti", serif;
-  font-size: 40px;
-  color: #314357;
-  text-shadow: 0 0 15px #ffffff;
-  white-space: pre-wrap;
-  margin: 100px auto;
-}
-
 .nom-match-text-first,
 .mypage-text-first,
 .term-text-first,
@@ -90,15 +72,6 @@
   }
 }
 
-.top-text-second {
-  font-size: 25px;
-  color: #0e2e3b;
-  text-shadow: 0 0 20px #ffffff;
-  font-family: "Kaisei Opti", serif;
-  font-weight: 40;
-  white-space: pre-wrap;
-}
-
 .term-text-second,
 .privacy-policy-text-second {
   color: #0e2e3b;
@@ -121,11 +94,6 @@
 }
 
 @media (max-width: 400px) {
-  .top-text-first,
-  .top-text-second {
-    font-family: "Kaisei Opti", serif;
-  }
-
   .content-videos-show-text-second {
     font-size: 20px;
     font-family: "Kaisei Opti", serif;

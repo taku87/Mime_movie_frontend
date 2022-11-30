@@ -1,9 +1,0 @@
-.iframe {
-  width: 800px;
-}
-
-@media (max-width: 670px) {
-  .iframe {
-    width: 0px;
-  }
-}

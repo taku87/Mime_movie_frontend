@@ -47,16 +47,20 @@ export const CompletedVideoCard = ( props: ContentVideo ) => {
           <img src={`${process.env.PUBLIC_URL}/mrmime-popcorn.png`} alt="mrmime-popcorn" className="completed-video-mrmime-popcorn" />
         </div>
         <div>
-          <div className="completed-video-card-like-button-comment-post">
-            { isAuthenticated ? ( <div><PostComment content_video_id={id} /></div> ) : ( <></> )}
+          <div className="like-button-and-comment-post">
             {likedState === undefined ? (
-              <></>
-              ) : (
-                  <div className='switch-like-buttons'><SwitchLikeButtons /></div>
-                )}
               <div className='like-amount'>
-                <p>Like数 {likeAmountState}</p>
+                <p className='like-amount-font' >Like数 {likeAmountState}</p>
               </div>
+              ) : (
+                <div className='like-button-and-like-amount'>
+                  <div className='switch-like-buttons'><SwitchLikeButtons /></div>
+                  <div className='like-amount'>
+                    <p className='like-amount-font' >Like数 {likeAmountState}</p>
+                  </div>
+                </div>
+                )}
+            { isAuthenticated ? ( <div><PostComment content_video_id={id} /></div> ) : ( <></> )}
           </div>
         </div>
         <CommentList comments={comments} />
