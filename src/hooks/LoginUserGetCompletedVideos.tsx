@@ -29,7 +29,6 @@ import type { ContentVideo } from "src/types/contentvideo";
     async (isAuthenticated) => {
       const token = await getAccessTokenSilently();
       setAccessToken(token);
-      console.log(token);
       /** GETの処理 */
       const res = await axios
       .get<ContentVideo[]>(`${REST_API_URL}/user/content_videos`,{
@@ -52,8 +51,6 @@ import type { ContentVideo } from "src/types/contentvideo";
         </div>
       );
     }
-
-  console.log(contentVideos)
 
     if ( contentVideos === void 0 || contentVideos.length === 0) {
       return (

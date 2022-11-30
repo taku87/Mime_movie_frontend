@@ -11,7 +11,6 @@ export const PostComment = (props :Id) => {
   const { content_video_id } = props;
   const [comment, setComment] = useState('')
   const {isAuthenticated,getAccessTokenSilently } = useAuth0();
-  console.log(content_video_id)
 
   const handleChange = (e :React.ChangeEvent<HTMLTextAreaElement>) => {
     setComment(e.target.value)
@@ -26,6 +25,7 @@ export const PostComment = (props :Id) => {
         .then((response) => {
         })
     }
+    csrf_token()
 
     const  post_comment = () => {
       axios
@@ -42,8 +42,6 @@ export const PostComment = (props :Id) => {
           console.error(error.response.data);
         });
     }
-
-  csrf_token()
   post_comment()
   }
 

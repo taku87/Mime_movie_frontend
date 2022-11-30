@@ -46,8 +46,6 @@ export const GuestGetContentVideos = memo(() => {
       );
     }
 
-    console.log(contentVideos)
-
     if (contentVideos === void 0 || contentVideos.length === 0) {
       return (
         <div style={{ textAlign: 'center', marginTop: '40px' }}>
