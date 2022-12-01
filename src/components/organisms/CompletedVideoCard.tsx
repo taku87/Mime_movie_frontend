@@ -63,7 +63,9 @@ export const CompletedVideoCard = ( props: ContentVideo ) => {
             { isAuthenticated ? ( <div><PostComment content_video_id={id} /></div> ) : ( <></> )}
           </div>
         </div>
-        <CommentList comments={comments} />
+        <div className='comment-container'>
+          <CommentList comments={comments} />
+        </div>
       </div>
   )
 }
