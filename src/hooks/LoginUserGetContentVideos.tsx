@@ -65,7 +65,7 @@ import type { ContentVideo } from "src/types/contentvideo";
     }
 
     return (
-      <div className="container">
+      <>
         <SwingVideos contentVideos = {contentVideos} />
         {/** query.isLoadingがtureのとき、つまり、ロード中はクラスネームのローダーのやつが表示*/}
         {contentVideos.map((content_video,index) => (
@@ -79,6 +79,6 @@ import type { ContentVideo } from "src/types/contentvideo";
               state = {content_video.attributes.state}
             />
         ))}
-      </div>
+      </>
     )
   })

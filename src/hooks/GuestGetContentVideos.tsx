@@ -59,7 +59,7 @@ export const GuestGetContentVideos = memo(() => {
 
 
     return (
-      <div className="container">
+      <>
         <SwingVideos contentVideos = {contentVideos} />
         {/** query.isLoadingがtureのとき、つまり、ロード中はクラスネームのローダーのやつが表示*/}
         {contentVideos.map((content_video,index) => (
@@ -73,6 +73,6 @@ export const GuestGetContentVideos = memo(() => {
               state = {content_video.attributes.state}
             />
         ))}
-      </div>
+      </>
     )
   })

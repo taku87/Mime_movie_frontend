@@ -13,14 +13,14 @@ const ContentVideos = memo(() => {
   const { isAuthenticated } = useAuth0();
 
   return(
-    <>
+    <div className="container">
     { isAuthenticated ? (
       <LoginUserGetContentVideos />
       ) : (
       <GuestGetContentVideos />
       )
     }
-    </>
+    </div>
   )
 })
 

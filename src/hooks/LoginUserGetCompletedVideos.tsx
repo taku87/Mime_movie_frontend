@@ -64,7 +64,7 @@ import type { ContentVideo } from "src/types/contentvideo";
     }
 
     return (
-      <div className="container">
+      <>
         {/** query.isLoadingがtureのとき、つまり、ロード中はクラスネームのローダーのやつが表示*/}
         {contentVideos.map((content_video,index) => (
             <CompletedVideoCard
@@ -76,7 +76,7 @@ import type { ContentVideo } from "src/types/contentvideo";
               like_amount = {content_video.attributes.like_amount}
             />
         ))}
-      </div>
+      </>
     )
   })
 
