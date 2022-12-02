@@ -7,6 +7,7 @@ import { UnlikeButton } from "src/components/molecules/UnlikeButton";
 import { SetYoutubeVideo } from "src/components/molecules/SetYoutubeVideo";
 import { PostComment } from "src/hooks/PostComment";
 import { CommentList } from "src/components/organisms/CommentList";
+import { ShareButton } from "src/components/atoms/ShareButton";
 import 'src/css/organisms/CompletedVideoCard.css';
 import "src/css/globals/text.css"
 
@@ -54,6 +55,7 @@ export const CompletedVideoCard = ( props: ContentVideo ) => {
               </div>
               ) : (
                 <div className='like-button-and-like-amount'>
+                  <ShareButton URL={'https://mime-movie.com'} QUOTE={'あなたが撮った映像からストーリーが始まる映像を作れるアプリ！マイムムービー!'} />
                   <div className='switch-like-buttons'><SwitchLikeButtons /></div>
                   <div className='like-amount'>
                     <p className='like-amount-font' >Like数 {likeAmountState}</p>

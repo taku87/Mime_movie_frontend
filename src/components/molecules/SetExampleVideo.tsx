@@ -10,7 +10,7 @@ export const SetExampleVideo = (props :Video) => {
     }, []);
     return (
       <video className="video-frame" playsInline controls  muted ref={videoRef}  >
-          <source className="movie" src={`${process.env.PUBLIC_URL}/videos/${url}.mp4`} type="video/mp4" />
+          <source className="movie" src={`${process.env.PUBLIC_URL}/videos/example/${url}.mp4`} type="video/mp4" />
       </video>
     );
 }

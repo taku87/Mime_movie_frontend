@@ -29,8 +29,10 @@ export const   SetUserCreatedVideo = memo(() => {
           <img src={`${process.env.PUBLIC_URL}/movie-light.png`} alt="movie-light" className="completed-video-design-bottom" />
           <img src={`${process.env.PUBLIC_URL}/mrmime-popcorn.png`} alt="mrmime-popcorn" className="completed-video-mrmime-popcorn" />
         </div>
-        <ShareButton URL={'https://mime-movie.com'} QUOTE={'あなたが撮った映像からストーリーが始まる映像を作れるアプリ！マイムムービー!'} />
-        <DownloadCreatedVideo URL={`${user_created_file_name}_completed.mp4`} />
+        <div className='created-video-button'>
+          <ShareButton URL={'https://mime-movie.com'} QUOTE={'あなたが撮った映像からストーリーが始まる映像を作れるアプリ！マイムムービー!'} />
+          <DownloadCreatedVideo URL={`${user_created_file_name}_completed.mp4`} />
+        </div>
       </div>
     );
 })
