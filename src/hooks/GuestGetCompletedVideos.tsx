@@ -66,6 +66,7 @@ export const GuestGetCompletedVideos = () => {
           id = {content_video.attributes.id}
           youtube_url = {content_video.attributes.youtube_url}
           comments = {content_video.attributes.comments}
+          like_amount = {content_video.attributes.like_amount}
         />
       ))}
     </>
