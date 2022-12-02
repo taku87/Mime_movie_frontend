@@ -2,7 +2,7 @@
 import { useAuth0 } from '@auth0/auth0-react';
 import { useState, memo } from 'react';
 import axios from 'axios';
-import { REST_API_URL } from 'src/urls/index';
+import { REST_API_URL, API_URL} from 'src/urls/index';
 import type { ContentVideo } from "src/types/contentvideo";
 import { useLocation } from "react-router-dom";
 import {
@@ -28,6 +28,14 @@ const GetContentVideo = memo(() => {
   const [contentVideo, setContentVideo ] = useState<ContentVideo[]>([]);
   const location = useLocation();
   const { id } = location.state as State || {};
+
+  const csrf_token = () => {
+    axios
+      .get(`${API_URL}/secured`)
+      .then((response) => {
+      })
+  }
+  csrf_token()
 
   let { isLoading: queryLoading } = useQuery(['content_videos'],
     async () => {
