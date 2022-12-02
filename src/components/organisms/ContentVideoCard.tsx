@@ -1,7 +1,5 @@
 
-import { useState, memo  } from 'react';
-import { LikeButton } from "src/components/molecules/LikeButton";
-import { UnlikeButton } from "src/components/molecules/UnlikeButton";
+import {  memo } from 'react';
 import { FlipCardButton } from "src/components/molecules/FlipCardButton";
 import type { ContentVideo } from "src/types/contentvideo"
 

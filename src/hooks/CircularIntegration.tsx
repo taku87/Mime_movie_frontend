@@ -37,7 +37,7 @@ export default function CircularIntegration(props :EventProps) {
             asyncEvent.execute()
           }}
         >
-          {props.text}
+          {text}
         </Button>
         {asyncEvent.loading && (
           <CircularProgress

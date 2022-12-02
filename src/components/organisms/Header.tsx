@@ -1,7 +1,6 @@
 import 'src/css/organisms/header.css';
 import { Link } from 'react-router-dom';
 import { LoginButton } from "src/components/molecules/LoginButton";
-import { IconClickEffect }  from "src/hooks/IconClickEffect"
 import { HamburgerMenu } from "src/components/molecules/HamburgerMenu";
 
 export const Header = () => {

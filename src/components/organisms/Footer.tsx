@@ -8,7 +8,6 @@ import BottomNavigationAction from "@material-ui/core/BottomNavigationAction";
 import HomeIcon from '@mui/icons-material/Home';
 import MovieIcon from '@mui/icons-material/Movie';
 import DesktopMacIcon from '@mui/icons-material/DesktopMac';
-import AccountBoxIcon from '@mui/icons-material/AccountBox';
 import AppBar from "@material-ui/core/AppBar";
 
 const useStyles = makeStyles((theme: Theme) =>

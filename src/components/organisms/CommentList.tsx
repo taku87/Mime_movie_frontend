@@ -1,5 +1,3 @@
-import { useAuth0 } from "@auth0/auth0-react";
-
 import moment from "moment";
 import "moment/locale/ja";
 
@@ -8,11 +6,8 @@ import ListItem from "@material-ui/core/ListItem";
 import Divider from "@material-ui/core/Divider";
 import ListItemText from "@material-ui/core/ListItemText";
 import Typography from "@material-ui/core/Typography";
-import { Avatar, ListItemAvatar } from "@material-ui/core";
 
 import type { Comment,Comments } from "src/types/contentvideo"
-
-
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
@@ -28,27 +23,15 @@ const useStyles = makeStyles((theme: Theme) =>
 export const CommentList = (props :Comments) => {
   const classes = useStyles();
   const { comments } = props;
-  const { user } = useAuth0();
 
   return (
     <div>
       {comments?.map((comment :Comment) => (
         <>
         <ListItem alignItems="flex-start" key={comment.id}>
-          {/* <ListItemAvatar>
-              <img src={user.picture} alt={user.name} className="avatar"/>
-          </ListItemAvatar> */}
           <ListItemText
             primary={
               <>
-                {/* <Typography
-                  component="span"
-                  variant="body2"
-                  className={classes.inline}
-                  color="textPrimary"
-                >
-                  {user.name}
-                </Typography> */}
                 <Typography
                   component="span"
                   variant="body2"
