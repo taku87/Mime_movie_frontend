@@ -13,7 +13,7 @@ export const GuestGetCompletedVideos = () => {
 
   const csrf_token = () => {
     axios
-      .get(`${API_URL}/application`)
+      .get(`${API_URL}/secured`)
       .then((response) => {
       })
   }
