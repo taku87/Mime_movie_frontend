@@ -28,7 +28,7 @@ export const UploadUserVideo= (id :number) => {
   const navigate = useNavigate()
 
   const inputRef = useRef(null)
-  const [ fotmState, setFormState ] = useState(initialState)
+  const [ formState, setFormState ] = useState(initialState)
   const [success, setSuccess] = useState(false)
 
   const csrf_token = () => {

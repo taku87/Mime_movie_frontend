@@ -13,6 +13,7 @@ export const HamburgerMenu = () => {
         src={`${process.env.PUBLIC_URL}/blackhat-menu.png`}
         onClick={() => setDrawerOpened(true)}
         className="menu-button"
+        alt="menu-button"
       />
       <Drawer
         anchor={'left'}

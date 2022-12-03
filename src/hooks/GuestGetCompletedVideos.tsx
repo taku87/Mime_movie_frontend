@@ -1,17 +1,11 @@
 // @ts-nocheck
-import { memo } from 'react';
-import {
-  QueryClient,
-  QueryClientProvider,
-} from 'react-query';
-
 import { useState } from 'react';
 import  {AxiosResponse} from 'axios';
 import axios from 'src/lib/axios';
 import { REST_API_URL, API_URL } from 'src/urls/index';
 import { useQuery } from 'react-query';
 
-import type { ContentVideo, ContentVideos } from "src/types/contentvideo";
+import type { ContentVideos } from "src/types/contentvideo";
 import { CompletedVideoCard } from "src/components/organisms/CompletedVideoCard";
 
 
@@ -19,7 +13,7 @@ export const GuestGetCompletedVideos = () => {
 
   const csrf_token = () => {
     axios
-      .get(`${API_URL}/secured`)
+      .get(`${API_URL}/application`)
       .then((response) => {
       })
   }
@@ -72,6 +66,7 @@ export const GuestGetCompletedVideos = () => {
           id = {content_video.attributes.id}
           youtube_url = {content_video.attributes.youtube_url}
           comments = {content_video.attributes.comments}
+          like_amount = {content_video.attributes.like_amount}
         />
       ))}
     </>

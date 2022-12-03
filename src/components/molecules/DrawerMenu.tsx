@@ -23,7 +23,7 @@ export const DrawerMenu = () => {
     </ul>
     <div className='DrawerMenu-raw'>
     <div id='icon'><MessageIcon /></div>
-      <a id='link' target="_blank" href="https://twitter.com/hanatomura">問い合わせ</a>
+      <a id='link' target="_blank"  rel="noopener noreferrer" href="https://twitter.com/hanatomura">問い合わせ</a>
     </div>
     <img src={`${process.env.PUBLIC_URL}/mrmime-stand.png`} alt="mrmime-stand" className="mrmime-stand" />
   </div>
