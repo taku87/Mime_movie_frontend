@@ -54,14 +54,28 @@
     align-items: center;
   }
 
+  .tutorial-card-textbox {
+    padding: 30px 0px;
+    height: 900px;
+  }
+
   .tutorial-image-box,
   .tutorial-mrmime-box {
     width: 100%;
   }
 
-  .tutorial-card-textbox {
-    width: 70%;
-    height: 1000px;
+  .tutorial-image-box {
+    order: 1;
+  }
+
+  .tutorial-mrmime-box {
+    order: 0;
+    padding-top: 0px;
+  }
+
+  .tutorial-mrmime {
+    margin-top: 0px;
+    margin-bottom: 20px;
   }
 }
 
@@ -80,7 +94,7 @@
 @media (max-width: 400px) {
   .tutorial-card-textbox {
     width: 90%;
-    height: 900px;
+    height: 750px;
   }
 
   .tutorial-image {
