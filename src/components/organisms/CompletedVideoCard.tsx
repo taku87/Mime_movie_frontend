@@ -50,12 +50,15 @@ export const CompletedVideoCard = ( props: ContentVideo ) => {
         <div>
           <div className="like-button-and-comment-post">
             {likedState === undefined ? (
-              <div className='like-amount'>
-                <p className='like-amount-font' >Like数 {likeAmountState}</p>
-              </div>
+              <>
+                <ShareButton URL={`https://youtu.be/${youtube_url}`} QUOTE={'あなたが撮った映像からストーリーが始まる映像を作れるアプリ！マイムムービー!'} />
+                <div className='like-amount'>
+                  <p className='like-amount-font' >Like数 {likeAmountState}</p>
+                </div>
+              </>
               ) : (
                 <div className='like-button-and-like-amount'>
-                  <ShareButton URL={'https://mime-movie.com'} QUOTE={'あなたが撮った映像からストーリーが始まる映像を作れるアプリ！マイムムービー!'} />
+                  <ShareButton URL={`https://youtu.be/${youtube_url}`} QUOTE={'あなたが撮った映像からストーリーが始まる映像を作れるアプリ！マイムムービー!'} />
                   <div className='switch-like-buttons'><SwitchLikeButtons /></div>
                   <div className='like-amount'>
                     <p className='like-amount-font' >Like数 {likeAmountState}</p>
