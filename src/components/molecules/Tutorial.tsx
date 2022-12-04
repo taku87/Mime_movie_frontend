@@ -28,11 +28,7 @@ export const Tutorial = () => {
                   </div>
                 </div>
               </div>
-              { key % 2  ?
-                (<img src={`${process.env.PUBLIC_URL}/foot-stamp-right.png`} className="foot-stamp" alt="foot-stamp-right" />)
-                :
-                (<img src={`${process.env.PUBLIC_URL}/foot-stamp-left.png`} className="foot-stamp" alt="foot-stamp-left" />)
-              }
+              <img src={`${process.env.PUBLIC_URL}/foot-stamp-${value.foot}.png`} className="foot-stamp" alt="foot-stamp" />
             </div>
           )
         })}
