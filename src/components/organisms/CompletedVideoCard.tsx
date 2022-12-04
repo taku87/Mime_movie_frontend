@@ -1,12 +1,12 @@
 
 //import type { CompletedVideo } from "src/types/contentvideo";
-import { useAuth0 } from '@auth0/auth0-react';
+// import { useAuth0 } from '@auth0/auth0-react';
 import { useState, memo  } from 'react';
 import { LikeButton } from "src/components/molecules/LikeButton";
 import { UnlikeButton } from "src/components/molecules/UnlikeButton";
 import { SetYoutubeVideo } from "src/components/molecules/SetYoutubeVideo";
-import { PostComment } from "src/hooks/PostComment";
-import { CommentList } from "src/components/organisms/CommentList";
+//import { PostComment } from "src/hooks/PostComment";
+//import { CommentList } from "src/components/organisms/CommentList";
 import { ShareButton } from "src/components/atoms/ShareButton";
 import 'src/css/organisms/CompletedVideoCard.css';
 import "src/css/globals/text.css"
@@ -14,11 +14,11 @@ import "src/css/globals/text.css"
 import type { ContentVideo } from "src/types/contentvideo"
 
 export const CompletedVideoCard = ( props: ContentVideo ) => {
-  const {isAuthenticated } = useAuth0();
+  // const {isAuthenticated } = useAuth0();
   const {
     id,
     youtube_url,
-    comments,
+    // comments,
     liked,
     like_amount,
   } = props;
@@ -50,12 +50,15 @@ export const CompletedVideoCard = ( props: ContentVideo ) => {
         <div>
           <div className="like-button-and-comment-post">
             {likedState === undefined ? (
-              <div className='like-amount'>
-                <p className='like-amount-font' >Like数 {likeAmountState}</p>
-              </div>
+              <>
+                <ShareButton URL={`https://youtu.be/${youtube_url}`} QUOTE={'あなたが撮った映像からストーリーが始まる映像を作れるアプリ！マイムムービー!'} />
+                <div className='like-amount'>
+                  <p className='like-amount-font' >Like数 {likeAmountState}</p>
+                </div>
+              </>
               ) : (
                 <div className='like-button-and-like-amount'>
-                  <ShareButton URL={'https://mime-movie.com'} QUOTE={'あなたが撮った映像からストーリーが始まる映像を作れるアプリ！マイムムービー!'} />
+                  <ShareButton URL={`https://youtu.be/${youtube_url}`} QUOTE={'あなたが撮った映像からストーリーが始まる映像を作れるアプリ！マイムムービー!'} />
                   <div className='switch-like-buttons'><SwitchLikeButtons /></div>
                   <div className='like-amount'>
                     <p className='like-amount-font' >Like数 {likeAmountState}</p>

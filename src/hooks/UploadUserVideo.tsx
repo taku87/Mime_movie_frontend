@@ -74,7 +74,7 @@ export const UploadUserVideo= (id :number) => {
       /* 2秒経つまでresolveを返さずに次のアクションに進ませない。
       sleep()の処理が完了（返り値がくる）までawaitしている。*/
       const sleep = ms  => new Promise(resolve => setTimeout(resolve, ms))
-      await sleep(2000)
+      await sleep(1500)
 
       /* アップロード処理が成功したらフォームの状態を初期化してsuccessステータスをtrueにする */
       setFormState(initialState)
