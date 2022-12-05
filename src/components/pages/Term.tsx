@@ -1,5 +1,5 @@
+import 'src/css/pages/TermAndPrivacyPolicy.css';
 import 'src/css/globals/common.css';
-import 'src/css/pages/Term.css';
 import 'src/css/globals/text.css';
 import { TermData } from 'src/components/atoms/TermData';
 
@@ -13,18 +13,18 @@ export const Terms = () => {
         {TermData.map((value, key) => {
           return(
             <li key={key} >
-              <h1>{value.article}</h1>
+              <p className='term-text-third'>{value.article}</p>
               <ol>
               {value.paragraph.map((value, key) => {
                 return(
                   <li key={key} >
-                    <p>{value.body}</p>
+                    <p className='term-text-fourth'>{value.body}</p>
                     { value.sub_paragraph ? (
                       <ol>
                       {value.sub_paragraph.map((value, key) => {
                         return(
                           <li key={key} >
-                            <p>{value.body}</p>
+                            <p className='term-text-fifth'>{value.body}</p>
                           </li>
                         )
                       })}
