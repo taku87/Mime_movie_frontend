@@ -10,14 +10,13 @@ import {
   QueryClientProvider,
   useQuery,
 } from 'react-query';
+import CircularProgress from '@mui/material/CircularProgress';
 import { ContentVideoShowCard } from "src/components/organisms/ContentVideoShowCard";
 import { SetExampleVideo } from "src/components/molecules/SetExampleVideo";
 import { UploadUserVideo } from "src/hooks/UploadUserVideo";
 import 'src/css/pages/ContentVideoShow.css';
 import 'src/css/globals/text.css';
 import "src/css/globals/common.css";
-
-
 
 interface State {
   id: number;
@@ -56,9 +55,18 @@ const GetContentVideo = memo(() => {
   if (queryLoading) {
     return (
       <div style={{ textAlign: 'center', marginTop: '150px' }}>
-      {/* <Circular large={60} small={60} /> */}
-      <p>ロード中</p>
-      </div>
+      <CircularProgress
+        sx={{
+          color: '#314357',
+          mt: -1,
+          fontSize: '80px',
+          '@media screen and (max-width:700px)': {
+            mt: -0.4,
+          },
+        }}
+      />
+      <p className="loading-text">ロード中</p>
+    </div>
     )
   }
 
