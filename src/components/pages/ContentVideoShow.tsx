@@ -17,6 +17,7 @@ import { UploadUserVideo } from "src/hooks/UploadUserVideo";
 import 'src/css/pages/ContentVideoShow.css';
 import 'src/css/globals/text.css';
 import "src/css/globals/common.css";
+import { Padding } from '@mui/icons-material';
 
 interface State {
   id: number;
@@ -54,7 +55,7 @@ const GetContentVideo = memo(() => {
 
   if (queryLoading) {
     return (
-      <div style={{ textAlign: 'center', marginTop: '150px' }}>
+      <div style={{ textAlign: 'center', marginTop: '150px', minHeight: '1000px' }}>
       <CircularProgress
         sx={{
           color: '#314357',

@@ -46,7 +46,7 @@ import "src/css/globals/text.css";
 
     if (queryLoading) {
       return (
-        <div style={{ textAlign: 'center', marginTop: '150px' }}>
+        <div style={{ textAlign: 'center', marginTop: '150px', minHeight: '1000px' }}>
           <CircularProgress
             sx={{
               color: '#314357',
