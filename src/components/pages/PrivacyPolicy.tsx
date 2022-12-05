@@ -1,5 +1,5 @@
+import 'src/css/pages/TermAndPrivacyPolicy.css';
 import 'src/css/globals/common.css';
-import 'src/css/pages/PrivacyPolicy.css';
 import 'src/css/globals/text.css';
 import { PrivacyPolicyData } from 'src/components/atoms/PrivacyPolicyData';
 
@@ -13,18 +13,18 @@ export const PrivacyPolicy = () => {
         {PrivacyPolicyData.map((value, key) => {
           return(
             <li key={key} >
-              <h1>{value.article}</h1>
+              <p className='privacy-policy-text-third'>{value.article}</p>
               <ol>
               {value.paragraph.map((value, key) => {
                 return(
                   <li key={key} >
-                    <p>{value.body}</p>
+                    <p className='privacy-policy-text-fourth'>{value.body}</p>
                     { value.sub_paragraph ? (
                       <ol>
                       {value.sub_paragraph.map((value, key) => {
                         return(
                           <li key={key} >
-                            <p>{value.body}</p>
+                            <p className='privacy-policy-text-fifth'>{value.body}</p>
                           </li>
                         )
                       })}

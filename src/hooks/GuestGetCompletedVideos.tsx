@@ -8,6 +8,9 @@ import { useQuery } from 'react-query';
 import type { ContentVideos } from "src/types/contentvideo";
 import { CompletedVideoCard } from "src/components/organisms/CompletedVideoCard";
 
+import CircularProgress from '@mui/material/CircularProgress';
+import "src/css/globals/text.css";
+
 
 export const GuestGetCompletedVideos = () => {
 
@@ -41,8 +44,17 @@ export const GuestGetCompletedVideos = () => {
     if (queryLoading) {
       return (
         <div style={{ textAlign: 'center', marginTop: '150px' }}>
-        {/* <Circular large={60} small={60} /> */}
-        <p>ロード中</p>
+          <CircularProgress
+            sx={{
+              color: '#314357',
+              mt: -1,
+              fontSize: '80px',
+              '@media screen and (max-width:700px)': {
+                mt: -0.4,
+              },
+            }}
+          />
+          <p className="loading-text">ロード中</p>
         </div>
       );
     }
@@ -50,9 +62,9 @@ export const GuestGetCompletedVideos = () => {
     if (contentVideos === void 0 || contentVideos.length === 0) {
       return (
         <div style={{ textAlign: 'center', marginTop: '40px' }}>
-          <p style={{ fontSize: '13px' }}>
+          <p className="loading-text" >
             {' '}
-            完成版動画がありません
+            完成版動画はありません
           </p>
         </div>
       )

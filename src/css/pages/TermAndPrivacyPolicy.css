@@ -1,0 +1,66 @@
+.term,
+.privacy-policy {
+  width: 80%;
+  margin: 0 auto;
+}
+
+.term-list,
+.privacy-policy-list {
+  list-style: none;
+  text-align: left;
+}
+
+.term-text-second,
+.privacy-policy-text-second {
+  font-size: 20px;
+
+  color: #0e2e3b;
+}
+
+.term-text-third {
+  font-size: 30px;
+}
+
+.term-text-fourth {
+  font-size: 20px;
+}
+
+.term-text-fifth {
+  font-size: 20px;
+}
+
+@media (max-width: 1200px) {
+  .term,
+  .privacy-policy {
+    width: 90%;
+    margin: 0 auto;
+  }
+
+  .term-list,
+  .privacy-policy-list {
+    padding: 5px;
+    list-style: none;
+    text-align: left;
+  }
+
+  ol {
+    padding: 0 0 0 20px;
+  }
+
+  .term-text-second,
+  .privacy-policy-text-second {
+    font-size: 15px;
+  }
+
+  .term-text-third {
+    font-size: 20px;
+  }
+
+  .term-text-fourth {
+    font-size: 15px;
+  }
+
+  .term-text-fifth {
+    font-size: 13px;
+  }
+}

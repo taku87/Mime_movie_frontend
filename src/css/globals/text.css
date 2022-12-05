@@ -8,6 +8,12 @@
   font-family: "Kaisei Opti", serif;
 }
 
+.loading-text {
+  font-size: 30px;
+  font-family: "Kaisei Opti", serif;
+  color: #314357;
+}
+
 @media (max-width: 400px) {
   .big-text {
     font-family: "Kaisei Opti", serif;
@@ -70,11 +76,6 @@
   .completed-videos-index-text-first {
     font-size: 35px;
   }
-}
-
-.term-text-second,
-.privacy-policy-text-second {
-  color: #0e2e3b;
 }
 
 .content-videos-index-text-second {

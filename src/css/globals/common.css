@@ -5,6 +5,7 @@
 .mypage,
 .content-videos-index,
 .content-video-show,
+.completed-videos-index,
 .set-user-created-video-wrapper {
   min-height: 1000px;
   width: 100%;
