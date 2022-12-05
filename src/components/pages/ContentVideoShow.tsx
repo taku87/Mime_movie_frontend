@@ -17,7 +17,6 @@ import { UploadUserVideo } from "src/hooks/UploadUserVideo";
 import 'src/css/pages/ContentVideoShow.css';
 import 'src/css/globals/text.css';
 import "src/css/globals/common.css";
-import { Padding } from '@mui/icons-material';
 
 interface State {
   id: number;
