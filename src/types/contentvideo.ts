@@ -2,6 +2,15 @@ export type ContentVideos = {
   data?: any;
 };
 
+export interface ContentVideoFormData {
+  number: string;
+  title: string;
+  description: string;
+  thumbnail: string;
+  youtube_url: string;
+  state: number;
+}
+
 export type ContentVideo = {
   attributes: {
     id: number;
