@@ -4,6 +4,7 @@ import { ScrollToTop } from 'src/hooks/ScrollToTop';
 
 import Top from 'src/components/pages/Top';
 import NoMatch from 'src/components/pages/NoMatchs';
+import AdminContentVideosIndex from 'src/components/pages/AdminContentVideosIndex';
 import ContentsVideosIndex from 'src/components/pages/ContentVideosIndex';
 import ContentsVideoShow from 'src/components/pages/ContentVideoShow';
 import SetUserCreatedVideo  from 'src/components/molecules/SetUserCreatedVideo';
@@ -23,6 +24,7 @@ export const Routers = memo(() => {
       <Routes>
         <Route path="/" element={<Top />} />
         <Route path="*" element={<NoMatch />} />
+        <Route path="/admin/contents_videos" element={<AdminContentVideosIndex />} />
         <Route path="/contents_videos" element={<ContentsVideosIndex />}/>
         <Route path="contents_videos/:contentsVideoId" element={<ContentsVideoShow />} />
         <Route path="/created_video" element={<SetUserCreatedVideo/>}/>
