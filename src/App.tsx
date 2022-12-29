@@ -8,8 +8,8 @@ import { QueryClient, QueryClientProvider } from 'react-query';
 import { AuthCheckProvider } from 'src/components/providers/AuthCheckprovider';
 import { GlobalProvider } from 'src/components/providers/Globalprovider';
 import { BrowserRouter } from 'react-router-dom';
-import { Footer } from "src/components/organisms/Footer";
-import { Header } from "src/components/organisms/Header";
+import { Footer } from "src/components/ui/layouts/Footer";
+import { Header } from "src/components/ui/layouts/Header";
 import { Routers } from 'src/route/Routers';
 
 const queryClient = new QueryClient();
